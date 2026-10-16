@@ -73,3 +73,5 @@ See [migration](docs/IDENTITY_MIGRATION.md), [version policy](docs/VERSION_POLIC
 ## Offline checks
 
 Run `python scripts/check_versions.py`, `python scripts/validate_source.py`, and `python scripts/run_host_tests.py`. The host runner requires `lupa.lua51` and the declared sibling dependency checkouts; it never launches PZ or a server. Use `python scripts/check_public_tree.py` after targeted staging and before every public push. Package verification uses `python scripts/package_project.py --verify`. `--release` deliberately blocks stable G8 without required runtime evidence.
+
+The 0.9.3 Workshop MP test update was confirmed by SteamCMD and Steam restarted gracefully. See [distribution evidence](docs/WORKSHOP_UPLOAD_0_9_3.md). Anonymous live-page metadata and subscriber download remain unverified. Source is pushed on the PR branch; main remains the recorded legacy baseline pending merge.

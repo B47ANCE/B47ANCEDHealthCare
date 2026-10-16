@@ -15,7 +15,8 @@
   "historical_roots": [
     "Contents",
     "dist",
-    "docs/audit"
+    "docs/audit",
+    "docs/history/pre-health-care-0.9.2"
   ],
   "generated_roots": [
     "dist"
@@ -64,6 +65,14 @@
     {
       "path": "docs/VALIDATION_0_9_3.md",
       "pattern": "^Current version: ([^ ]+)\\.$"
+    },
+    {
+      "path": "docs/WORKSHOP_UPLOAD_0_9_3.md",
+      "pattern": "^Current version: ([^ ]+)\\.$"
+    },
+    {
+      "path": "docs/RELEASE_PROVENANCE_0_9_3.json",
+      "pattern": "\"project_version\": \"([^\"]+)\""
     }
   ],
   "retained_contracts": [
