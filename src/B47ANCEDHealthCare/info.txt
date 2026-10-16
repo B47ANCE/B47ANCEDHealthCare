@@ -2,5 +2,5 @@ B47ANCE'd Health Care — STEAM WORKSHOP INFO
 
 Status: Procedure API, severing, and detached-part provenance foundation; not yet a gameplay release.
 Author: B47ANCE
-Version: 0.9.3
+Version: 0.10.0
 Internal Mod ID: B47ANCEDHealthCare

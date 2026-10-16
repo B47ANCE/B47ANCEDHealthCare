@@ -76,3 +76,7 @@ pre-existing disability. Rollback now restores both original fields independentl
 for the selected region and descendants. A malformed storage root is rejected
 without replacing it. Host tests cover these failures, authority denial,
 successful descendant detachment and repeated sever rejection.
+
+## Superseding 0.10.0 source checkpoint
+
+The historical custom command reconstruction above is disabled: it could not prove elapsed work. Current recovery uses shared native timed-action complete and its server duration with canonical validation. Client direct-command attempts are rejected. The native corpse/item constructor, ownership replication, save/reload and dedicated timing/cancellation checks remain unverified; see AUDIT_0_10_0.md.

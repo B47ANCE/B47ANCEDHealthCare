@@ -1,4 +1,4 @@
-# B47ANCE'd Health Care 0.9.3 testing
+# B47ANCE'd Health Care 0.10.0 testing
 
 Automated cases in the suite include `test_severing`, `test_procedure_runtime`,
 `test_sever_transaction`, `test_corpse_recovery`,
@@ -84,3 +84,11 @@ Version 0.9.0 tests completed-examination scoping, detached report copies,
 non-serializable fact removal, expiry, and publication only after successful
 timed-action completion. In game, verify local and consented remote patients,
 expiration, recreated player objects, disconnect, and split-screen isolation.
+
+## 0.10.0 regressions and required native runs
+
+Run python scripts/check_versions.py, python scripts/validate_source.py and python scripts/run_host_tests.py. The 18 tests include new procedure integrity, native action selection/unit conversion and blocked legacy completion reproductions. Re-run the existing sever/provenance, optional treatment, knowledge, sandbox and load-graph cases.
+
+In disposable SP, confirm the configured recovery/examination seconds are real elapsed durations (including documented vanilla moodle modifiers). Examination must finish locally and publish once; shared recovery must create one authoritative output. Dedicated tests must trace native constructor corpse/item resolution, server getDuration and complete ownership, cancellation/disconnect/rejoin/restart, simultaneous recovery and inventory/anatomy replication. Send a direct old recoverCorpsePart command: it must not mutate anything. Do not use mock test results to mark these live scenarios PASS.
+
+Existing schema-1 saves with absent optional procedure maps initialize only on authoritative writes. Read-only inspection must not add them; corrupt maps must remain intact and reject actions. Repeated reloads and uncertain/executing reservation recovery require disposable native fixtures. The retired ExaminationMaxBodyParts value is ignored without editing existing saves.

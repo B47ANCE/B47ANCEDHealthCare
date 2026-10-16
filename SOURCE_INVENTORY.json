@@ -1,5 +1,5 @@
 {
-  "project_version": "0.9.3",
+  "project_version": "0.10.0",
   "display_name": "B47ANCE'd Health Care",
   "source_root": "src/B47ANCEDHealthCare",
   "mod_ids": [
@@ -16,7 +16,8 @@
     "Contents",
     "dist",
     "docs/audit",
-    "docs/history/pre-health-care-0.9.2"
+    "docs/history/pre-health-care-0.9.2",
+    "docs/history/workshop-0.9.3"
   ],
   "generated_roots": [
     "dist"
@@ -63,16 +64,12 @@
       "pattern": "\\A# Changelog\\n\\n## ([^ ]+) - "
     },
     {
-      "path": "docs/VALIDATION_0_9_3.md",
+      "path": "docs/VALIDATION_0_10_0.md",
       "pattern": "^Current version: ([^ ]+)\\.$"
     },
     {
-      "path": "docs/WORKSHOP_UPLOAD_0_9_3.md",
-      "pattern": "^Current version: ([^ ]+)\\.$"
-    },
-    {
-      "path": "docs/RELEASE_PROVENANCE_0_9_3.json",
-      "pattern": "\"project_version\": \"([^\"]+)\""
+      "path": "TESTER_HANDOFF.md",
+      "pattern": "^# B47ANCE'd Health Care ([^ ]+) playtester handoff$"
     }
   ],
   "retained_contracts": [
@@ -82,6 +79,12 @@
     "medWorks network channel",
     "SandboxVars.medWorks"
   ],
-  "current_package": "dist/B47ANCEDHealthCare-0.9.3-workshop-ready.zip",
-  "current_manifest": "dist/RELEASE_0_9_3.json"
+  "current_package": null,
+  "current_manifest": null,
+  "historical_records": [
+    "docs/VALIDATION_0_9_3.md",
+    "docs/WORKSHOP_UPLOAD_0_9_3.md",
+    "docs/RELEASE_PROVENANCE_0_9_3.json"
+  ],
+  "last_distributed_version": "0.9.3"
 }

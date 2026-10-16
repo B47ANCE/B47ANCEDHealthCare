@@ -6,8 +6,6 @@
   "Sandbox_medWorks_EnableCorpseRecovery_tooltip": "Allow timed recovery from corpses with preserved anatomy and provenance. Requires a carried working saw.",
   "Sandbox_medWorks_CorpseRecoverySeconds": "Corpse recovery time (seconds)",
   "Sandbox_medWorks_CorpseRecoverySeconds_tooltip": "Time for each recovered part. Movement cancels the action without consuming anatomy.",
-  "Sandbox_medWorks_ExaminationMaxBodyParts": "Maximum examined body parts",
-  "Sandbox_medWorks_ExaminationMaxBodyParts_tooltip": "Technical safety limit per examination provider. Higher values support expanded anatomy but increase work per examination.",
   "Sandbox_medWorks_EnableExaminations": "Enable player examinations",
   "Sandbox_medWorks_EnableExaminations_tooltip": "Add a timed read-only examination option to the vanilla health-panel body-part menu.",
   "Sandbox_medWorks_ExaminationSeconds": "Examination time (seconds)",

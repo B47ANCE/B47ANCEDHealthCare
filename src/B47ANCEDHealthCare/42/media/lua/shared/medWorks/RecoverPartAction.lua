@@ -13,16 +13,16 @@ function MWRecoverPartAction:start()
     self:setAnimVariable("LootPosition","Low")
 end
 function MWRecoverPartAction:update() self.character:faceThisObject(self.corpse) end
-function MWRecoverPartAction:getDuration() return Recovery.duration() end
+-- Native action units are 20 ms; server sandbox values are seconds.
+function MWRecoverPartAction:getDuration() return Recovery.duration()*50 end
 function MWRecoverPartAction:complete()
     if self.completed then return false end
     local client=false
     if type(rawget(_G,"isClient"))=="function"then local ok,value=pcall(isClient);client=ok and value==true end
     if client then
-        local Transport=require "medWorks/CorpseRecoveryClient"
-        local sent=Transport.request(self.character,self.corpse,self.region,self.tool)
-        if sent then self.completed=true end
-        return sent==true
+        -- Build 42 dispatches complete on the server for this shared action.
+        -- A client callback must never submit a second mutation path.
+        return false
     end
     local item=Recovery.complete(self.character,self.corpse,self.region,self.tool)
     if item~=nil then self.completed=true end

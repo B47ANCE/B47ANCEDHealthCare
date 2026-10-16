@@ -1,7 +1,7 @@
 local Mortis=require "Mortis/init"
 
 local medWorks=rawget(_G,"medWorks") or {}
-medWorks.VERSION="0.9.3"
+medWorks.VERSION="0.10.0"
 medWorks.Procedures=medWorks.Procedures or {}
 
 local PART_TYPES={
@@ -62,18 +62,37 @@ local function emit(name,...)
     end
 end
 
-local function patientData(patient)
-    if not patient or not patient.getModData then return nil end
+local completing=setmetatable({},{__mode="k"})
+local function patientData(patient,create)
+    if not patient or not patient.getModData then return nil,"patient state unavailable" end
     local ok,data=pcall(function() return patient:getModData() end)
-    if not ok or type(data)~="table" then return nil end
-    if data.medWorks==nil then data.medWorks={schemaVersion=1,completedProcedures={}} end
+    if not ok or type(data)~="table" then return nil,"patient state unavailable" end
+    if data.medWorks==nil then
+        if not create then return nil,"patient state absent" end
+        data.medWorks={schemaVersion=1,completedProcedures={}}
+    end
     if type(data.medWorks)~="table" or data.medWorks.schemaVersion~=1
-        or type(data.medWorks.completedProcedures)~="table" then return nil end
-    data.medWorks.activeProcedures=type(data.medWorks.activeProcedures)=="table"
-        and data.medWorks.activeProcedures or {}
-    data.medWorks.procedureLocks=type(data.medWorks.procedureLocks)=="table"
-        and data.medWorks.procedureLocks or {}
+        or type(data.medWorks.completedProcedures)~="table" then return nil,"malformed patient state" end
+    for _,key in ipairs({"activeProcedures","procedureLocks"}) do
+        if data.medWorks[key]~=nil and type(data.medWorks[key])~="table" then return nil,"malformed patient state" end
+    end
+    if create then
+        data.medWorks.activeProcedures=data.medWorks.activeProcedures or {}
+        data.medWorks.procedureLocks=data.medWorks.procedureLocks or {}
+    end
     return data.medWorks
+end
+
+local function copyKeys(keys)local copy={};for index,key in ipairs(keys)do copy[index]=key end;return copy end
+local function sameKeys(a,b)
+    if type(a)~="table"or type(b)~="table"or #a~=#b then return false end
+    for index,key in ipairs(a)do if b[index]~=key then return false end end
+    return true
+end
+local function reservationMatches(token,active,record)
+    return type(active)=="table"and type(record)=="table"
+        and active.procedureId==token.procedureId and record.procedureId==token.procedureId
+        and record.operationId==token.operationId and sameKeys(active.lockKeys,record.lockKeys)
 end
 
 local function transmit(patient)
@@ -154,7 +173,7 @@ function medWorks.beginProcedure(id,context)
     local valid,definitionOrError=medWorks.validateProcedure(id,context)
     if not valid then return false,definitionOrError end
     if not canWrite(context.patient) then return false,"non-authority" end
-    local data=patientData(context.patient)
+    local data=patientData(context.patient,true)
     if not data then return false,"patient state unavailable" end
     local operationId=context.operationId or context.replayId
     if type(operationId)~="string" or operationId=="" then return false,"replay id required" end
@@ -163,6 +182,7 @@ function medWorks.beginProcedure(id,context)
     end
     local keys,keyError=procedureKeys(definitionOrError,context)
     if not keys then return false,keyError end
+    if data.completedProcedures[operationId]or data.activeProcedures[operationId]then return false,"procedure already attempted"end
     for _,key in ipairs(keys) do
         local owner=data.procedureLocks[key]
         if owner and owner~=operationId then return false,"patient resource busy: "..key end
@@ -172,15 +192,16 @@ function medWorks.beginProcedure(id,context)
     data.activeProcedures[operationId]={procedureId=id,status="reserved",lockKeys=keys}
     for _,key in ipairs(keys) do data.procedureLocks[key]=operationId end
     transmit(context.patient)
-    return true,{patient=context.patient,procedureId=id,operationId=operationId,lockKeys=keys}
+    return true,{patient=context.patient,procedureId=id,operationId=operationId,lockKeys=copyKeys(keys)}
 end
 
 function medWorks.cancelProcedure(token,reason)
     if type(token)~="table" or not canWrite(token.patient) then return false,"non-authority" end
-    local data=patientData(token.patient)
+    if completing[token.patient] and completing[token.patient][token.operationId] then return false,"procedure is being validated" end
+    local data=patientData(token.patient,true)
     local active=data and data.activeProcedures[token.operationId]
     local record=data and data.completedProcedures[token.operationId]
-    if not active or not record or active.status~="reserved" then return false,"procedure is not cancellable" end
+    if not reservationMatches(token,active,record) or active.status~="reserved" or record.status~="reserved" then return false,"procedure is not cancellable" end
     record.status="cancelled"
     record.reason=tostring(reason or "cancelled before execution")
     releaseProcedure(data,token.operationId)
@@ -191,15 +212,29 @@ end
 function medWorks.completeProcedure(token,context)
     context=type(context)=="table" and context or {}
     if type(token)~="table" or token.patient~=context.patient then return false,"procedure token mismatch" end
+    token={patient=token.patient,procedureId=token.procedureId,operationId=token.operationId}
     if not canWrite(token.patient) then return false,"non-authority" end
     local definition=medWorks.Procedures[token.procedureId]
-    local data=patientData(token.patient)
+    if completing[token.patient] and completing[token.patient][token.operationId] then return false,"procedure is being validated" end
+    local data=patientData(token.patient,true)
     local active=data and data.activeProcedures[token.operationId]
     local record=data and data.completedProcedures[token.operationId]
-    if not definition or not active or not record or active.status~="reserved" then
+    if not definition or not reservationMatches(token,active,record) or active.status~="reserved" or record.status~="reserved" then
         return false,"procedure reservation unavailable"
     end
-    local valid,validationReason=medWorks.validateProcedure(token.procedureId,context)
+    if (context.operationId~=nil and context.operationId~=token.operationId)
+        or (context.replayId~=nil and context.replayId~=token.operationId)then return false,"procedure replay identity mismatch"end
+    local supplied={};for key,value in pairs(context)do supplied[key]=value end
+    supplied.operationId=token.operationId;supplied.replayId=token.operationId
+    local pending=completing[token.patient]or{};completing[token.patient]=pending;pending[token.operationId]=true
+    local valid,validationReason=medWorks.validateProcedure(token.procedureId,supplied)
+    local keys,keyReason
+    if valid then keys,keyReason=procedureKeys(definition,supplied)end
+    pending[token.operationId]=nil
+    if supplied.patient~=token.patient or supplied.operationId~=token.operationId or supplied.replayId~=token.operationId then return false,"procedure completion identity changed"end
+    -- Callback code cannot reenter completion/cancellation while validation runs.
+    if data.activeProcedures[token.operationId]~=active or data.completedProcedures[token.operationId]~=record
+        or active.status~="reserved"or record.status~="reserved"then return false,"procedure reservation changed"end
     if not valid then
         record.status="cancelled"
         record.reason=validationReason
@@ -207,10 +242,20 @@ function medWorks.completeProcedure(token,context)
         transmit(token.patient)
         return false,validationReason
     end
+    if not keys or not sameKeys(keys,active.lockKeys)then return false,keyReason or "procedure reserved resources changed"end
+    for _,key in ipairs(keys)do if data.procedureLocks[key]~=token.operationId then return false,"procedure lock ownership changed"end end
+    if not canWrite(token.patient)then return false,"non-authority"end
     active.status="executing"
     record.status="executing"
     transmit(token.patient)
-    local ok,result,reason=pcall(definition.execute,context)
+    local ok,result,reason=pcall(definition.execute,supplied)
+    -- Preserve provider annotations without changing the caller's identity fields.
+    for key in pairs(context)do
+        if key~="patient"and key~="operationId"and key~="replayId"and supplied[key]==nil then context[key]=nil end
+    end
+    for key,value in pairs(supplied)do
+        if key~="patient"and key~="operationId"and key~="replayId"then context[key]=value end
+    end
     if not ok then
         -- Provider code may have changed the patient before throwing. Preserve
         -- the lock and explicit uncertain state until an operator resolves it.
@@ -225,7 +270,7 @@ function medWorks.completeProcedure(token,context)
     releaseProcedure(data,token.operationId)
     transmit(token.patient)
     if result~=true then return false,reason or "procedure failed; operation must not be replayed" end
-    emit("MedicalProcedureCompleted",token.procedureId,context,result)
+    emit("MedicalProcedureCompleted",token.procedureId,supplied,result)
     return true,result
 end
 
@@ -236,10 +281,14 @@ function medWorks.performProcedure(id,context)
 end
 
 function medWorks.inspectProcedureRecovery(patient)
-    local data=patientData(patient)
-    if not data then return nil,"patient state unavailable" end
+    local data,reason=patientData(patient,false)
+    if not data then
+        if reason=="patient state absent"then return{requiresInspection=false,active={}}end
+        return nil,reason
+    end
     local result={requiresInspection=false,active={}}
-    for operationId,active in pairs(data.activeProcedures) do
+    for operationId,active in pairs(data.activeProcedures or{}) do
+        if type(operationId)~="string"or type(active)~="table"or type(active.lockKeys)~="table"then return nil,"malformed procedure reservation"end
         local entry={operationId=operationId,procedureId=active.procedureId,
             status=active.status,lockKeys={}}
         for i,key in ipairs(active.lockKeys or {}) do entry.lockKeys[i]=key end
@@ -252,13 +301,15 @@ end
 
 function medWorks.resolveProcedureRecovery(patient,operationId,outcome)
     if not canWrite(patient) then return false,"non-authority" end
+    if completing[patient] and completing[patient][operationId]then return false,"procedure is being validated"end
     if outcome~="failed" and outcome~="completed" and outcome~="cancelled" then
         return false,"resolution outcome must be failed, completed, or cancelled"
     end
-    local data=patientData(patient)
+    local data=patientData(patient,true)
     local active=data and data.activeProcedures[operationId]
     local record=data and data.completedProcedures[operationId]
-    if not active or not record then return false,"procedure recovery not found" end
+    if type(active)~="table"or type(active.procedureId)~="string"
+        or not reservationMatches({procedureId=active.procedureId,operationId=operationId},active,record)then return false,"procedure recovery not found or malformed" end
     if active.status=="executing" then return false,"procedure is still executing" end
     if active.status=="uncertain" and outcome=="cancelled" then
         return false,"uncertain execution requires completed or failed resolution"

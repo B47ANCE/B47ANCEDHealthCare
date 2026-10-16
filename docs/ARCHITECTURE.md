@@ -110,7 +110,7 @@ while the provider's guarded require preserves standalone medWorks loading.
 The client graph also installs the corpse-recovery menu after its transport, so
 the documented part-acquisition path is reachable through normal startup.
 
-## Corpse-recovery transport (0.8.0)
+## Historical corpse-recovery transport (0.8.0, superseded by 0.10.0)
 
 Single-player recovery commits directly after timed-action revalidation. A
 remote client sends only bounded identity assertions: request ID, square,
@@ -125,8 +125,18 @@ dedicated behavior remains an explicit live validation gate.
 
 ## Completed examination observations (0.9.0)
 
-Only `MWExaminationAction:complete` publishes a UI-consumable examination. The
+Only `MWExaminationAction:finishObservation`, called from local `perform`, publishes a UI-consumable examination. The
 session-local cache is keyed by exact examiner and patient objects, retains at
 most 16 observations per examiner, expires entries after five real-time minutes,
 removes object/function/non-finite facts, and returns a detached copy. Remote
 consent and `BodyDamageRemote` validation still occur before publication.
+
+## Current action and reservation boundary (0.10.0)
+
+Shared MWRecoverPartAction defines complete, selecting installed Build 42 native server action execution. Its getDuration returns server-configured seconds multiplied by 50 native 20 ms action units. Completion revalidates exact corpse/tool, reach, clothing, knowledge, anatomy and provenance, then uses the canonical sever transaction. Client complete callbacks reject mutation. Legacy custom recoverCorpsePart commands are inert; CorpseRecoveryClient.request remains present but rejects rather than supplying a second commit path. Native argument reconstruction and completion ordering still need real hosted/dedicated tests.
+
+Client-only MWExaminationAction deliberately has no complete method: it finishes the read-only report from perform, mirroring the installed local medical-check presentation action. It converts configured seconds to local action units and retains one-shot publication, movement/range/object checks and remote snapshot selection. No shared medical state is written. The native health subscription does not establish an invasive-procedure consent policy.
+
+Procedure completion checks its persisted procedure/operation/lock identities, recomputes provider resources, verifies lock ownership and rejects conflicting replay IDs. Tokens return detached lock arrays; completion snapshots token fields. A synchronous guard rejects completion/cancellation/recovery reentry during validation. Provider execution receives a shallow context copy with both IDs normalized to the reservation; nonidentity annotations are copied back, while caller identity fields remain unchanged. Execution failures retain uncertain locks. Lock-key callback reentry cannot overwrite a reservation.
+
+Schema remains 1. Read-only recovery inspection creates no ModData or optional maps. Authoritative mutation initializes absent legacy maps, but non-table maps and malformed reservations are preserved and rejected. In-memory validation guards are not saved; persisted executing/uncertain states remain blocked for explicit authoritative recovery after restart. No automatic save rewrite, retry or rollback guarantee is added.

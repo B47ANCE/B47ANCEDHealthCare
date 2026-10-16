@@ -137,3 +137,7 @@ The action captures the patient's online ID and rejects a recreated player
 object, while self/vehicle driving checks match the vanilla movement contract.
 Host tests cover source selection, missing snapshots and identity replacement;
 actual subscription timing and multiplayer visibility remain the gates above.
+
+## 0.10.0 current installed-source checkpoint
+
+Examination is a client-only presentation action. It no longer defines complete, which selects native server action dispatch; perform publishes the bounded observation locally. Recovery remains a shared native server completion action, with full canonical validation. Both convert sandbox seconds to 50 native action units. Current evidence is fingerprinted in API_EVIDENCE_0_10_0.json (Steam build 25485521; exact engine patch UNKNOWN). This checkpoint does not upgrade the historical Build 42.20.3/native/SP/MP evidence above.

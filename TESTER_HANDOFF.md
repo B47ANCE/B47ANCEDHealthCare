@@ -1,4 +1,4 @@
-# B47ANCE'd Health Care 0.9.3 playtester handoff
+# B47ANCE'd Health Care 0.10.0 playtester handoff
 
 Begin only after the first two dependency-stage reports are reviewed as PASS.
 Enable only B47ANCED Knowledge & Wisdom, Project M.O.R.T.I.S., and B47ANCE'd Health Care (`B47ANCEDHealthCare`) on a disposable
@@ -19,3 +19,5 @@ Return `%USERPROFILE%\Zomboid\Lua\B47ANCED Health Care Test Results.txt`,
 later Nightfall dependencies until this stage is reviewed.
 
 MP testing build - dedicated multiplayer NOT TESTED. Prior 0.8.2/0.9.2 reports are historical. Activate B47ANCEDHealthCare, ProjectMORTIS and B47ANCEDKnowledgeAndWisdom; use a disposable save.
+
+0.10.0 source changes native action routing and seconds conversion. Verify actual timing and native constructor arguments before expanding the procedure loop; the legacy direct recovery command must do nothing. No 0.10.0 package or deployment has been made by this development task.
