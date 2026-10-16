@@ -1,4 +1,4 @@
-# medWorks Architecture
+# B47ANCE'd Health Care Architecture
 
 Project M.O.R.T.I.S. owns anatomy. medWorks owns generic medical procedure
 execution. Procedure providers own their content and domain-specific outcomes.

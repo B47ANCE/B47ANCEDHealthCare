@@ -1,4 +1,4 @@
-# Build 42 medical precedent and medWorks gap report
+# Build 42 medical precedent and B47ANCE'd Health Care gap report
 
 Status: public-description review completed 2026-08-31. Third-party claims are
 not engine verification, compatibility certification, or permission to reuse
@@ -28,7 +28,7 @@ core should provide:
 - human BodyDamage adapters that preserve vanilla treatment state;
 - Project M.O.R.T.I.S. topology/trauma integration without duplicating anatomy;
 - authoritative detached-part recovery, later surgery and prosthetic fitting;
-- experienceWorks-owned knowledge and semantic progression;
+- B47ANCEDKnowledgeAndWisdom-owned knowledge and semantic progression;
 - bounded diagnostics, sandbox controls and explicit third-party providers;
 - no client-trusted mutations and no global corpse, patient or inventory scans.
 

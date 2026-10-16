@@ -1,10 +1,10 @@
-[h1]medWorks[/h1]
+[h1]B47ANCE'd Health Care[/h1]
 
 Medical examination, treatment, surgery, trauma procedures, and recovery infrastructure for theWorks ecosystem.
 
-medWorks owns authoritative medical actions while consuming shared entity and anatomy capabilities where a procedure requires them.
+B47ANCE'd Health Care owns authoritative medical actions while consuming shared entity and anatomy capabilities where a procedure requires them.
 
-[b]Mod Version: 0.9.2[/b]
+[b]Mod Version: 0.9.3[/b]
 
 [b]Development Status[/b]
 
@@ -21,17 +21,17 @@ The examination and procedure framework is implemented and actively tested; deep
 [*]Timed zombie-corpse part recovery through Project M.O.R.T.I.S. anatomy
 [*]Server-authoritative remote recovery with exact corpse/tool reconstruction, bounded requests, and replay protection
 [*]Detached-part provenance for downstream consumers
-[*]Optional authoritative sunburn treatment when lightWorks is installed
+[*]Optional authoritative sunburn treatment when B47ANCED Spectrum is installed
 [*]Admin and debug procedure diagnostics that cannot mutate uncertain state
 [/list]
 
 [h2]Ecosystem Integration[/h2]
 [list]
 [*]Requires Project M.O.R.T.I.S. for shared entity and anatomy infrastructure
-[*]Requires experienceWorks for medical knowledge and progression requirements
+[*]Requires B47ANCED Knowledge & Wisdom for medical knowledge and progression requirements
 [*]Provides medical and veterinary procedure APIs to compatible consumers
 [*]Exposes recovered body-part provenance used by Project Nightfall effigies
-[*]Consumes lightWorks sunburn state only when lightWorks is installed
+[*]Consumes B47ANCED Spectrum sunburn state only when B47ANCED Spectrum is installed
 [/list]
 
 [h2]Upcoming Features[/h2]
@@ -46,4 +46,18 @@ Project Director & Designer: B47ANCE
 Development, systems architecture, implementation, testing & documentation: Codex
 
 Workshop ID: 3788592396
-Mod ID: medWorks
+Mod ID: B47ANCEDHealthCare
+
+
+[h2]Compatibility and testing[/h2]
+MP testing build - dedicated multiplayer NOT TESTED
+Requires Project Zomboid Build 42.20.3 or later, ProjectMORTIS and B47ANCEDKnowledgeAndWisdom. Native game/SP/hosted/dedicated validation of 0.9.3 has not been performed. Hosted/dedicated synchronization, native inventories, persistence, consent and corpse provenance remain runtime gates. G7 and stable G8 remain BLOCKED.
+
+[h2]Migration from medWorks[/h2]
+Select B47ANCEDHealthCare instead of medWorks in mod lists. Existing Workshop item 3788592396 is retained. Dependent mods, including Nightfall, must update their required Mod ID before using this build. Lua API, item types, saved state and sandbox keys remain medWorks for compatibility. Back up existing saves; validate migration on a disposable copy. Rendered limb removal and a complete clinical treatment loop remain unfinished.
+
+[h2]Configuration[/h2]
+Server sandbox settings control examination and recovery availability, duration and recovery knowledge requirements. The displayed page is B47ANCE'd Health Care; stored medWorks setting keys are preserved.
+
+[h2]Source Code and Development[/h2]
+[url=https://github.com/B47ANCE/B47ANCEDHealthCare]GitHub — Source Code & Issues[/url]

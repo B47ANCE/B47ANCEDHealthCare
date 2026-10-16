@@ -1,6 +1,6 @@
-# medWorks Master Roadmap
+# B47ANCE'd Health Care Master Roadmap
 
-Canonical version: 0.9.2.
+Canonical version: 0.9.3.
 
 ## Implemented
 
@@ -9,7 +9,7 @@ Canonical version: 0.9.2.
 - MORTIS-backed anatomical clothing access, detached-part provenance, severing,
   corpse recovery, death-state transfer, and source overlap prevention.
 - Server-authoritative timed corpse/tool transport with bounded nested inventory.
-- experienceWorks knowledge definitions, literature, and committed Doctor XP.
+- B47ANCEDKnowledgeAndWisdom knowledge definitions, literature, and committed Doctor XP.
 - Bounded examination providers, vanilla BodyDamage adapter, remote snapshot
   handling, health-panel action, and diagnostics.
 - Optional lightWorks sunburn treatment and sandbox ownership.

@@ -1,8 +1,8 @@
-# medWorks in-game validation
+# B47ANCE'd Health Care in-game validation
 
 medWorks is stage 3 of the progressive Nightfall test. Begin only after the
-experienceWorks and Project M.O.R.T.I.S. reports are reviewed as PASS. Enable
-only `experienceWorks`, `ProjectMORTIS`, and `medWorks` on a disposable save.
+B47ANCEDKnowledgeAndWisdom and Project M.O.R.T.I.S. reports are reviewed as PASS. Enable
+only `B47ANCEDKnowledgeAndWisdom`, `ProjectMORTIS`, and `B47ANCEDHealthCare` on a disposable save.
 
 ## Commands
 
@@ -19,6 +19,6 @@ only `experienceWorks`, `ProjectMORTIS`, and `medWorks` on a disposable save.
 | `medWorksTestReport()` | Print and rewrite the complete report. |
 | `medWorksTestWhere()` | Print the Windows result location. |
 
-Every command rewrites `%USERPROFILE%\Zomboid\Lua\theWorks Test Results - medWorks.txt`.
+Every command rewrites `%USERPROFILE%\Zomboid\Lua\B47ANCED Health Care Test Results.txt`.
 Host tests do not certify native timed actions, corpse lifecycle, rendering,
 persistence, or multiplayer authority.

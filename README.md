@@ -1,12 +1,12 @@
-# medWorks
+# B47ANCE'd Health Care
 
-medWorks is the planned species-agnostic medical-procedure framework for the
+B47ANCE'd Health Care (formerly medWorks) is the planned species-agnostic medical-procedure framework for the
 Works ecosystem. It will ship human-focused medical content while allowing
 providers such as animalWorks to register procedures for any compatible Project
 M.O.R.T.I.S. anatomy.
 
 - Status: foundation development; bounded examination, its player-facing timed health-panel workflow, authoritative severing, and detached-part provenance are implemented, while diagnosis/treatment actions and visuals remain in development.
-- Version: `0.9.2`. See [release work](docs/ROADMAP.md) for the remaining gameplay and safety gates.
+- Version: `0.9.3`. See [release work](docs/ROADMAP.md) for the remaining gameplay and safety gates.
 
 Generic procedure providers can reserve an operation before a timed action,
 lock one or more patient resources, revalidate at completion, cancel safely
@@ -47,8 +47,7 @@ Remote clients submit a bounded request; the server reconstructs the exact
 loaded corpse and exact owned nested saw, then repeats reach, clothing,
 knowledge, anatomy, and provenance validation before the canonical transaction.
 See [testing](docs/TESTING.md).
-- Hard dependencies: `ProjectMORTIS` and `experienceWorks` (the compatibility
-  Mod ID currently used by experienceWorks).
+- Hard dependencies: `ProjectMORTIS` and `B47ANCEDKnowledgeAndWisdom` (its current canonical Mod ID).
 - Optional integrations: waterWorks, powerWorks, and lightWorks where justified.
 
 See [docs/B42_API_RESEARCH_HANDOFF.md](docs/B42_API_RESEARCH_HANDOFF.md) for the Build 42 healthcare audit plan. Proposed procedures remain unimplemented until their technical spikes pass.
@@ -56,5 +55,21 @@ See [docs/B42_API_RESEARCH_HANDOFF.md](docs/B42_API_RESEARCH_HANDOFF.md) for the
   consumables, pain/anesthesia abstractions, treatment events, and MP authority.
 - Non-goal: owning anatomy or animal-specific veterinary content.
 
-Authoritative assets are under `src/medWorks/`: Steam `thumbnail.png` at the mod root,
+Authoritative assets are under `src/B47ANCEDHealthCare/`: Steam `thumbnail.png` at the mod root,
 with the Build 42 `poster.png` and canonical `icon.png` under `42/`.
+
+## Identity and migration
+
+- Current version: 0.9.3; root `VERSION` is canonical.
+- New Mod ID: `B47ANCEDHealthCare` (replaces `medWorks`). Existing Workshop ID: `3788592396`.
+- Public source: https://github.com/B47ANCE/B47ANCEDHealthCare
+- Required: `ProjectMORTIS` and `B47ANCEDKnowledgeAndWisdom` (the renamed Knowledge & Wisdom dependency).
+- Existing configurations must select `B47ANCEDHealthCare` in place of `medWorks`; dependent mod metadata must update its required Mod ID. Nightfall still requires that separate update.
+- Lua `medWorks/*` imports, `_G.medWorks`, item full types, procedure/knowledge IDs, saved ModData, network channels and SandboxVars keys are preserved. They are compatibility contracts, not the activation ID. No saved-state schema is rewritten.
+- MP testing build - dedicated multiplayer NOT TESTED. G7 BLOCKED / NOT TESTED; stable G8 BLOCKED.
+
+See [migration](docs/IDENTITY_MIGRATION.md), [version policy](docs/VERSION_POLICY.md) and [validation](docs/VALIDATION_0_9_3.md). `Contents/` and older packages are historical; builds use authoritative source into separate staging. Artwork retains the supplied bytes.
+
+## Offline checks
+
+Run `python scripts/check_versions.py`, `python scripts/validate_source.py`, and `python scripts/run_host_tests.py`. The host runner requires `lupa.lua51` and the declared sibling dependency checkouts; it never launches PZ or a server. Use `python scripts/check_public_tree.py` after targeted staging and before every public push. Package verification uses `python scripts/package_project.py --verify`. `--release` deliberately blocks stable G8 without required runtime evidence.

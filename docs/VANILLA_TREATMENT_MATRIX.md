@@ -50,7 +50,7 @@ its own mutated fields and verified synchronization contract.
 - `syncBodyPart` is player-specific: its packet casts the parent to `IsoPlayer`.
   It cannot synchronize M.O.R.T.I.S. zombie/animal anatomy.
 - Native Doctor XP remains vanilla-owned. New semantic procedure credit uses
-  experienceWorks after authoritative medWorks commit and must not double-award
+  B47ANCEDKnowledgeAndWisdom after authoritative medWorks commit and must not double-award
   the vanilla action.
 - Item transfers, patient movement, doctor/patient death, disconnect, and exact
   body-part ownership remain completion-time validation requirements.

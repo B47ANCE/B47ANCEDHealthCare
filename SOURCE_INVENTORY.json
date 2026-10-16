@@ -1,16 +1,16 @@
 {
-  "project_version": "0.9.2",
-  "display_name": "medWorks",
-  "source_root": "src/medWorks",
+  "project_version": "0.9.3",
+  "display_name": "B47ANCE'd Health Care",
+  "source_root": "src/B47ANCEDHealthCare",
   "mod_ids": [
-    "medWorks"
+    "B47ANCEDHealthCare"
   ],
   "workshop_ids": [
     "3788592396"
   ],
   "required_mod_ids": [
     "ProjectMORTIS",
-    "experienceWorks"
+    "B47ANCEDKnowledgeAndWisdom"
   ],
   "historical_roots": [
     "Contents",
@@ -22,15 +22,15 @@
   ],
   "version_mirrors": [
     {
-      "path": "src/medWorks/42/mod.info",
+      "path": "src/B47ANCEDHealthCare/42/mod.info",
       "pattern": "^modversion=(.+)$"
     },
     {
-      "path": "src/medWorks/info.txt",
+      "path": "src/B47ANCEDHealthCare/info.txt",
       "pattern": "^Version: (.+)$"
     },
     {
-      "path": "src/medWorks/42/media/lua/shared/medWorks/init.lua",
+      "path": "src/B47ANCEDHealthCare/42/media/lua/shared/medWorks/init.lua",
       "pattern": "medWorks.VERSION=\"([^\"]+)\""
     },
     {
@@ -43,7 +43,7 @@
     },
     {
       "path": "docs/TESTING.md",
-      "pattern": "^# medWorks ([^ ]+) testing$"
+      "pattern": "^# B47ANCE'd Health Care ([^ ]+) testing$"
     },
     {
       "path": "WORKSHOP_DESCRIPTION.txt",
@@ -60,6 +60,19 @@
     {
       "path": "CHANGELOG.md",
       "pattern": "\\A# Changelog\\n\\n## ([^ ]+) - "
+    },
+    {
+      "path": "docs/VALIDATION_0_9_3.md",
+      "pattern": "^Current version: ([^ ]+)\\.$"
     }
-  ]
+  ],
+  "retained_contracts": [
+    "medWorks Lua API",
+    "medWorks item full types",
+    "medWorks ModData",
+    "medWorks network channel",
+    "SandboxVars.medWorks"
+  ],
+  "current_package": "dist/B47ANCEDHealthCare-0.9.3-workshop-ready.zip",
+  "current_manifest": "dist/RELEASE_0_9_3.json"
 }

@@ -5,7 +5,7 @@ approval of native rendering. No runtime or frozen-candidate changes were made.
 
 ## Established item mapping
 
-`src/medWorks/42/media/lua/shared/medWorks/init.lua` maps the neck to
+`src/B47ANCEDHealthCare/42/media/lua/shared/medWorks/init.lua` maps the neck to
 `DetachedHead`; both arm sides to `DetachedArm`; both hand sides to
 `DetachedHand`; both leg sides to `DetachedLeg`; and both foot sides to
 `DetachedFoot`. The script file `medWorks_DetachedParts.txt` defines these five
