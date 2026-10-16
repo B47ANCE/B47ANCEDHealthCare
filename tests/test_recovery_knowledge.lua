@@ -1,5 +1,5 @@
 local Knowledge=require "medWorks/Knowledge"
-local Archive=require "experienceWorks/API"
+local Archive=require "B47ANCEDKnowledgeAndWisdom/API"
 local data={}
 local player={getModData=function() return data end}
 assert(not Knowledge.canRecover(player))

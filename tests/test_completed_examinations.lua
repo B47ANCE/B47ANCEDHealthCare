@@ -1,5 +1,5 @@
 local clock=1000;getTimestampMs=function()return clock end;package.loaded["medWorks/init"]={}
-local Results=dofile("src/medWorks/42/media/lua/client/medWorks/CompletedExaminations.lua")
+local Results=dofile("src/B47ANCEDHealthCare/42/media/lua/client/medWorks/CompletedExaminations.lua")
 local examiner,other,patient={},{},{};local report={patient=patient,sections={{providerId="fixture",data={health=80,bad=0/0,callback=function()end}}},diagnostics={}}
 assert(Results.publish(examiner,patient,report));local view=assert(Results.inspect(examiner,patient))
 assert(view.patient==nil and view.sections[1].data.health==80 and view.sections[1].data.bad==nil and view.sections[1].data.callback==nil)

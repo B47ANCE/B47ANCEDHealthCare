@@ -2,7 +2,7 @@ unpack=unpack or table.unpack
 package.loaded["medWorks/Knowledge"]={canRecover=function() return true end}
 local semanticDefinition
 local semanticReports={}
-package.loaded["experienceWorks/Progression"]={
+package.loaded["B47ANCEDKnowledgeAndWisdom/Progression"]={
     hasSemanticAction=function() return semanticDefinition~=nil end,
     registerSemanticAction=function(definition) semanticDefinition=definition end,
     processSemanticAction=function(character,id,report,context)
