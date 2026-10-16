@@ -1,0 +1,8 @@
+module medWorks
+{
+    item DetachedHead { DisplayCategory = Medical, Type = Normal, DisplayName = Detached Head, Icon = Bandage, Weight = 4.0, }
+    item DetachedArm  { DisplayCategory = Medical, Type = Normal, DisplayName = Detached Arm,  Icon = Bandage, Weight = 3.0, }
+    item DetachedHand { DisplayCategory = Medical, Type = Normal, DisplayName = Detached Hand, Icon = Bandage, Weight = 0.8, }
+    item DetachedLeg  { DisplayCategory = Medical, Type = Normal, DisplayName = Detached Leg,  Icon = Bandage, Weight = 5.0, }
+    item DetachedFoot { DisplayCategory = Medical, Type = Normal, DisplayName = Detached Foot, Icon = Bandage, Weight = 1.2, }
+}

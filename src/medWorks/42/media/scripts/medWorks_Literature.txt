@@ -1,0 +1,23 @@
+module medWorks
+{
+    item FieldSafetyMagazine
+    {
+        DisplayCategory = Literature,
+        ItemType = base:literature,
+        Weight = 0.1,
+        Icon = Magazine,
+        NumberOfPages = 12,
+        StaticModel = Magazine,
+        WorldStaticModel = MagazineGround,
+    }
+    item AnatomicalRecoveryManual
+    {
+        DisplayCategory = Literature,
+        ItemType = base:literature,
+        Weight = 0.5,
+        Icon = Book7,
+        NumberOfPages = 100,
+        StaticModel = BookBrown,
+        WorldStaticModel = BookBrown_Ground,
+    }
+}

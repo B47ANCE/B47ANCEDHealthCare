@@ -1,0 +1,17 @@
+2beda325cbfff7b2cc797d68a3d0d4d5a6888935087403c78ab84f5ebb75c7fc  dist/medWorks-0.1.0-workshop-ready.zip
+c2dc151ccd2e0a5876294178eabc6a8e4e0500dba57866d74cffa00555a7bdc1  dist/medWorks-0.1.1-workshop-ready.zip
+f0b4b16ebfb29b832f8f7dd9913bc00627b7766508e06e8db518122f7378ce26  dist/medWorks-0.2.0-workshop-ready.zip
+363a176f9551b4d0039aca3488bf2f2682663077619731d38546dc6f517d2af3  dist/medWorks-0.2.1-workshop-ready.zip
+ddb09da5e77f8742b154128817a3b0a860022ad94fb989a449d5533527487e5b  dist/medWorks-0.2.2-workshop-ready.zip
+e642b8a90bbf580131e72725fba0598f12379eda692046980d105686bb7d17f7  dist/medWorks-0.2.3-workshop-ready.zip
+042c70288b4703398d9b0a32d227b6df0274d2ab9529bb67f8c2814ff164c060  dist/medWorks-0.3.0-workshop-ready.zip
+23ee110bfcde51da9ddf6495c0b314c630b5d5681cba84582957fbbee9ab38ca  dist/medWorks-0.4.0-workshop-ready.zip
+bec3cd0ebc8eb210f6b276a6bbbcb6d5d8f6d23c9170db28e7c671c740908940  dist/medWorks-0.5.0-workshop-ready.zip
+aa42be3dcda77286cc6a70d39faac15787cc59c592732756f68abba6fc349cda  dist/medWorks-0.6.0-workshop-ready.zip
+685af8348cd0c6da151747617e57fba2ab2f150196dbef83a01854c8612f8803  dist/medWorks-0.7.0-workshop-ready.zip
+f38a31aa99d4e75131d47b950a2154f3cfcf36dd629d45fb1a148b30046d955f  dist/medWorks-0.7.1-workshop-ready.zip
+776719fa2982f7894dcb4b22b091e243697ca0561658148bd7061f1c3ce8bb95  dist/medWorks-0.8.0-workshop-ready.zip
+d8256289a699e5b5a10b7a6a24a2bb3c7a7c9302a7ac72658cb4f57da4252f02  dist/medWorks-0.8.2-workshop-ready.zip
+46a81d35788fd2ed76c6a3ae15bbc6be5a632bb69711eed42dbde6afde524fae  dist/medWorks-0.9.0-workshop-ready.zip
+308936945da369fe7ce868967738106da99e073c7fed5757b3270f8e2a896e5d  dist/medWorks-0.9.1-workshop-ready.zip
+b341504659c8f9052286b8ff643a7c225e278357f1adf1a644737fb22ca00502  dist/medWorks-0.9.2-workshop-ready.zip

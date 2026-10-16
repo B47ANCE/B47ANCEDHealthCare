@@ -1,0 +1,17 @@
+# Local tools, generated outputs and private diagnostics
+.agents/
+.codex/
+Contents/
+dist/
+__pycache__/
+*.pyc
+*.zip
+*.vdf
+*.log
+.env*
+local.settings*.json
+.steamcmd-last-upload.sha256
+console.txt
+server-console.txt
+*.pem
+*.key

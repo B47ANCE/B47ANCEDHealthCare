@@ -1,0 +1,49 @@
+VERSION = 1,
+option medWorks.RequireRecoveryKnowledge
+{
+    type = boolean,
+    default = true,
+    page = medWorks,
+    translation = medWorks_RequireRecoveryKnowledge,
+}
+option medWorks.EnableCorpseRecovery
+{
+    type = boolean,
+    default = true,
+    page = medWorks,
+    translation = medWorks_EnableCorpseRecovery,
+}
+option medWorks.CorpseRecoverySeconds
+{
+    type = integer,
+    min = 10,
+    max = 3600,
+    default = 120,
+    page = medWorks,
+    translation = medWorks_CorpseRecoverySeconds,
+}
+option medWorks.ExaminationMaxBodyParts
+{
+    type = integer,
+    min = 1,
+    max = 64,
+    default = 32,
+    page = medWorks,
+    translation = medWorks_ExaminationMaxBodyParts,
+}
+option medWorks.EnableExaminations
+{
+    type = boolean,
+    default = true,
+    page = medWorks,
+    translation = medWorks_EnableExaminations,
+}
+option medWorks.ExaminationSeconds
+{
+    type = integer,
+    min = 5,
+    max = 600,
+    default = 30,
+    page = medWorks,
+    translation = medWorks_ExaminationSeconds,
+}

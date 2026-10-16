@@ -1,0 +1,65 @@
+{
+  "project_version": "0.9.2",
+  "display_name": "medWorks",
+  "source_root": "src/medWorks",
+  "mod_ids": [
+    "medWorks"
+  ],
+  "workshop_ids": [
+    "3788592396"
+  ],
+  "required_mod_ids": [
+    "ProjectMORTIS",
+    "experienceWorks"
+  ],
+  "historical_roots": [
+    "Contents",
+    "dist",
+    "docs/audit"
+  ],
+  "generated_roots": [
+    "dist"
+  ],
+  "version_mirrors": [
+    {
+      "path": "src/medWorks/42/mod.info",
+      "pattern": "^modversion=(.+)$"
+    },
+    {
+      "path": "src/medWorks/info.txt",
+      "pattern": "^Version: (.+)$"
+    },
+    {
+      "path": "src/medWorks/42/media/lua/shared/medWorks/init.lua",
+      "pattern": "medWorks.VERSION=\"([^\"]+)\""
+    },
+    {
+      "path": "README.md",
+      "pattern": "^- Version: `([^`]+)`"
+    },
+    {
+      "path": "docs/MASTER_ROADMAP.md",
+      "pattern": "^Canonical version: ([0-9][^\\s]+)\\.$"
+    },
+    {
+      "path": "docs/TESTING.md",
+      "pattern": "^# medWorks ([^ ]+) testing$"
+    },
+    {
+      "path": "WORKSHOP_DESCRIPTION.txt",
+      "pattern": "^\\[b\\]Mod Version: ([^\\[]+)\\[/b\\]$"
+    },
+    {
+      "path": "workshop.txt",
+      "pattern": "^description=\\[b\\]Mod Version: ([^\\[]+)\\[/b\\]$"
+    },
+    {
+      "path": "WORKSHOP_CHANGE_NOTE.txt",
+      "pattern": "\\A\\[b\\]Version ([^\\[]+)\\[/b\\]"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "pattern": "\\A# Changelog\\n\\n## ([^ ]+) - "
+    }
+  ]
+}
