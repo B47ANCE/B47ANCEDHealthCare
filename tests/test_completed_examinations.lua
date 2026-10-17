@@ -7,3 +7,20 @@ view.sections[1].data.health=1;assert(Results.inspect(examiner,patient).sections
 assert(select(2,Results.inspect(other,patient))=="EXAMINATION_REQUIRED","another examiner must not read the result")
 clock=301001;assert(select(2,Results.inspect(examiner,patient))=="EXAMINATION_REQUIRED","expired observations must fail closed")
 assert(not Results.publish(examiner,patient,{}));print("test_completed_examinations.lua: PASS")
+clock=0;assert(Results.publish(examiner,patient,report))
+clock=300001;assert(not Results.inspect(examiner,patient),"zero timestamps must still expire")
+clock=5000;assert(Results.publish(examiner,patient,report));clock=4000
+assert(not Results.inspect(examiner,patient),"clock rollback must invalidate observations")
+clock=0/0;assert(not Results.publish(examiner,patient,report),"invalid clocks cannot create immortal cache entries")
+clock=1000;assert(Results.publish(examiner,patient,report));getTimestampMs=nil
+assert(not Results.inspect(examiner,patient),"loss of clock invalidates cached observations")
+getTimestampMs=function()return 5000 end
+local large={sections={{data={text="<IMAGE:unsafe>"..string.rep("x",100000)}}}}
+assert(Results.publish(examiner,patient,large))
+local text=Results.inspect(examiner,patient).sections[1].data.text
+assert(#text<=180 and not text:find("[<>]"),"cached provider strings must be bounded plain text")
+local wide={}
+for i=1,10000 do wide[string.rep("invalid-key",10)..i]=i end
+assert(Results.publish(examiner,patient,{sections={{data=wide}}}))
+local bounded=assert(Results.inspect(examiner,patient))
+assert(bounded.presentationLimited==true,"copy traversal limits must remain visible to report viewers")

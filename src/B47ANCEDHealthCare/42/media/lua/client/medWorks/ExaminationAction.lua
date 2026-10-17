@@ -29,7 +29,12 @@ end
 function MWExaminationAction:waitToStart()if self.character==self.patient then return false end;self.character:faceThisObject(self.patient);return self.character:shouldBeTurning()end
 function MWExaminationAction:start()self:setActionAnim("Loot");self:setAnimVariable("LootPosition","Mid")end
 function MWExaminationAction:update()if self.character~=self.patient then self.character:faceThisObject(self.patient)end end
-function MWExaminationAction:getDuration()local vars=rawget(_G,"SandboxVars");local value=vars and vars.medWorks and tonumber(vars.medWorks.ExaminationSeconds)or 30;return math.max(5,math.min(600,value))*50 end
+function MWExaminationAction:getDuration()
+    local vars=rawget(_G,"SandboxVars")
+    local value=vars and vars.medWorks and tonumber(vars.medWorks.ExaminationSeconds)or 30
+    if value~=value or value==math.huge or value==-math.huge then value=30 end
+    return math.max(5,math.min(600,value))*50
+end
 -- Local read-only observation: defining complete would request server execution.
 function MWExaminationAction:finishObservation()
     if self.completed then return false end;self.completed=true;if not self:isValid()then return false end
