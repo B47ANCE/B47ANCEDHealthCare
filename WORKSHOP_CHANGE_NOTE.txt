@@ -2,7 +2,9 @@
 
 MP testing build - dedicated multiplayer NOT TESTED
 
-[h2]Source development draft[/h2]
-Add View last examination to the health panel for completed, cached observations. Show a localized, scrolling historical report for the exact local examiner/patient. Bound malformed provider output, markup, count/text traversal and cache expiry; keep close/focus behavior local without changing game speed. Preserve gameplay/save/API identities and existing sandbox controls.
-
-Native UI/SP/hosted/dedicated NOT TESTED. Current Knowledge & Wisdom 0.16.0 blocks multiplayer storage; G7 and stable G8 remain BLOCKED. No 0.11.0 package, deploy or upload. Workshop ID: 3788592396.
+Added localized historical examination reports with bounded provider formatting,
+cache expiry and viewport/focus handling. Added optional SPXTRM cold-pack self-care
+with native server timing, consumed supplies, sandbox controls and receipt-based
+uncertain-outcome recovery. Knowledge & Wisdom's MP storage guard remains.
+Existing item 3788592396. No 0.11.0 upload performed; prior 0.10.1 distribution
+records remain historical. Stable G8 remains blocked pending dedicated G7.

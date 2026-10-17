@@ -140,6 +140,10 @@ Procedure completion checks its persisted procedure/operation/lock identities, r
 
 Schema remains 1. Read-only recovery inspection creates no ModData or optional maps. Authoritative mutation initializes absent legacy maps, but non-table maps and malformed reservations are preserved and rejected. In-memory validation guards are not saved; persisted executing/uncertain states remain blocked for explicit authoritative recovery after restart. No automatic save rewrite, retry or rollback guarantee is added.
 
+## Optional Spectrum self-care (0.11.0)
+
+With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-click a vanilla cold pack in your main inventory while you have documented sunburn. The native timed self-care action consumes the pack and reduces canonical Spectrum dose. It is self-only and server validated; no other-player treatment or free client RPC. Sandbox controls enablement, duration and reduction. Uncertain item/dose outcomes remain locked for inspection; see [current care validation](VALIDATION_0_11_0.md)  Native SP/dedicated NOT TESTED; no package, deployment or upload.
+
 ## Local report viewing (0.11.0)
 
 ExaminationViewer reads only CompletedExaminations for an exact examiner/patient and validates getSpecificPlayer(playerNum) at menu construction/click and while open. No server command or medical mutation. Report sections/parts/diagnostics/counts/text are capped and markup is rendered as plain text. Cached strings and copy traversals are bounded; invalid clocks or rollback discard observations. Data stays in session memory, not ModData. The modal has its own viewport layout and close method because vanilla modal auto-height uses the full screen and vanilla destroy changes game speed. Existing panels show historical text until closed, without live patient access. Details: EXAMINATION_REPORTS.md.

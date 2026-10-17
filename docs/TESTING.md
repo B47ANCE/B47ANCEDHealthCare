@@ -93,6 +93,10 @@ In disposable SP, confirm the configured recovery/examination seconds are real e
 
 Existing schema-1 saves with absent optional procedure maps initialize only on authoritative writes. Read-only inspection must not add them; corrupt maps must remain intact and reject actions. Repeated reloads and uncertain/executing reservation recovery require disposable native fixtures. The retired ExaminationMaxBodyParts value is ignored without editing existing saves.
 
+## Optional Spectrum self-care (0.11.0)
+
+With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-click a vanilla cold pack in your main inventory while you have documented sunburn. The native timed self-care action consumes the pack and reduces canonical Spectrum dose. It is self-only and server validated; no other-player treatment or free client RPC. Sandbox controls enablement, duration and reduction. Uncertain item/dose outcomes remain locked for inspection; see [current care validation](VALIDATION_0_11_0.md)  Native SP/dedicated NOT TESTED; no package, deployment or upload.
+
 ## 0.10.1 artwork checks
 
 Run `python scripts/validate_source.py` to verify the artwork inventory hashes, PNG dimensions, source role paths and preview size. For display validation after an explicitly requested package/deploy, check the poster in the Build 42 mod selector and all lettering at normal UI scale. After an explicitly requested publish, check the existing item thumbnail and subscriber download separately. These runtime/distribution checks are NOT TESTED for 0.10.1; no upload is implied by source validation.

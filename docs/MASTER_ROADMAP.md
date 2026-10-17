@@ -26,6 +26,10 @@ Canonical version: 0.11.0.
 
 G7 dedicated multiplayer BLOCKED / NOT TESTED. Stable G8 BLOCKED. No 0.10.0 package, deploy, Workshop update, game/server launch or Steam restart was requested or performed. The retained 0.9.3 artifacts remain historical and unchanged.
 
+## Optional Spectrum self-care (0.11.0)
+
+With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-click a vanilla cold pack in your main inventory while you have documented sunburn. The native timed self-care action consumes the pack and reduces canonical Spectrum dose. It is self-only and server validated; no other-player treatment or free client RPC. Sandbox controls enablement, duration and reduction. Uncertain item/dose outcomes remain locked for inspection; see [current care validation](VALIDATION_0_11_0.md)  Native SP/dedicated NOT TESTED; no package, deployment or upload.
+
 0.10.1 adds the supplied Health Care thumbnail/poster and package-bound preview selection only. See VALIDATION_0_10_1.md. Gameplay roadmap priorities and runtime gates are unchanged. The subsequent explicit publish request produced a verified 0.10.1 Workshop MP test upload; see WORKSHOP_UPLOAD_0_10_1.md. No local deploy or server change.
 
 0.11.0 source: View last examination, observer-scoped historical report, viewport-bound scrolling, safe close/focus restoration, 52 UI keys and English fallbacks, malformed-provider/markup/count/UTF-8 limits and clock-safe cache expiry. See EXAMINATION_REPORTS.md and VALIDATION_0_11_0.md. Dedicated recovery remains blocked both by missing native evidence and the current Knowledge & Wisdom 0.16.0 MULTIPLAYER_STORAGE_UNAVAILABLE guard. No 0.11.0 package/deploy/upload. The next implementation slice is diagnostic presentation hardening; native recovery/snapshot/clinical authority gates remain mandatory.

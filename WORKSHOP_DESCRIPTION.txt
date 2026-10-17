@@ -69,3 +69,7 @@ Native server recovery timing, local observation completion, corrected seconds c
 The 0.10.1 source update adds the user-supplied Health Care thumbnail/poster. In-game artwork display remains NOT TESTED.
 
 The current Knowledge & Wisdom 0.16.0 dependency blocks multiplayer storage; dedicated knowledge-gated recovery remains blocked until its owning project supplies a safe storage contract.
+
+View last examination opens a localized, read-only historical report for the exact local examiner/patient after a completed observation. Reopening validates cache expiry; it performs no treatment or live patient mutation.
+
+Optional SPXTRM integration: use a main-inventory cold pack for timed sunburn self-care. Requires the compatible Spectrum treatment-receipt API (0.30.0); consumed supplies, server settings and uncertain-outcome inspection apply. Native multiplayer NOT TESTED.

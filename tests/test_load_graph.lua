@@ -2,11 +2,11 @@ local clientModules={
     "medWorks/init","medWorks/Knowledge","medWorks/Examination",
     "medWorks/ExaminationReport","medWorks/ExaminationAction","medWorks/ExaminationViewer","medWorks/ExaminationMenu",
     "medWorks/ProcedureDiagnostics","medWorks/ProcedureDiagnosticViewer",
-    "medWorks/SunburnTreatment","medWorks/CorpseRecoveryClient","medWorks/CorpseMenu",
+    "medWorks/SunburnTreatment","medWorks/SunburnCareMenu","medWorks/CorpseRecoveryClient","medWorks/CorpseMenu",
 }
 local serverModules={
     "medWorks/init","medWorks/Knowledge","medWorks/Examination",
-    "medWorks/ProcedureDiagnostics","medWorks/SunburnTreatment","medWorks/CorpseRecoveryServer",
+    "medWorks/ProcedureDiagnostics","medWorks/SunburnTreatment","medWorks/SunburnCareAction","medWorks/CorpseRecoveryServer",
 }
 
 local function exercise(path,modules)

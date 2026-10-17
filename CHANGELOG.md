@@ -2,7 +2,9 @@
 
 ## 0.11.0 - 2026-10-16
 
-MINOR: add a localized, scrollable View last examination health-panel report for the exact local examiner/patient after timed observation. The existing five-minute session cache is rechecked on click; one window per local player, viewport resizing and focus restoration, with no game-speed change on close. Bound malformed-provider formatting, plain-text rich-text escaping, UTF-8 truncation, finite counts/durations and cache traversal/clock handling. Add 52 UI keys plus a menu key across 29 English-fallback locales. No diagnosis/treatment, canonical gameplay mutation, network or save-schema change. Current dependency fixtures use SP realm flags and the verified SPXTRM checkout path. Native UI/SP/dedicated NOT TESTED; G7/stable G8 BLOCKED. No package, deploy or publish.
+MINOR: optional Spectrum cold-pack self-care with native server timed actions, consumed supplies, server sandbox controls, replay protection and durable uncertain-outcome inspection. Existing public identifiers and save schemas remain compatible. Offline tests only; SP/dedicated NOT TESTED. No package, deploy or publish.
+
+MINOR: add a localized, scrollable View last examination health-panel report for the exact local examiner/patient after timed observation. The existing five-minute session cache is rechecked on click; one window per local player, viewport resizing and focus restoration, with no game-speed change on close. Bound malformed-provider formatting, plain-text rich-text escaping, UTF-8 truncation, finite counts/durations and cache traversal/clock handling. Add 52 UI keys plus a menu key across 29 English-fallback locales. The report itself adds no diagnosis/treatment, canonical gameplay mutation, network or save-schema change. Current dependency fixtures use SP realm flags and the verified SPXTRM checkout path. Native UI/SP/dedicated NOT TESTED; G7/stable G8 BLOCKED. No package, deploy or publish.
 
 ## 0.10.1 - 2026-10-16
 

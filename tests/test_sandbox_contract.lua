@@ -6,6 +6,7 @@ local recovery=read(arg[3]);local knowledge=read(arg[4]);local examination=read(
 local expected={
     RequireRecoveryKnowledge="boolean",EnableCorpseRecovery="boolean",CorpseRecoverySeconds="integer",
     EnableExaminations="boolean",ExaminationSeconds="integer",
+    EnableSunburnCare="boolean",SunburnCareSeconds="integer",SunburnCareReduction="double",
 }
 for id,kind in pairs(expected)do
     local block=options:match("option%s+medWorks%."..id.."%s*(%b{})")
