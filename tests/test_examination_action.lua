@@ -12,14 +12,18 @@ local dead=false;local x,y=0,0
 local character={isDead=function()return dead end,getX=function()return 0 end,getY=function()return 0 end,getPlayerNum=function()return 0 end,getVehicle=function()return nil end,isDriving=function()return false end,faceThisObject=function()end,shouldBeTurning=function()return false end}
 local patient={isDead=function()return false end,getX=function()return x end,getY=function()return y end,getVehicle=function()return nil end,getOnlineID=function()return 7 end}
 SandboxVars={medWorks={ExaminationSeconds=1}}
-local action=Action:new(character,patient);assert(action.maxTime==5 and action:isValid());assert(action:complete()and examined==2);assert(not action:complete()and examined==2)
+local action=Action:new(character,patient);assert(action.maxTime==250 and action:isValid());assert(action:finishObservation()and examined==2);assert(not action:finishObservation()and examined==2)
+for _,invalid in ipairs({0/0,math.huge,-math.huge,"not a duration"})do
+    SandboxVars.medWorks.ExaminationSeconds=invalid
+    assert(Action:new(character,patient).maxTime==1500,"invalid duration must use the 30-second default")
+end
 assert(lastContext.remoteObservation==false and lastContext.bodyDamageSnapshot==nil)
 x=3;assert(not Action:new(character,patient):isValid());x=0;local moved=Action:new(character,patient);x=1;assert(not moved:isValid());x=0;dead=true;assert(not Action:new(character,patient):isValid());dead=false
 isClient=function()return true end;local snapshot={};patient.isLocalPlayer=function()return false end;patient.getBodyDamageRemote=function()return snapshot end
 getPlayerByOnlineID=function()return patient end
-local remote=Action:new(character,patient);assert(remote:isValid()and remote:complete());assert(lastContext.remoteObservation and lastContext.bodyDamageSnapshot==snapshot)
+local remote=Action:new(character,patient);assert(remote:isValid()and remote:finishObservation());assert(lastContext.remoteObservation and lastContext.bodyDamageSnapshot==snapshot)
 local replaced=Action:new(character,patient);getPlayerByOnlineID=function()return{}end;assert(not replaced:isValid(),"recreated remote patient must invalidate retained action")
-getPlayerByOnlineID=function()return patient end;patient.getBodyDamageRemote=function()return nil end;assert(not Action:new(character,patient):complete(),"missing remote snapshot must fail closed")
+getPlayerByOnlineID=function()return patient end;patient.getBodyDamageRemote=function()return nil end;assert(not Action:new(character,patient):finishObservation(),"missing remote snapshot must fail closed")
 isClient=function()return false end
 
 local originalCalls,queued=0,0

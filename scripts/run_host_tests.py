@@ -15,11 +15,11 @@ def main():
     base = Path("src/B47ANCEDHealthCare/42/media")
     shared = base / "lua/shared/medWorks"
     client = base / "lua/client/medWorks"
-    spectrum = options.dependencies / "B47ANCEDSpectrum/src/lightWorks/42/media/lua/shared"
+    spectrum = options.dependencies / "B47ANCEDSPXTRM/src/B47ANCEDSPXTRM/42/media/lua/shared"
     sources = [ROOT / base / "lua"]
     sources.extend(options.dependencies / folder / "src" / mod / "42/media/lua" for folder, mod in [
         ("B47ANCEDKnowledgeAndWisdom", "B47ANCEDKnowledgeAndWisdom"),
-        ("Project MORTIS", "ProjectMORTIS"), ("B47ANCEDSpectrum", "lightWorks")])
+        ("Project MORTIS", "ProjectMORTIS"), ("B47ANCEDSPXTRM", "B47ANCEDSPXTRM")])
     paths = ";".join((root / realm / "?.lua").as_posix() for root in sources for realm in ("shared", "client", "server"))
     arguments = {
         "test_severing.lua": [shared / "init.lua"],

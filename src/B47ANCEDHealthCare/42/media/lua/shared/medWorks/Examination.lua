@@ -4,6 +4,7 @@ medWorks.ExaminationProviders=medWorks.ExaminationProviders or {}
 
 local MAX_PROVIDERS=16
 local HARD_PART_LIMIT=64
+local DEFAULT_PART_LIMIT=32 -- Internal traversal budget, not gameplay configuration.
 
 local function call(object,method,...)
     if not object or type(object[method])~="function" then return nil end
@@ -24,10 +25,7 @@ end
 
 local function configuredPartLimit(context)
     local requested=type(context)=="table" and finite(context.maxBodyParts) or nil
-    local sandbox=rawget(_G,"SandboxVars")
-    local configured=type(sandbox)=="table" and type(sandbox.medWorks)=="table"
-        and finite(sandbox.medWorks.ExaminationMaxBodyParts) or nil
-    local value=math.floor(requested or configured or 32)
+    local value=math.floor(requested or DEFAULT_PART_LIMIT)
     return math.max(1,math.min(HARD_PART_LIMIT,value))
 end
 

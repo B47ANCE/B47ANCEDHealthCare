@@ -18,7 +18,7 @@ parts and a callable sever API. Runtime development is authorized.
   completion notifications (0.1.1).
 - Timed world-corpse recovery with reach, distance, saw ownership/condition,
   frozen provenance, completion revalidation, cancellation and sandbox controls.
-- Remote recovery uses an exact server-authoritative corpse/tool command,
+- Historical 0.8.0 remote recovery used a corpse/tool command,
   bounded nested inventory search, rate limiting, replay, and sanitized results
   (0.8.0).
 - Off-inventory output staging, verified rollback, source overlap locks and
@@ -104,3 +104,11 @@ it does not yet supply a complete medical gameplay loop.
 
 All three remain behind the existing native treatment, remote-patient,
 reservation, persistence, and multiplayer proof gates.
+
+## 0.10.0 audit-driven first slice
+
+Implemented native server recovery timing, disabled the direct commit shortcut, moved client-only examination completion to local perform, corrected seconds/action-unit conversion, and tightened procedure reservation identity/reentry/persistence. See MASTER_ROADMAP.md for the ordered remaining work and AUDIT_0_10_0.md for findings and evidence. This is source implementation, not native or multiplayer verification.
+
+## 0.11.0 examination report slice
+
+The health panel now offers View last examination for a completed, unexpired observation owned by the same local examiner. The scrolling localized snapshot is bounded, escaped and read-only; no invasive-care consent or native synchronization claim is added. Source implementation is complete; actual layout, gamepad/split-screen and remote snapshot testing remain required. See EXAMINATION_REPORTS.md. Current Knowledge & Wisdom 0.16.0 deliberately blocks multiplayer storage, so dedicated knowledge/recovery progression cannot be marked ready. No changes were made to that dependency.

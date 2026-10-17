@@ -106,7 +106,7 @@ def main():
             "package": package.name, "package_sha256": digest(package.read_bytes()),
             "minimum_game_version": "42.20.3", "installed_steam_build_id": options.steam_build_id,
             "game_runtime_version": "NOT VERIFIED BY LAUNCH", "distribution": "MP testing build - dedicated multiplayer NOT TESTED",
-            "validation": {"offline": "PASS; see docs/VALIDATION_0_9_3.md", "SP": "NOT TESTED", "G7": "BLOCKED / NOT TESTED", "stable_G8": "BLOCKED"},
+            "validation": {"offline": f"PASS; see docs/VALIDATION_{version.replace('.', '_')}.md", "SP": "NOT TESTED", "G7": "BLOCKED / NOT TESTED", "stable_G8": "BLOCKED"},
             "files": {name: digest(data) for name, data in sorted(expected.items())},
         }
         manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")

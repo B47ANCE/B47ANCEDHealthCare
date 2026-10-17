@@ -1,0 +1,14 @@
+[b]Version 0.9.3[/b]
+
+MP testing build - dedicated multiplayer NOT TESTED
+
+[h2]Identity migration[/h2]
+• Renamed medWorks to B47ANCE'd Health Care; the new activation Mod ID is B47ANCEDHealthCare.
+• Retained existing Workshop item 3788592396. Update enabled-mod lists and dependent mod requirements; Nightfall needs its separate dependency metadata update.
+• Preserved Lua API imports, saved-state keys, item types, procedure IDs, network channels and sandbox storage keys.
+• Updated required Knowledge & Wisdom imports and Mod ID to B47ANCEDKnowledgeAndWisdom.
+• Added canonical VERSION, public source history, validation and reproducible packaging checks.
+• Updated sandbox display labels and in-game test reporting. Reused the supplied thumbnail bytes for the previously missing version-local poster.
+
+[h2]Validation limits[/h2]
+Offline checks do not prove PZ runtime or multiplayer correctness. Native inventory, consent, corpse provenance, concurrency, save/load, join/rejoin and dedicated synchronization remain NOT TESTED. G7 BLOCKED; stable G8 BLOCKED. Historical 0.9.2 results and packages retain their original meaning.

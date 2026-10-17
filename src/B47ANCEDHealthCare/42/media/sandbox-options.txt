@@ -22,15 +22,6 @@ option medWorks.CorpseRecoverySeconds
     page = medWorks,
     translation = medWorks_CorpseRecoverySeconds,
 }
-option medWorks.ExaminationMaxBodyParts
-{
-    type = integer,
-    min = 1,
-    max = 64,
-    default = 32,
-    page = medWorks,
-    translation = medWorks_ExaminationMaxBodyParts,
-}
 option medWorks.EnableExaminations
 {
     type = boolean,
@@ -46,4 +37,32 @@ option medWorks.ExaminationSeconds
     default = 30,
     page = medWorks,
     translation = medWorks_ExaminationSeconds,
+}
+
+option medWorks.EnableSunburnCare
+{
+    type = boolean,
+    default = true,
+    page = medWorks,
+    translation = medWorks_EnableSunburnCare,
+}
+
+option medWorks.SunburnCareSeconds
+{
+    type = integer,
+    default = 30,
+    min = 5,
+    max = 600,
+    page = medWorks,
+    translation = medWorks_SunburnCareSeconds,
+}
+
+option medWorks.SunburnCareReduction
+{
+    type = double,
+    default = 0.10,
+    min = 0.01,
+    max = 0.50,
+    page = medWorks,
+    translation = medWorks_SunburnCareReduction,
 }

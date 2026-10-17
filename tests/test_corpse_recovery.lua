@@ -63,7 +63,7 @@ ISBaseTimedAction={derive=function(_,name)
 end,new=function(class,player) return setmetatable({character=player},class) end,perform=function() end}
 local Action=require "medWorks/RecoverPartAction"
 local action=Action:new(character,corpse,"leftArm",tool)
-assert(action.maxTime==120 and action.stopOnWalk and action.stopOnRun and action:isValid())
+assert(action.maxTime==6000 and action.stopOnWalk and action.stopOnRun and action:isValid())
 covered=true;assert(not action:complete() and severed==0,
     "clothing added during the timed action must block completion");covered=false
 carried=false; assert(not action:complete() and severed==0); carried=true

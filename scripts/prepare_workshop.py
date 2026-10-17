@@ -1,5 +1,6 @@
 """Prepare an existing-item VDF from canonical text. Never authenticates/uploads."""
 import json
+import hashlib
 from pathlib import Path
 import re
 import subprocess
@@ -26,9 +27,14 @@ def main():
     values = {
         "appid": "108600", "publishedfileid": "3788592396",
         "contentfolder": (ROOT / f"dist/workshop-{version}").as_posix(),
+        "previewfile": (ROOT / f"dist/workshop-{version}/preview.png").as_posix(),
         "title": "B47ANCE'd Health Care", "description": description, "changenote": changes,
     }
-    # Omit visibility, tags and preview fields so the existing item's settings/artwork remain intact.
+    preview = Path(values["previewfile"]).read_bytes()
+    assert preview.startswith(b"\x89PNG\r\n\x1a\n") and 0 < len(preview) < 1_000_000, "Preview must be PNG under 1 MB"
+    assert hashlib.sha256(preview).hexdigest() == manifest["files"]["preview.png"], "Preview differs from verified package"
+    # The user supplied replacement artwork. Include its verified staged preview;
+    # omit visibility and tags to preserve the existing item's settings.
     text = '"workshopitem"\n{\n' + "".join(f"    {quote(key)} {quote(value)}\n" for key, value in values.items()) + "}\n"
     tokens = re.findall(r'"(?:\\.|[^"\\])*"', text, re.S)
     decoded = [json.loads(token, strict=False) for token in tokens]
@@ -38,7 +44,7 @@ def main():
         assert target.read_text(encoding="utf-8") == text, "Existing descriptor differs; review explicitly"
     else:
         target.write_text(text, encoding="utf-8", newline="\n")
-    print("PASS: existing item 3788592396 / App 108600; canonical title, description and changes; actual paragraph breaks round-trip; visibility/tags/preview omitted")
+    print("PASS: existing item 3788592396 / App 108600; canonical title, description, changes and verified preview; actual paragraph breaks round-trip; visibility/tags omitted")
     print("VDF:", target)
 
 

@@ -6,10 +6,14 @@
   "Sandbox_medWorks_EnableCorpseRecovery_tooltip": "Allow timed recovery from corpses with preserved anatomy and provenance. Requires a carried working saw.",
   "Sandbox_medWorks_CorpseRecoverySeconds": "Corpse recovery time (seconds)",
   "Sandbox_medWorks_CorpseRecoverySeconds_tooltip": "Time for each recovered part. Movement cancels the action without consuming anatomy.",
-  "Sandbox_medWorks_ExaminationMaxBodyParts": "Maximum examined body parts",
-  "Sandbox_medWorks_ExaminationMaxBodyParts_tooltip": "Technical safety limit per examination provider. Higher values support expanded anatomy but increase work per examination.",
   "Sandbox_medWorks_EnableExaminations": "Enable player examinations",
   "Sandbox_medWorks_EnableExaminations_tooltip": "Add a timed read-only examination option to the vanilla health-panel body-part menu.",
   "Sandbox_medWorks_ExaminationSeconds": "Examination time (seconds)",
-  "Sandbox_medWorks_ExaminationSeconds_tooltip": "Base duration before B47ANCE'd Health Care reports current observable findings."
+  "Sandbox_medWorks_ExaminationSeconds_tooltip": "Base duration before B47ANCE'd Health Care reports current observable findings.",
+  "Sandbox_medWorks_EnableSunburnCare": "Enable cold-pack sunburn self-care",
+  "Sandbox_medWorks_EnableSunburnCare_tooltip": "Optional Spectrum self-care. Consumes one vanilla cold pack from main inventory; does not treat another player.",
+  "Sandbox_medWorks_SunburnCareSeconds": "Sunburn self-care time (seconds)",
+  "Sandbox_medWorks_SunburnCareSeconds_tooltip": "Server-owned native timed-action duration; walking or running interrupts the action.",
+  "Sandbox_medWorks_SunburnCareReduction": "Sunburn dose reduction per cold pack",
+  "Sandbox_medWorks_SunburnCareReduction_tooltip": "Normalized gameplay dose reduction per consumed cold pack. Provisional balance; not a medical simulation."
 }
