@@ -6,7 +6,7 @@ providers such as animalWorks to register procedures for any compatible Project
 M.O.R.T.I.S. anatomy.
 
 - Status: foundation development; bounded examination, its player-facing timed health-panel workflow, authoritative severing, and detached-part provenance are implemented, while diagnosis/treatment actions and visuals remain in development.
-- Version: `0.10.0`. See [release work](docs/ROADMAP.md) for the remaining gameplay and safety gates.
+- Version: `0.11.0`. See [release work](docs/ROADMAP.md) for the remaining gameplay and safety gates.
 
 Generic procedure providers can reserve an operation before a timed action,
 lock one or more patient resources, revalidate at completion, cancel safely
@@ -76,4 +76,8 @@ The 0.9.3 Workshop MP test update was confirmed by SteamCMD and Steam restarted 
 
 ## 0.10.0 roadmap slice
 
-The audit and first implementation slice are in [AUDIT_0_10_0.md](docs/AUDIT_0_10_0.md). Source now uses native server recovery timing, client-only observation completion, correct seconds conversion and stronger procedure identity/resource/replay binding. Recovery diagnostics no longer initialize or repair save data. The obsolete ExaminationMaxBodyParts setting is ignored; the existing 32/64 internal/provider limits remain bounded. Native constructor/clock/replication tests are still required before clinical expansion or release claims. Current source is 0.10.0; the retained 0.9.3 Workshop package and distribution evidence remain historical. No 0.10.0 build/upload was performed.
+The audit and first implementation slice are in [AUDIT_0_10_0.md](docs/AUDIT_0_10_0.md). Source now uses native server recovery timing, client-only observation completion, correct seconds conversion and stronger procedure identity/resource/replay binding. Recovery diagnostics no longer initialize or repair save data. The obsolete ExaminationMaxBodyParts setting is ignored; the existing 32/64 internal/provider limits remain bounded. Native constructor/clock/replication tests are still required before clinical expansion or release claims. That historical slice used source 0.10.0; the retained 0.9.3 Workshop package and distribution evidence remain historical. No 0.10.0 build/upload was performed.
+
+## Optional Spectrum self-care (0.11.0)
+
+With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-click a vanilla cold pack in your main inventory while you have documented sunburn. The native timed self-care action consumes the pack and reduces canonical Spectrum dose. It is self-only and server validated; no other-player treatment or free client RPC. Sandbox controls enablement, duration and reduction. Uncertain item/dose outcomes remain locked for inspection; see [current care validation](docs/VALIDATION_0_11_0.md)  Native SP/dedicated NOT TESTED; no package, deployment or upload.

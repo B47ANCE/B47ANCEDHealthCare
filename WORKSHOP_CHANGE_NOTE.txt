@@ -1,3 +1,7 @@
+[b]Version 0.11.0[/b]
+MP testing build - dedicated multiplayer NOT TESTED
+Existing item 3788592396. Added optional Spectrum cold-pack self-care with server-owned native timing, supply consumption and recovery inspection. No upload performed.
+
 [b]Version 0.10.0[/b]
 
 MP testing build - dedicated multiplayer NOT TESTED

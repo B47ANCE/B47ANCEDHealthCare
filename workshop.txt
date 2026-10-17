@@ -8,7 +8,7 @@ description=Medical examination, treatment, surgery, trauma procedures, and reco
 description=
 description=B47ANCE'd Health Care owns authoritative medical actions while consuming shared entity and anatomy capabilities where a procedure requires them.
 description=
-description=[b]Mod Version: 0.10.0[/b]
+description=[b]Mod Version: 0.11.0[/b]
 description=
 description=[b]Development Status[/b]
 description=
@@ -68,3 +68,5 @@ description=[url=https://github.com/B47ANCE/B47ANCEDHealthCare]GitHub â€” S
 description=
 description=[h2]Development status for 0.10.0[/h2]
 description=Native server recovery timing, local observation completion, corrected seconds conversion, read-only recovery inspection and stronger procedure reservation identity/lock checks are implemented in source. The legacy direct recovery command is disabled. Clinical consequences, body visuals and native/dedicated proof remain pending. This text is a development draft; the last Workshop upload remains 0.9.3 until publication is explicitly requested.
+description=
+description=Optional SPXTRM integration: use a main-inventory cold pack for timed sunburn self-care. Requires the compatible Spectrum treatment-receipt API (0.30.0); consumed supplies, server settings and uncertain-outcome inspection apply. Native multiplayer NOT TESTED.

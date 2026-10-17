@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.11.0 - 2026-10-16
+
+MINOR: optional Spectrum cold-pack self-care with native server timed actions, consumed supplies, server sandbox controls, replay protection and durable uncertain-outcome inspection. Existing public identifiers and save schemas remain compatible. Offline tests only; SP/dedicated NOT TESTED. No package, deploy or publish.
+
 ## 0.10.0 - 2026-10-16
 
 Audited and repaired procedure identity/resource/replay binding, validation reentry and read-only persistence. Recovery uses native server timed actions; the unchecked legacy commit command is disabled. Client-only examinations finish locally, and both durations convert seconds to native action units. Removed the exposed internal traversal budget while preserving bounded provider overrides. MINOR increment for the tightened integration/transport contracts; matched client/server versions are required. Saved ModData schema and public item/API identities remain stable. Offline evidence is recorded separately; PZ/SP/dedicated NOT TESTED. No package, deploy or publish for this iteration.

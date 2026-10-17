@@ -38,3 +38,31 @@ option medWorks.ExaminationSeconds
     page = medWorks,
     translation = medWorks_ExaminationSeconds,
 }
+
+option medWorks.EnableSunburnCare
+{
+    type = boolean,
+    default = true,
+    page = medWorks,
+    translation = medWorks_EnableSunburnCare,
+}
+
+option medWorks.SunburnCareSeconds
+{
+    type = integer,
+    default = 30,
+    min = 5,
+    max = 600,
+    page = medWorks,
+    translation = medWorks_SunburnCareSeconds,
+}
+
+option medWorks.SunburnCareReduction
+{
+    type = double,
+    default = 0.10,
+    min = 0.01,
+    max = 0.50,
+    page = medWorks,
+    translation = medWorks_SunburnCareReduction,
+}

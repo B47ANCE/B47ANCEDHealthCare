@@ -1,3 +1,7 @@
+-- Explicit offline SP realm. The dependency fails closed without an execution
+-- side and blocks its own dedicated storage until that contract is verified.
+isClient=function()return false end
+isServer=function()return false end
 local Knowledge=require "medWorks/Knowledge"
 local Archive=require "B47ANCEDKnowledgeAndWisdom/API"
 local data={}

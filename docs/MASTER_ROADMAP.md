@@ -1,6 +1,6 @@
 # B47ANCE'd Health Care Master Roadmap
 
-Canonical version: 0.10.0.
+Canonical version: 0.11.0.
 
 ## First slice completed in source
 
@@ -25,3 +25,7 @@ Canonical version: 0.10.0.
 Bound presentation-provider values/diagnostic traversal, complete report/diagnostic localization and escaping, validate finite examination duration inputs, and define safe long-lived procedure-ledger retention without deleting replay protection. These are open findings, not completed features. Save corruption/reconnect/restart cases need native fixtures as well as host tests.
 
 G7 dedicated multiplayer BLOCKED / NOT TESTED. Stable G8 BLOCKED. No 0.10.0 package, deploy, Workshop update, game/server launch or Steam restart was requested or performed. The retained 0.9.3 artifacts remain historical and unchanged.
+
+## Optional Spectrum self-care (0.11.0)
+
+With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-click a vanilla cold pack in your main inventory while you have documented sunburn. The native timed self-care action consumes the pack and reduces canonical Spectrum dose. It is self-only and server validated; no other-player treatment or free client RPC. Sandbox controls enablement, duration and reduction. Uncertain item/dose outcomes remain locked for inspection; see [current care validation](VALIDATION_0_11_0.md)  Native SP/dedicated NOT TESTED; no package, deployment or upload.
