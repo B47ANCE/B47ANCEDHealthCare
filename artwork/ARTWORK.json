@@ -1,0 +1,68 @@
+{
+  "provenance": "User-supplied Health Care artwork, attached 2026-10-16; no generative edits. Original retained byte-for-byte. No third-party license inferred.",
+  "original": {
+    "path": "artwork/health-care-original.png",
+    "sha256": "5656c81da79c59efcb72cabaf0a8cb161f8ff07422f366bbeb60e6ae27548643",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "bytes": 1634849
+  },
+  "export": {
+    "operation": "Full frame resized to 512x512 using Pillow Image.Resampling.LANCZOS; RGB PNG optimize=True; no crop, redraw or text changes.",
+    "pillow_version": "12.3.0"
+  },
+  "outputs": [
+    {
+      "path": "preview.png",
+      "sha256": "247793bab8b3cf86b0f38b1a93b4e2cfe442ff7b31b37a366a819d2e6cae579c",
+      "dimensions": [
+        512,
+        512
+      ],
+      "mode": "RGB",
+      "bytes": 308715
+    },
+    {
+      "path": "src/B47ANCEDHealthCare/thumbnail.png",
+      "sha256": "247793bab8b3cf86b0f38b1a93b4e2cfe442ff7b31b37a366a819d2e6cae579c",
+      "dimensions": [
+        512,
+        512
+      ],
+      "mode": "RGB",
+      "bytes": 308715
+    },
+    {
+      "path": "src/B47ANCEDHealthCare/42/thumbnail.png",
+      "sha256": "247793bab8b3cf86b0f38b1a93b4e2cfe442ff7b31b37a366a819d2e6cae579c",
+      "dimensions": [
+        512,
+        512
+      ],
+      "mode": "RGB",
+      "bytes": 308715
+    }
+  ],
+  "preserved_icon": {
+    "path": "src/B47ANCEDHealthCare/42/icon.png",
+    "sha256": "fa3da2fd25be9ab6348b4c576fdbb7219f52e2ede48ad979bd32d1a79d65e0ee",
+    "dimensions": [
+      32,
+      32
+    ],
+    "mode": "RGBA",
+    "bytes": 2658
+  },
+  "previous_outputs": {
+    "source_commit": "0c7fd8defe24d859db69d585c7a3f0b5f9649c76",
+    "paths": [
+      "preview.png",
+      "src/B47ANCEDHealthCare/thumbnail.png",
+      "src/B47ANCEDHealthCare/42/thumbnail.png"
+    ],
+    "sha256": "ad1ebdc8e6c81309b8b8000e21417d40d85bc500a9d629326d11d8bfa5c128e0"
+  }
+}

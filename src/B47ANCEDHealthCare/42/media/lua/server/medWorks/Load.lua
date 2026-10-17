@@ -1,0 +1,7 @@
+require "medWorks/init"
+require "medWorks/Knowledge"
+require "medWorks/Examination"
+require "medWorks/ProcedureDiagnostics"
+require "medWorks/SunburnTreatment"
+require "medWorks/SunburnCareAction"
+require "medWorks/CorpseRecoveryServer"

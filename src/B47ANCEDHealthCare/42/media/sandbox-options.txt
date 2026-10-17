@@ -1,0 +1,68 @@
+VERSION = 1,
+option medWorks.RequireRecoveryKnowledge
+{
+    type = boolean,
+    default = true,
+    page = medWorks,
+    translation = medWorks_RequireRecoveryKnowledge,
+}
+option medWorks.EnableCorpseRecovery
+{
+    type = boolean,
+    default = true,
+    page = medWorks,
+    translation = medWorks_EnableCorpseRecovery,
+}
+option medWorks.CorpseRecoverySeconds
+{
+    type = integer,
+    min = 10,
+    max = 3600,
+    default = 120,
+    page = medWorks,
+    translation = medWorks_CorpseRecoverySeconds,
+}
+option medWorks.EnableExaminations
+{
+    type = boolean,
+    default = true,
+    page = medWorks,
+    translation = medWorks_EnableExaminations,
+}
+option medWorks.ExaminationSeconds
+{
+    type = integer,
+    min = 5,
+    max = 600,
+    default = 30,
+    page = medWorks,
+    translation = medWorks_ExaminationSeconds,
+}
+
+option medWorks.EnableSunburnCare
+{
+    type = boolean,
+    default = true,
+    page = medWorks,
+    translation = medWorks_EnableSunburnCare,
+}
+
+option medWorks.SunburnCareSeconds
+{
+    type = integer,
+    default = 30,
+    min = 5,
+    max = 600,
+    page = medWorks,
+    translation = medWorks_SunburnCareSeconds,
+}
+
+option medWorks.SunburnCareReduction
+{
+    type = double,
+    default = 0.10,
+    min = 0.01,
+    max = 0.50,
+    page = medWorks,
+    translation = medWorks_SunburnCareReduction,
+}

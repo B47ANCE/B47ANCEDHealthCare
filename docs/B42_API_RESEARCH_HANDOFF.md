@@ -1,4 +1,6 @@
-# medWorks — PROJECT ZOMBOID BUILD 42 HEALTHCARE SYSTEM API DEEP-DIVE
+> Historical research brief: current source, AUDIT_0_10_0.md and MASTER_ROADMAP.md define implementation status and priorities. Proposed capabilities below are not runtime proof or approval to bypass authority/API gates.
+
+# B47ANCE'd Health Care — PROJECT ZOMBOID BUILD 42 HEALTHCARE SYSTEM API DEEP-DIVE
 # Vanilla Healthcare Audit, Medical Framework, Procedures, Equipment,
 # Pharmaceuticals, Diagnostics & Cross-Works Integration
 

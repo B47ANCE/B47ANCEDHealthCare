@@ -1,7 +1,12 @@
 package.loaded["medWorks/TestHarness"]=nil
+-- This fixture reloads a module inside one host VM, not a real game runtime.
+-- Keep its temporary identity allocations alive: GC address reuse can otherwise
+-- make tostring({}) repeat and invalidate the simulated different-runtime step.
+-- Native persistence/restart acceptance remains a separate runtime gate.
+collectgarbage("stop")
 local reportLines={}
 getFileWriter=function(name,create,append)
-    assert(name=="theWorks Test Results - medWorks.txt" and create==true and append==false)
+    assert(name=="B47ANCED Health Care Test Results.txt" and create==true and append==false)
     reportLines={}; return {writeln=function(_,line) reportLines[#reportLines+1]=line end,close=function() end}
 end
 getGameTime=function() return {getWorldAgeHours=function() return 24 end} end
@@ -11,7 +16,7 @@ function player:getModData() return self.modData end
 getSpecificPlayer=function(index) assert(index==0); return player end
 
 local learned=false
-experienceWorks={
+B47ANCEDKnowledgeAndWisdom={
     hasDocument=function(id) return id=="MW-FIELD-001" end,
     hasKnowledge=function(character,id) return character==player and id=="medWorks.CorpseRecovery" and learned end,
 }
@@ -41,6 +46,7 @@ for _=1,140 do Harness.auto() end
 assert(#session.commands==128,"command history must remain bounded")
 assert(Harness.report()==true)
 local joined=table.concat(reportLines,"\n")
-assert(joined:find("Mod ID: medWorks",1,true))
-assert(joined:find("Dependencies enabled for this stage: experienceWorks, ProjectMORTIS",1,true))
+assert(joined:find("Mod ID: B47ANCEDHealthCare",1,true))
+assert(joined:find("Dependencies enabled for this stage: B47ANCEDKnowledgeAndWisdom, ProjectMORTIS",1,true))
 print("medWorks in-game test harness/result-export checks passed")
+collectgarbage("restart")

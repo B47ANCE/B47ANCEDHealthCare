@@ -1,5 +1,7 @@
+-- Explicit SP fixture; the current dependency fails closed for an unknown realm.
+isServer=function()return false end;isClient=function()return false end
 local Knowledge=require "medWorks/Knowledge"
-local Archive=require "experienceWorks/API"
+local Archive=require "B47ANCEDKnowledgeAndWisdom/API"
 local data={}
 local player={getModData=function() return data end}
 assert(not Knowledge.canRecover(player))
@@ -21,3 +23,7 @@ assert(Knowledge.canRecover(player))
 SandboxVars.medWorks.RequireRecoveryKnowledge=true
 assert(not Knowledge.canRecover(player))
 print("medWorks physical literature progression, gating and loot checks passed")
+isServer=function()return true end
+local learned,blockedReason=Archive.completeRead(player,"medWorks.FieldSafetyMagazine")
+assert(not learned and blockedReason=="MULTIPLAYER_STORAGE_UNAVAILABLE","current dependency MP storage guard must remain explicit")
+assert(not Knowledge.canRecover(player),"Health Care must not bypass unavailable dedicated knowledge storage")

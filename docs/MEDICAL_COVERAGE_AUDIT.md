@@ -10,9 +10,9 @@ the general medical framework is complete.
 M.O.R.T.I.S. owns species anatomy, topology, trauma, limb/sever/attachment state.
 medWorks owns examination, diagnosis, treatments, procedures, complications,
 anesthesia, medication, blood/infusion, recovery and prosthetic fitting.
-experienceWorks owns semantic XP; its internal homeWorks subsystem owns learned
+B47ANCEDKnowledgeAndWisdom owns semantic XP; its internal homeWorks subsystem owns learned
 knowledge/provenance. animalWorks owns veterinary content. Preserve current
-`experienceWorks` identifiers until the naming migration is audited.
+`B47ANCEDKnowledgeAndWisdom` identifiers until the naming migration is audited.
 
 Do not extend the fixed vanilla BodyPartType enum or build a competing anatomical
 graph. Human BodyDamage/BodyPart is a compatibility adapter, not generic anatomy.

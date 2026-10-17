@@ -1,4 +1,4 @@
-# medWorks release work
+# B47ANCE'd Health Care release work
 
 > Consolidated status: [MASTER_ROADMAP.md](MASTER_ROADMAP.md).
 
@@ -18,7 +18,7 @@ parts and a callable sever API. Runtime development is authorized.
   completion notifications (0.1.1).
 - Timed world-corpse recovery with reach, distance, saw ownership/condition,
   frozen provenance, completion revalidation, cancellation and sandbox controls.
-- Remote recovery uses an exact server-authoritative corpse/tool command,
+- Historical 0.8.0 remote recovery used a corpse/tool command,
   bounded nested inventory search, rate limiting, replay, and sanitized results
   (0.8.0).
 - Off-inventory output staging, verified rollback, source overlap locks and
@@ -30,9 +30,9 @@ parts and a callable sever API. Runtime development is authorized.
   completion revalidation, cancellation, uncertain-execution quarantine, and
   authoritative recovery resolution (0.2.2).
 - Field-safety and anatomical-recovery knowledge definitions are explicitly
-  owned and registered through experienceWorks before literature content (0.2.3).
+  owned and registered through B47ANCEDKnowledgeAndWisdom before literature content (0.2.3).
 - Successful corpse-part recovery reports a committed, source-keyed Doctor
-  semantic action to experienceWorks only after severing commits; invalid,
+  semantic action to B47ANCEDKnowledgeAndWisdom only after severing commits; invalid,
   cancelled, repeated, and no-op attempts grant nothing (0.3.0).
 - Bounded read-only examination providers with deterministic priority, isolated
   diagnostics, a vanilla-human BodyDamage adapter, normalized injury observations,
@@ -48,7 +48,7 @@ parts and a callable sever API. Runtime development is authorized.
   copies that ModData into the corpse before removing the character; medWorks
   recovers the frozen record without global corpse scans or identity guessing.
 - Physical medical books and magazines register their appropriate advanced and
-  simple knowledge through experienceWorks; corpse recovery requires its learned
+  simple knowledge through B47ANCEDKnowledgeAndWisdom; corpse recovery requires its learned
   anatomical-recovery knowledge unless the owning sandbox rule disables it.
 - Installed Build 42 body-part treatments and both medication-consumption routes
   now have explicit source matrices in `docs/VANILLA_TREATMENT_MATRIX.md` and
@@ -77,7 +77,7 @@ features. Runtime and multiplayer claims remain gated by the tests below.
    operator diagnostic modal against native inventories and multiplayer roles.
 4. Validate the implemented corpse-to-detached-part-to-Nightfall-effigy path in game;
    implement body visuals only after native render-hook proof.
-5. Expand the implemented experienceWorks-backed medical literature only alongside
+5. Expand the implemented B47ANCEDKnowledgeAndWisdom-backed medical literature only alongside
    new procedures that have verified vanilla capability and treatment contracts.
 6. Define additional provider-specific pain, bleeding, anesthesia, treatment and recovery
    consequences after vanilla-first API verification.
@@ -104,3 +104,11 @@ it does not yet supply a complete medical gameplay loop.
 
 All three remain behind the existing native treatment, remote-patient,
 reservation, persistence, and multiplayer proof gates.
+
+## 0.10.0 audit-driven first slice
+
+Implemented native server recovery timing, disabled the direct commit shortcut, moved client-only examination completion to local perform, corrected seconds/action-unit conversion, and tightened procedure reservation identity/reentry/persistence. See MASTER_ROADMAP.md for the ordered remaining work and AUDIT_0_10_0.md for findings and evidence. This is source implementation, not native or multiplayer verification.
+
+## 0.11.0 examination report slice
+
+The health panel now offers View last examination for a completed, unexpired observation owned by the same local examiner. The scrolling localized snapshot is bounded, escaped and read-only; no invasive-care consent or native synchronization claim is added. Source implementation is complete; actual layout, gamepad/split-screen and remote snapshot testing remain required. See EXAMINATION_REPORTS.md. Current Knowledge & Wisdom 0.16.0 deliberately blocks multiplayer storage, so dedicated knowledge/recovery progression cannot be marked ready. No changes were made to that dependency.

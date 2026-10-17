@@ -1,0 +1,9 @@
+name=B47ANCE'd Health Care
+id=B47ANCEDHealthCare
+require=ProjectMORTIS,B47ANCEDKnowledgeAndWisdom
+description=Species-aware medical framework with bounded examination providers, authoritative procedures, limb recovery, and Project M.O.R.T.I.S. anatomy integration.
+poster=thumbnail.png
+icon=icon.png
+author=B47ANCE
+modversion=0.11.0
+versionMin=42.20.3
