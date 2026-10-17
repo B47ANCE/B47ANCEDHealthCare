@@ -1,0 +1,274 @@
+{
+  "recorded_date": "2026-10-16",
+  "timezone": "America/Phoenix",
+  "health_care_baseline": {
+    "version": "0.11.0",
+    "commit": "2665e74d6f8b829a83beccbd278abad2ff419b43"
+  },
+  "scope": "Read-only public metadata, interface/capability and narrow compatibility/state-access inspection. Not a full security or runtime audit. No implementation/asset import. No external file executed or modified.",
+  "sources": [
+    {
+      "workshop_id": "3818733381",
+      "title": "The Only Cure+ (Field Surgery)",
+      "author": "NEXCONKER",
+      "workshop_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3818733381",
+      "workshop_description_observed_version": "3.1.0",
+      "repository": "https://github.com/Nexconker/TheOnlyCurePlus",
+      "source_commit": "9e08c4b54df008595418f36aa0c648d197290518",
+      "source_modversion": "3.2.0",
+      "source_version_min": "42.20",
+      "readme_build_claim": "42.21+",
+      "license": "GPL-3.0; verified root LICENSE and repository metadata; asset/third-party-specific scope not adjudicated",
+      "source_note": "GitHub source is separately pinned; correspondence to the current Workshop payload is UNKNOWN. Workshop folder absent locally. No native/java artifact paths found in pinned runtime tree; not a blanket audit of transitive dependencies.",
+      "selected_fingerprints": [
+        {
+          "path": "LICENSE",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+          "bytes": 35149
+        },
+        {
+          "path": "CHANGELOG.md",
+          "sha256": "9fc7d60939e92bf870885fdfa427cddd139cdfae3cc140dcd62ef99074c92f03",
+          "bytes": 13032
+        },
+        {
+          "path": "TheOnlyCurePlus/42/mod.info",
+          "sha256": "79fffb572faf858f2e0eac1edf098bee643d16ec711940d33e468f4b1713451f",
+          "bytes": 846
+        },
+        {
+          "path": "TheOnlyCurePlus/42/media/lua/client/TOC/API.lua",
+          "sha256": "2202febbe2226b3809457e5bccad1890e3c4c1d407d2401588eb063d2cf4dc98",
+          "bytes": 2266
+        },
+        {
+          "path": "TheOnlyCurePlus/42/media/lua/server/TOC/Handlers/ServerDataHandler.lua",
+          "sha256": "4cf1c71c72b6eb0642e99349a4fc029b92c4ca403db53c76d3d90f020c4bc75a",
+          "bytes": 2227
+        },
+        {
+          "path": "TheOnlyCurePlus/42/media/lua/server/TOC/ServerRelayCommands.lua",
+          "sha256": "6c18bb8944c45f166cd80f3a61fa4e38293993e40d681e65e89123ffa913aa75",
+          "bytes": 17042
+        }
+      ]
+    },
+    {
+      "workshop_id": "3819438691",
+      "title": "Wound Expansion",
+      "author": "Kaoeutsu",
+      "workshop_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3819438691",
+      "installed_modversion": "1.0.5",
+      "installed_version_min": "42.20.0",
+      "base_mod_id": "WoundExpansion",
+      "addon_mod_id": "WoundExpansionZB",
+      "license": "UNKNOWN: no LICENSE/COPYING found in installed item; no reuse permission verified on referenced Workshop page",
+      "base_runtime_note": "22 Lua files in base 42 tree; no .java/.jar/.class/.dll/.so/.zbs artifacts in base tree. Optional addon declares ZombieBuddy and WoundExpansion, a Java package and JAR; addon excluded from adoption.",
+      "observation_limit": "Public page is author documentation; local 1.0.5 files are a separate installed snapshot, not proof of the newest Workshop version.",
+      "selected_fingerprints": [
+        {
+          "path": "mods/WoundExpansion/42/media/lua/client/WoundExpansion/WE_Client.lua",
+          "sha256": "93bcee4193c1588f372e8769a18b5bd9119dfb450ff760db8016239af4f65f2d",
+          "bytes": 4893
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/client/WoundExpansion/WE_HealthPanel.lua",
+          "sha256": "f6b5c0a54d84fd67b5245c1ceb54c2fd6c7e76d12a53ea60604aacd0b0ec2b74",
+          "bytes": 11158
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/client/WoundExpansion/WE_MedicineMoodles.lua",
+          "sha256": "7d6372a0aac1c527600eddd3e97ebada76b029c49a222d56c091653165ec55c1",
+          "bytes": 1508
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/client/WoundExpansion/WE_Menu.lua",
+          "sha256": "d07b3933902c4c8e32606846ef203d0bee7a9b3a356a66ed86b6d2bb0e92c0f1",
+          "bytes": 17643
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/client/WoundExpansion/WE_Minigame.lua",
+          "sha256": "6ab8a5e358fd1a8911f92a4407efedb3a877612dbadf964cd64211d4394ba997",
+          "bytes": 23406
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/client/WoundExpansion/WE_MinigameLogic.lua",
+          "sha256": "7365470c4b2d23326a58b7735f916b1fdcd4d4b593297ca286aca62402c98001",
+          "bytes": 13081
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/client/WoundExpansion/WE_ModOptions.lua",
+          "sha256": "6bb4168412f24a43301e753e95d9f5c3310fc42064c9874c5b2f19e52c989b68",
+          "bytes": 1380
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/server/WoundExpansion/WE_Loot.lua",
+          "sha256": "3505aa82a1b7e557b3f685779a92c9936ca6816c9bda9906ed4df1595a50aab2",
+          "bytes": 2316
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Actions.lua",
+          "sha256": "d9042430f56db749c753e0ab08ecd38da37bedc7cf3ae7213aae66b06586f767",
+          "bytes": 24314
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Compat.lua",
+          "sha256": "da991ff479aac369fc78a92afedeab56c6911f4e70d95aba088a0b9b6fb6ad20",
+          "bytes": 5951
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Conditions.lua",
+          "sha256": "638c952e3addd12be4a22cbe79ea40769b14951fe9450e01863a34cf2116bc3c",
+          "bytes": 9037
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Config.lua",
+          "sha256": "570ced453921cf64842edbd1c0d5351403fc1b62a4ce1653812d86134e901efc",
+          "bytes": 6689
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Core.lua",
+          "sha256": "5ff67f3d6993eb591df9f7f0106f82f2c9360f624b62c4c4f0f004a96e7cb946",
+          "bytes": 11899
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Effects.lua",
+          "sha256": "179f856417507f8c564ad17ca166b2793f4351b334e614eef1caf840c16ef602",
+          "bytes": 12373
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Foraging.lua",
+          "sha256": "86d7549ce625457d653ecd59d953a5c638bd1b2fc89045931e3789509fb5cdfb",
+          "bytes": 1360
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Items.lua",
+          "sha256": "2a77dd7ca725b75790e874fe7a5daa3b61a728134bd13160f14673c0b068cd42",
+          "bytes": 5094
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Net.lua",
+          "sha256": "32a034c1c6c8c201989eacba120c22b1ae7f74404bfacb3661dbf1261d73ae31",
+          "bytes": 3106
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Notify.lua",
+          "sha256": "be6352bf483bc929fcbfb04b38cbf89484f4a2f8d718f79a419d4549e60ddaa3",
+          "bytes": 2696
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Sandbox.lua",
+          "sha256": "7b60fe25252d78b71b08488240c6bda874a9b1a94c6d53a5f6da6e20f96ca773",
+          "bytes": 722
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Triggers.lua",
+          "sha256": "db18b505e59e341a54fe6738ab9cb9dd4b5038cd6550b09a4258ae0ecb07f367",
+          "bytes": 12189
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Update.lua",
+          "sha256": "175afd00963fa15b30600309fb7146833d1974a75ddc447c32bb57bc5c93b260",
+          "bytes": 16485
+        },
+        {
+          "path": "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Wounds.lua",
+          "sha256": "30d6155fea47cdfff8b3d1b2350b01b899fca789fff3244a07212ef345aa4262",
+          "bytes": 8313
+        },
+        {
+          "path": "mods/WoundExpansion/42/mod.info",
+          "sha256": "f1906ca85827eca00624a55549c3cf5eb010963a74c40ceb991ab221277c93b1",
+          "bytes": 241
+        },
+        {
+          "path": "mods/WoundExpansion/mod.info",
+          "sha256": "f1906ca85827eca00624a55549c3cf5eb010963a74c40ceb991ab221277c93b1",
+          "bytes": 241
+        },
+        {
+          "path": "mods/WoundExpansionZB/42/media/java/WoundExpansionZB.jar",
+          "sha256": "496df903fa9ab8326803f7af9b3e3338f6e95658e0693efc0f26a166717b0a83",
+          "bytes": 8835
+        },
+        {
+          "path": "mods/WoundExpansionZB/42/media/java/WoundExpansionZB.jar.zbs",
+          "sha256": "fa8619877abb6aa198c7af185d852ed8983ff89a28686cfa6ef6116720ca027f",
+          "bytes": 171
+        },
+        {
+          "path": "mods/WoundExpansionZB/42/mod.info",
+          "sha256": "d06b79904a591e92df5cb30fa99b8981e76d7c98be1606c97c8925bee9297a0c",
+          "bytes": 381
+        },
+        {
+          "path": "mods/WoundExpansionZB/42/src/me/kaoe/woundexpansion/Main.java",
+          "sha256": "871eab1d65fec575691fa62827373f7ad37f01d51116c6899ea893d1ff7345b4",
+          "bytes": 311
+        },
+        {
+          "path": "mods/WoundExpansionZB/42/src/me/kaoe/woundexpansion/WoundExpansionApi.java",
+          "sha256": "365cf739f01c0a1e2655e509802deb9c1823af8ddd6c638f53baa5cac0c6296b",
+          "bytes": 8360
+        },
+        {
+          "path": "mods/WoundExpansionZB/mod.info",
+          "sha256": "d06b79904a591e92df5cb30fa99b8981e76d7c98be1606c97c8925bee9297a0c",
+          "bytes": 381
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "CR-MED-01",
+      "status": "VERIFIED source, runtime NOT TESTED",
+      "fact": "Wound 1.0.5 original-TOC detection names TheOnlyCure, not TheOnlyCurePlus; its mapped limb group covers hands/forearms/upper arms. No TheOnlyCurePlus or TOC_Compat reference found across the 22 Lua files.",
+      "evidence_paths": [
+        "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Compat.lua"
+      ],
+      "lines": [
+        10,
+        44
+      ]
+    },
+    {
+      "id": "CR-MED-02",
+      "status": "VERIFIED source, runtime NOT TESTED",
+      "fact": "Wound Core.peekPart calls Core.root; root can initialize/replace a state root and perform cleanup. getWound/getCondition reach peekPart. Getter names do not prove no-write behavior.",
+      "evidence_paths": [
+        "mods/WoundExpansion/42/media/lua/shared/WoundExpansion/WE_Core.lua"
+      ],
+      "lines": [
+        54,
+        107
+      ]
+    },
+    {
+      "id": "CR-MED-03",
+      "status": "VERIFIED source layout/interface declarations, runtime NOT TESTED",
+      "fact": "Pinned TOC+ declares a client-side TOC_Compat API with limb/hand/leg/mobility queries. Client file placement/declarations do not establish server availability, freshness, purity or a MORTIS authority contract.",
+      "evidence_paths": [
+        "TheOnlyCurePlus/42/media/lua/client/TOC/API.lua"
+      ],
+      "lines": [
+        1,
+        69
+      ]
+    }
+  ],
+  "imports": {
+    "runtime_code": [],
+    "assets": [],
+    "text_or_translation": [],
+    "balance_tables_or_recipes": [],
+    "java_or_native_components": []
+  },
+  "validation": {
+    "external_execution": "NONE",
+    "SP": "NOT TESTED",
+    "dedicated": "NOT TESTED",
+    "compatibility": "NOT VERIFIED",
+    "independent_reviewer_signoff": "PENDING; no merge or release requested"
+  }
+}

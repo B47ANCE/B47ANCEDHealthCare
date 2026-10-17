@@ -29,3 +29,13 @@ G7 dedicated multiplayer BLOCKED / NOT TESTED. Stable G8 BLOCKED. No 0.10.0 pack
 0.10.1 adds the supplied Health Care thumbnail/poster and package-bound preview selection only. See VALIDATION_0_10_1.md. Gameplay roadmap priorities and runtime gates are unchanged. The subsequent explicit publish request produced a verified 0.10.1 Workshop MP test upload; see WORKSHOP_UPLOAD_0_10_1.md. No local deploy or server change.
 
 0.11.0 source: View last examination, observer-scoped historical report, viewport-bound scrolling, safe close/focus restoration, 52 UI keys and English fallbacks, malformed-provider/markup/count/UTF-8 limits and clock-safe cache expiry. See EXAMINATION_REPORTS.md and VALIDATION_0_11_0.md. Dedicated recovery remains blocked both by missing native evidence and the current Knowledge & Wisdom 0.16.0 MULTIPLAYER_STORAGE_UNAVAILABLE guard. No 0.11.0 package/deploy/upload. The next implementation slice is diagnostic presentation hardening; native recovery/snapshot/clinical authority gates remain mandatory.
+
+## External medical-reference candidates (research only)
+
+The user-requested audit of The Only Cure+ (3818733381) and Wound Expansion (3819438691) is recorded in [THIRD_PARTY_RESEARCH.md](THIRD_PARTY_RESEARCH.md), with separately pinned public-source/installed-package evidence. No runtime change, version bump, imported implementation/asset or compatibility claim.
+
+Proposed order: read-only procedure-readiness information; then, after existing clinical authority and dedicated dependency gates, one wound-care/aftercare provider plus its original supplies/literature; later finite postoperative complications, staged surgery and MORTIS-owned prosthetic fitting. Blood/infusion, permanent deficits and movement effects remain later audited capabilities. These proposals do not replace the ordered mandatory gates or the current diagnostic-hardening slice.
+
+Important findings: the inspected Wound 1.0.5 compatibility path identifies original TheOnlyCure rather than TheOnlyCurePlus and does not establish the pair's leg/prosthetic compatibility. Its getters can initialize/clean up state and are not automatically safe for read-only examinations. The optional ZombieBuddy Java add-on is excluded. TOC+ public Git source is 3.2.0 while the inspected Workshop description shows 3.1.0; payload equivalence is unknown. No foreign canonical limb/condition state will be silently mirrored into MORTIS.
+
+Independent clean-room reviewer signoff is pending before the research PR can merge. No new PZ runtime or G7/G8 evidence comes from this audit.
