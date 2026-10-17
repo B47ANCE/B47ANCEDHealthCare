@@ -26,4 +26,4 @@ Bound presentation-provider values/diagnostic traversal, complete report/diagnos
 
 G7 dedicated multiplayer BLOCKED / NOT TESTED. Stable G8 BLOCKED. No 0.10.0 package, deploy, Workshop update, game/server launch or Steam restart was requested or performed. The retained 0.9.3 artifacts remain historical and unchanged.
 
-0.10.1 adds the supplied Health Care thumbnail/poster and package-bound preview selection only. See VALIDATION_0_10_1.md. Gameplay roadmap priorities and runtime gates are unchanged. No 0.10.1 package/deploy/upload.
+0.10.1 adds the supplied Health Care thumbnail/poster and package-bound preview selection only. See VALIDATION_0_10_1.md. Gameplay roadmap priorities and runtime gates are unchanged. The subsequent explicit publish request produced a verified 0.10.1 Workshop MP test upload; see WORKSHOP_UPLOAD_0_10_1.md. No local deploy or server change.

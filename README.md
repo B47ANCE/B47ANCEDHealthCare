@@ -80,4 +80,6 @@ The audit and first implementation slice are in [AUDIT_0_10_0.md](docs/AUDIT_0_1
 
 ## 0.10.1 artwork
 
-The user-supplied medical-bag artwork is used for `preview.png`, the source-root `thumbnail.png` and the Build 42 poster. The original 1254x1254 PNG is retained outside runtime content; export settings, hashes and previous artwork provenance are in [artwork/ARTWORK.json](artwork/ARTWORK.json). The small icon is preserved. Future explicit Workshop preparation uses the verified staged preview. No package or upload was made; Workshop still distributes 0.9.3. In-game poster display remains NOT TESTED.
+The user-supplied medical-bag artwork is used for `preview.png`, the source-root `thumbnail.png` and the Build 42 poster. The original 1254x1254 PNG is retained outside runtime content; export settings, hashes and previous artwork provenance are in [artwork/ARTWORK.json](artwork/ARTWORK.json). The small icon is preserved. Future explicit Workshop preparation uses the verified staged preview. The subsequent explicitly requested 0.10.1 Workshop MP test upload was confirmed by SteamCMD; see [distribution evidence](docs/WORKSHOP_UPLOAD_0_10_1.md). In-game poster display remains NOT TESTED.
+
+Current distribution: 0.10.1 Workshop MP testing build, source commit `042673cb25a7eddf2a1536a871ded89ca562c837`. Package and sanitized provenance are recorded in [WORKSHOP_UPLOAD_0_10_1.md](docs/WORKSHOP_UPLOAD_0_10_1.md). Native SP/dedicated and subscriber download remain NOT TESTED; G7/stable G8 BLOCKED.

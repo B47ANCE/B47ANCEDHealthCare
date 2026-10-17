@@ -22,4 +22,4 @@ MP testing build - dedicated multiplayer NOT TESTED. Prior 0.8.2/0.9.2 reports a
 
 0.10.0 source changes native action routing and seconds conversion. Verify actual timing and native constructor arguments before expanding the procedure loop; the legacy direct recovery command must do nothing. No 0.10.0 package or deployment has been made by this development task.
 
-0.10.1 changes thumbnail/poster artwork and future preview selection only. No new package/deployment/upload. When a development build is explicitly distributed, verify the full Health Care poster and text in the mod selector; this visual check is currently NOT TESTED.
+0.10.1 changes thumbnail/poster artwork and future preview selection only. The subsequent explicit publish request distributed 0.10.1 to existing item 3788592396 for MP testing; see docs/WORKSHOP_UPLOAD_0_10_1.md. No local deployment/server changes. Verify the full Health Care poster and text in the mod selector; this visual check is currently NOT TESTED.
