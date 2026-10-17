@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "id": "health",
+  "name": "Health Care",
+  "version": "0.11.0",
+  "reviewed": true,
+  "source_digest": "cc1df258833a5334e111045493ab8886ccf47c46e5c5557473ed2fd487442a28",
+  "features": [
+    {
+      "status": "Source",
+      "text": "Timed read-only clinical examinations with bounded, observer-scoped recent-observation reports."
+    },
+    {
+      "status": "Foundation",
+      "text": "Species-agnostic procedure reservations, resource locks, replay protection and uncertain-outcome inspection; MORTIS owns anatomy."
+    },
+    {
+      "status": "Source",
+      "text": "Timed corpse-part recovery with tool, clothing, anatomy and detached-part provenance checks."
+    },
+    {
+      "status": "Source",
+      "text": "Optional Spectrum cold-pack self-care uses native server timed actions, consumed supplies and canonical Spectrum receipts."
+    },
+    {
+      "status": "Planned",
+      "text": "Independent Only Cure+ dependency integration: capability/readiness audit, then bounded self-observation and original report presentation."
+    },
+    {
+      "status": "Blocked",
+      "text": "Only Cure+ clinical/prosthetic mutation and remote observations require authority, privacy and anatomy-ownership contracts."
+    }
+  ],
+  "limits": "Source review only. No Only Cure+ adapter ships. Combined-mod SP/hosted/dedicated NOT TESTED; G7 and stable G8 BLOCKED. Knowledge & Wisdom 0.16.0 dedicated storage remains unavailable. Last distributed Health Care version is 0.10.1.",
+  "evidence": [
+    "README.md",
+    "docs/ARCHITECTURE.md",
+    "docs/VALIDATION_0_11_0.md",
+    "docs/ONLY_CURE_PLUS_AUDIT_2026_10_17.md"
+  ],
+  "relations": [
+    {
+      "target": "spx",
+      "kind": "Optional",
+      "text": "Consumes canonical Spectrum sunburn treatment/receipt capability when available; Spectrum retains dose ownership."
+    }
+  ]
+}

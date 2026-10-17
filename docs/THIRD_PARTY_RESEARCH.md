@@ -1,5 +1,7 @@
 # External medical-mod research ledger
 
+Current follow-up: the [2026-10-17 Only Cure+ dependency/coexistence audit](ONLY_CURE_PLUS_AUDIT_2026_10_17.md) supersedes absorption proposals and records the now-installed 3.2.0 snapshot. The [integration plan](ONLY_CURE_PLUS_INTEGRATION.md) retains the original mod as an external dependency. The historical audit and review below retain their exact scope; their signoff does not approve the new audit or an unimplemented adapter.
+
 Audit date: 2026-10-16 (America/Phoenix). Health Care baseline: **0.11.0**, commit `2665e74d6f8b829a83beccbd278abad2ff419b43`.
 
 Purpose: identify useful player-facing requirements from the two user-selected references, compare them with Health Care's existing architecture, and specify independent implementation candidates. This is documentation-only research: canonical version remains 0.11.0, runtime source is unchanged, no compatibility adapter or new dependency is installed, and nothing is packaged/deployed/published.

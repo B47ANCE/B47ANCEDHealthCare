@@ -1,5 +1,7 @@
 # B47ANCE'd Health Care
 
+Only Cure+ integration is planned as independently authored support for the separately installed original. The [dependency/coexistence audit](docs/ONLY_CURE_PLUS_AUDIT_2026_10_17.md) identifies readiness, state-ownership, timed-action and server-authority blockers; no adapter or dependency change ships yet. See the [integration plan](docs/ONLY_CURE_PLUS_INTEGRATION.md).
+
 B47ANCE'd Health Care (formerly medWorks) is the planned species-agnostic medical-procedure framework for the
 Works ecosystem. It will ship human-focused medical content while allowing
 providers such as animalWorks to register procedures for any compatible Project

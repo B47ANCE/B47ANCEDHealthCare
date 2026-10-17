@@ -2,6 +2,8 @@
 
 ## 0.11.0 - 2026-10-16
 
+Documentation-only audit follow-up (2026-10-17): replace Only Cure+ absorption with original-mod dependency support. Audit the installed/source 3.2.0 interfaces, readiness defaults, mobility side effects, shared hooks, medical relay authority and independent MORTIS state. Record a conditional observation-first contract and blocked treatment paths, fingerprints and a source-bound feature overview. Runtime, dependencies, license, schema and canonical version remain unchanged; combined-mod SP/dedicated compatibility and independent review are pending.
+
 MINOR: optional Spectrum cold-pack self-care with native server timed actions, consumed supplies, server sandbox controls, replay protection and durable uncertain-outcome inspection. Existing public identifiers and save schemas remain compatible. Offline tests only; SP/dedicated NOT TESTED. No package, deploy or publish.
 
 MINOR: add a localized, scrollable View last examination health-panel report for the exact local examiner/patient after timed observation. The existing five-minute session cache is rechecked on click; one window per local player, viewport resizing and focus restoration, with no game-speed change on close. Bound malformed-provider formatting, plain-text rich-text escaping, UTF-8 truncation, finite counts/durations and cache traversal/clock handling. Add 52 UI keys plus a menu key across 29 English-fallback locales. The report itself adds no diagnosis/treatment, canonical gameplay mutation, network or save-schema change. Current dependency fixtures use SP realm flags and the verified SPXTRM checkout path. Native UI/SP/dedicated NOT TESTED; G7/stable G8 BLOCKED. No package, deploy or publish.

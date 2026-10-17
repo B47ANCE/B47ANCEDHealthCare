@@ -2,6 +2,10 @@
 
 Canonical version: 0.11.0.
 
+## Original Only Cure+ dependency track
+
+The owner selected clean-room support for the separately installed original, superseding absorption. The [2026-10-17 dependency/coexistence audit](ONLY_CURE_PLUS_AUDIT_2026_10_17.md) and [integration plan](ONLY_CURE_PLUS_INTEGRATION.md) establish the current requirements. First resolve activation/readiness, MORTIS granularity/ownership and passive hook coexistence; then implement bounded self-observation and original report presentation. Remote data, treatments, surgery and prosthetic mutations require additional authoritative contracts. Do not reuse upstream relay commands or mirror cut flags into MORTIS. No adapter/dependency change is implemented; this track preserves the mandatory gates below. New independent reviewer signoff is pending.
+
 ## First slice completed in source
 
 - 0.9.3 foundation remains: procedure registry, reservations/locks/quarantine, MORTIS clothing/provenance/sever transactions, medical knowledge/semantic XP, bounded examinations, optional Spectrum sunburn integration and diagnostics.
