@@ -2,7 +2,7 @@
 
 ## 0.10.1 - 2026-10-16
 
-Installed the user-supplied Health Care artwork as the Workshop preview, source thumbnail and Build 42 poster. Retained the original PNG unchanged and recorded export hashes; the small icon is preserved. Future explicit Workshop preparation includes the package-bound preview without changing item identity or visibility. PATCH presentation/tooling update; no gameplay or save-schema change. Offline checks only; in-game display and dedicated multiplayer NOT TESTED. No package, deployment or upload.
+Installed the user-supplied Health Care artwork as the Workshop preview, source thumbnail and Build 42 poster. Retained the original PNG unchanged and recorded export hashes; the small icon is preserved. Future explicit Workshop preparation includes the package-bound preview without changing item identity or visibility. PATCH presentation/tooling update; no gameplay or save-schema change. Offline checks only; in-game display and dedicated multiplayer NOT TESTED. No package, deployment or upload was performed during the artwork implementation. The subsequent explicit publish request selects this version for Workshop MP test distribution.
 
 ## 0.10.0 - 2026-10-16
 
