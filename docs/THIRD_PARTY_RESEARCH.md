@@ -71,11 +71,40 @@ Our installed-source constraints remain [the treatment matrix](VANILLA_TREATMENT
 - [x] Runtime code, recipes, tuning tables, UI text/translations, assets, animations and third-party documentation imported: **NONE**. External files modified/executed: **NONE**. No author contacted or permission inferred.
 - [x] No GPL component imported. Any future reuse needs exact scope/notices/source obligations review and project-owner authorization; identifying GPL-3.0 here is not approval to merge or redistribute assets. Wound's unknown rights block copying, not independent feature research.
 - [x] Authoring self-check: no foreign implementation bodies or close pseudocode are present in this specification; named foreign interfaces appear solely as compatibility observations.
-- [ ] Independent clean-room reviewer signoff: **PENDING**. Research PR must receive that signoff before merge; no automatic clearance, merge or release is claimed.
+- [x] Independent source-review signoff: **PASS for this research-only scope**, reviewed by the Codex merge-coordination task, separate from the research authoring chat. See the integration/review record below. This is not human legal review, imported-component permission or runtime acceptance.
 - [x] Research validation: source metadata/interface fingerprints and narrow path/side/access traces recorded; current source/version/public-file checks recorded with the PR. SP, hosted, dedicated, actual pair compatibility and licensing clearance for imported assets: **NOT TESTED / NOT APPLICABLE (nothing imported)**.
 
-## Audit validation record
+## Original research audit validation record (before integration)
 
 `python scripts/check_versions.py` PASS: 0.11.0 / 12 mirrors and identities. `python scripts/validate_source.py` PASS: unchanged Lua-only 145 authoring files / 19 modules / 29 locales, exact require case, artwork and Workshop drafts. An inline Python check rehashed every recorded installed-Wound snapshot file and confirmed src/scripts/tests/VERSION/SOURCE_INVENTORY have no diff from the baseline. No new gameplay tests were added or runtime tests run for this documentation-only audit; earlier 20-case results remain the separately recorded 0.11.0 evidence.
 
 Before commit, Test-PZRepositoryFreshness.ps1 fetched origin: REVIEW solely for these intentional research docs, HEAD and parent upstream both 2665e74d6f8b829a83beccbd278abad2ff419b43, ahead 0 / behind 0; main ahead 8 / behind 0; no unfinished operations. No stash/reset/pull/merge/rebase. `git diff --cached --check` PASS and `python scripts/check_public_tree.py` PASS (246 indexed files, zero findings). Only the five intended documentation files are staged; private logs, local settings, external source bodies, assets and generated packages remain excluded. CI is not configured or claimed. The independent clean-room reviewer checkbox remains pending; these offline checks do not provide that signoff.
+
+## Independent source review and main integration
+
+The separate merge-coordination task reviewed research head
+`a2f4484d3e4c55c5bf3a7268cb452d1ad6bf999f`, this ledger, the portable evidence
+inventory and all five changed paths. The report contains neutral capability/
+interface observations and independently specified requirements, not external
+implementation bodies, close pseudocode, assets, balance tables or copied UI/
+documentation. Foreign names identify provenance/interfaces only. Existing
+attribution and GPL/unknown-rights limits are retained; nothing is imported and
+this review does not independently adjudicate upstream licenses or asset rights.
+
+Reviewer: Codex merge-coordination task, independent of the research authoring
+chat. Source review PASS for retaining these research notes and proposals. This
+is an engineering review, not legal clearance or approval to implement every
+candidate. Future reuse or implementation remains subject to its own permissions,
+vanilla API, authority, persistence and runtime gates.
+
+The old parent PR was already merged, so this PR is retargeted to main. A normal
+merge brings in main `b2e05c73a40680edac3ed76d7f7ff3416031762b`, preserving both
+the examination report and cold-pack features. Only an appended README section
+conflicted; both sections are retained. Compared with that main, source, scripts,
+tests, VERSION and source inventory are unchanged. New version/source checks and
+the exact public-index review validate the combined documentation tree; original
+20-case results above remain historical, and no new gameplay run is claimed.
+
+No external file is reopened, executed or modified by this independent review.
+No author is contacted. No PZ/server launch, package, deploy or Workshop upload.
+G7 and stable G8 remain BLOCKED; no clinical/runtime or licensing claim is promoted.

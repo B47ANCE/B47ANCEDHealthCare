@@ -90,6 +90,10 @@ After completing **Perform examination**, reopen a body-region context menu in t
 
 Report labels/findings use translation keys with English fallback in all 29 locale folders; this is not a claim of 29 translated languages. Malformed providers are skipped or shown safely, markup is inert, and text/traversal/count budgets are internal safety limits. Missing/non-finite/backward clocks invalidate reopening; no save data is written. Native layout, gamepad, remote snapshots and dedicated behavior remain untested. See [report design/testing](docs/EXAMINATION_REPORTS.md). The current Knowledge & Wisdom 0.16.0 dependency explicitly blocks multiplayer storage, so knowledge-gated dedicated recovery remains blocked pending work in that owning project. Workshop still distributes 0.10.1; no 0.11.0 package or upload.
 
+## Optional Spectrum self-care (0.11.0)
+
+With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-click a vanilla cold pack in your main inventory while you have documented sunburn. The native timed self-care action consumes the pack and reduces canonical Spectrum dose. It is self-only and server validated; no other-player treatment or free client RPC. Sandbox controls enablement, duration and reduction. Uncertain item/dose outcomes remain locked for inspection; see [current care validation](docs/VALIDATION_0_11_0.md)  Native SP/dedicated NOT TESTED; no package, deployment or upload.
+
 ## Medical-reference audit
 
 The user-selected [The Only Cure+ and Wound Expansion audit](docs/THIRD_PARTY_RESEARCH.md) ranks independent Health Care candidates and records licensing, Lua-only, ownership and compatibility limits. Best near-term proposal: a read-only procedure-readiness checklist; clinical additions remain behind existing authority/dependency/runtime gates. This is research, with no foreign code/assets imported or new runtime feature. Canonical source remains 0.11.0; Workshop remains 0.10.1.
