@@ -1,0 +1,110 @@
+# External medical-mod research ledger
+
+Audit date: 2026-10-16 (America/Phoenix). Health Care baseline: **0.11.0**, commit `2665e74d6f8b829a83beccbd278abad2ff419b43`.
+
+Purpose: identify useful player-facing requirements from the two user-selected references, compare them with Health Care's existing architecture, and specify independent implementation candidates. This is documentation-only research: canonical version remains 0.11.0, runtime source is unchanged, no compatibility adapter or new dependency is installed, and nothing is packaged/deployed/published.
+
+## Provenance
+
+| Reference | Inspected revision | Author / license evidence | Scope and limits |
+|---|---|---|---|
+| [The Only Cure+ (Field Surgery), 3818733381](https://steamcommunity.com/sharedfiles/filedetails/?id=3818733381) | Workshop description displays 3.1.0; [public source](https://github.com/Nexconker/TheOnlyCurePlus) pinned at `9e08c4b54df008595418f36aa0c648d197290518` declares **3.2.0** | NEXCONKER; original credits include ZioPao/contributors and RabenRabo. Root [LICENSE](https://github.com/Nexconker/TheOnlyCurePlus/blob/9e08c4b54df008595418f36aa0c648d197290518/LICENSE) and repository metadata identify GPL-3.0. Individual asset/third-party rights are not separately adjudicated. | Public description, repository metadata/license/changelog, interface declarations and server-module boundary signals. The Workshop folder is absent locally. GitHub-to-current-Workshop payload equivalence is UNKNOWN. Metadata says minimum 42.20 while README describes 42.21+; do not infer compatibility with our installed engine patch. |
+| [Wound Expansion, 3819438691](https://steamcommunity.com/sharedfiles/filedetails/?id=3819438691) | Legitimately installed **1.0.5**, minimum 42.20.0; separate public Workshop description | Kaoeutsu. No LICENSE/COPYING file found in the installed item; no reuse permission established from the referenced page. License/permissions **UNKNOWN**. | Read-only metadata, file inventory, interface/event signals and narrow state-access/compatibility inspection. The installed snapshot is not proof of the newest live payload. No Java source or binaries executed/decompiled. |
+
+The companion [evidence inventory](THIRD_PARTY_RESEARCH_EVIDENCE_2026_10_16.json) records portable relative paths, exact hashes, version divergence, interface observations and limits. It contains no implementation bodies, foreign balancing tables or assets. No runtime behavior was observed in PZ. A filename/event count is a lead, not proof of authority or stability.
+
+## Author-described capability observations
+
+The Only Cure+ describes staged invasive care, skill/knowledge requirements, complications after an operation, configurable failure consequences, amputations, and maintained prostheses with different capabilities. Its public API declares hand/leg/mobility queries. Its visible source layout separates client actions and server handlers, but this audit does not certify that every request is secure or every state change survives MP reloads. [Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3818733381), [pinned API](https://github.com/Nexconker/TheOnlyCurePlus/blob/9e08c4b54df008595418f36aa0c648d197290518/TheOnlyCurePlus/42/media/lua/client/TOC/API.lua).
+
+Wound Expansion describes added soft-tissue, cold, joint and neurological injuries; contamination, closure/dressing complications, bleeding control, advanced supplies and optional procedure minigames. These are gameplay descriptions, not medical or runtime validation. The installed base has 22 Lua files and no custom-native artifacts in its Build 42 subtree. Its separate WoundExpansionZB metadata explicitly requires ZombieBuddy and WoundExpansion and declares a Java package/JAR; that add-on is excluded under our Lua-only policy. [Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3819438691); installed metadata fingerprints in the evidence inventory.
+
+## Integration findings
+
+1. **[VERIFIED — source, CR-MED-01] Do not assume these two references interoperate.** Installed Wound 1.0.5 checks activation ID `TheOnlyCure` and maps upper-limb names in its specific TOC compatibility path. No `TheOnlyCurePlus` or `TOC_Compat` reference was found across its 22 Lua files. The Plus metadata instead identifies `TheOnlyCurePlus` and marks the original incompatible. This is a detected integration gap, not a reproduced runtime failure or a claim that all other compatibility mechanisms are impossible. Legs/prostheses also need independent mapping tests.
+2. **[VERIFIED — source, CR-MED-02] Wound getter names do not establish read-only behavior.** `Core.peekPart` reaches `Core.root`; `getWound`/`getCondition` reach that path. The root accessor can initialize/replace stored state and perform cleanup. Health Care must not call it from read-only examination under an assumption of purity. A future adapter needs an explicitly verified non-mutating snapshot/export contract and exact version checks; no upstream internals are written or repaired by Health Care.
+3. **[VERIFIED — declarations/layout, CR-MED-03] TOC+ offers an observation-interface lead, not a medical-authority adapter.** Its `TOC_Compat` declarations are in client code. Server availability, purity, snapshot freshness, reconnect semantics and coexistence with MORTIS remain UNKNOWN. A future presentation adapter cannot authorize surgery or turn a foreign limb flag into canonical MORTIS anatomy.
+4. **[VERIFIED — metadata/inventory] Keep native enhancements separate from Lua feasibility.** No Java/JAR/class/DLL/SO/ZBS artifact paths were found in the pinned TOC+ runtime tree; that bounded inventory is not a complete dependency audit. Wound's optional add-on positively contains Java components. Neither finding proves a particular gait, renderer, clothing-dirt or animation hook is available in our installed Lua environment.
+5. **[UNKNOWN — runtime] MP and existing-save statements remain author claims.** Neither reference was launched. The pair was not tested together or alongside Health Care. No client/server security, performance, save migration or Linux compatibility certification is inferred.
+
+## Independent Health Care candidate plan
+
+These are **proposals**, not implemented features or approval to import reference content. The common medical concepts below become our own requirements; their item lists, exact procedure sequencing, probabilities, timing, assets, labels, recipes and algorithms will not be copied.
+
+| Priority / candidate | Original Health Care requirement | Ownership and acceptance gate |
+|---|---|---|
+| A — Procedure readiness checklist | Show why a proposed procedure is unavailable: observed target status, required owned equipment, knowledge/skill and known consent/preparation requirements. Show only supported procedures, with bounded/localized explanations. | Local advisory presentation over explicit read-only provider metadata. Do not invoke arbitrary gameplay validators merely to render UI. A positive client preview never authorizes execution; server revalidates at reservation/completion. This is the best near-term source slice after current UI/diagnostic validation. |
+| A — Examination interpretation | Separate observed facts from uncertain interpretation, missing information and stale observations. Improve useful findings without exposing hidden infection or pretending every observer can diagnose every condition. | Extend the existing bounded report/provider contract. Knowledge/skill-based shared outcomes need authoritative policy. Do not read Knox infection to produce a guaranteed diagnosis. Preserve exact observer/patient scoping. |
+| B — Wound-care depth | Add one distinct irrigation/debridement or aftercare provider with a defined indication, materials, interruption rule and observable follow-up result. | Clinical adapter first: canonical human BodyPart ownership, exact native fields/masks and patient consent. Reuse vanilla disinfect/stitch/burn/extraction actions for what they already do. Verify exactly-once consumption and uncertain-state recovery; do not introduce a parallel basic-bandaging system. |
+| B — Purposeful supplies | Introduce an original supply only alongside the procedure that needs it, such as an irrigation consumable or procedure-specific kit. Clearly distinguish reusable tools from consumed materials. | Item/recipe/loot ownership, tags and exact nested inventory identity must be verified against vanilla. Define original assets/values. Server checks tool condition, quantity, transfers and disposal at completion; no generic health-restoration shortcut. |
+| B — Preparation/cleanliness | Model explicit treatment preparation and equipment suitability where verified data exists. State uncertainty instead of estimating exact contamination from unsupported clothing-zone information. | Meaningful server sandbox controls; no Java bridge. Exact clothing holes/dirt/local coverage remain separate API questions. A documented Lua-visible coverage check is needed for each receiver; corpse clothing evidence does not prove living-patient sterility. |
+| B — Recoverable complications | Implement one finite postoperative/aftercare condition with clear cause, observations, treatment, expiry and recovery. | Own a small medical-condition provider over MORTIS identity, not a global replacement health loop. Server owns timers, rolls and transitions; explicit save schema, offline-time policy, reconnect/restart and disposable migrations. No arbitrary injury flag used as a storage slot. |
+| C — Staged surgery | Use Health Care's existing reservations/resource locks to support independently specified clinical stages with explicit committed effects and interruption outcomes. | Server validates actor/patient/region/tool/consumable/consent at every relevant transition. Checkpoint uncertainty without automatic retries or duplicate outputs. Current corpse recovery is not proof of living-player surgery. |
+| C — Bleeding control / limb risk | Consider an emergency treatment with a visible limitation and a bounded follow-up-care requirement. | Native bleed state, application/removal, elapsed-time ownership and sync must be proven. Any tissue-risk progression needs safe persistence and clear sandbox policy. Never trust a client clock or make permanent tissue loss an undocumented default. |
+| C — Prosthetic fitting and maintenance | Fit/remove/repair an original prosthesis only for a compatible canonical missing region and valid attachment socket. | MORTIS owns topology/sever/socket state; Health Care owns fitting/medical consequences. Original geometry/icons/animations, exact renderer proof, clothing/body replacement tests and server-owned equip/condition transactions. Do not run two independent limb-state owners. |
+| C — Blood/infusion care | Build a dedicated blood/infusion procedure family only if it serves a verified, explicitly owned physiological state. | Server-owned material units, item identity, safe consumption/duplication boundaries, patient identity and native effect/sync proof. A blood-themed item that simply grants generic health does not satisfy this design. |
+| Later — Permanent injuries and mobility effects | Consider only a narrow, explainable condition after reversible care works. | Persistence/rollback/disabling semantics and native movement/action hooks are UNKNOWN until audited. Do not promise exact limping, swing restriction or XP interception from Lua just because the references exhibit it. |
+| Later — Optional minigame presentation | Optional local interaction could accompany a valid timed procedure, with an accessible non-minigame path. | A client-reported score alone must never authorize a shared result, shorten authoritative elapsed work, bypass knowledge or duplicate a procedure. Keep cosmetic-only unless a safe validated gameplay contract is separately established. No reuse of reference layouts/art or challenge algorithms. |
+| Supporting — Literature / progression | Release original instruction material with each implemented provider and only grant completion-based knowledge/semantic XP that the owning system can support. | Knowledge & Wisdom owns progression. Its current 0.16.0 dedicated-storage guard is unresolved; do not bypass it or represent new MP learning as available. Never duplicate vanilla XP rewards. |
+| Supporting — Optional interoperability | Present another owner's already-existing conditions only through a documented, bounded, non-mutating contract. | Fail gracefully when absent/changed. No new dependency required for base Health Care; no mirrored canonical wound/limb state. A provider must respect side, versions and privacy. Full coexistence requires separate runtime testing. |
+
+## What should stay out of the next slice
+
+- A wholesale injury/health replacement, copied supply catalogue, automatic infection-cure window, or guaranteed hidden-infection detector. Each would change Health Care's current vanilla-preserving scope and needs a separate explicit design decision.
+- Repurposing vanilla sleeping medication as a surgical immobilization shortcut without its actual native effects, consent and synchronization contract. Medication is already covered by our vanilla matrix; do not bypass it.
+- Java/Java-agent/ZombieBuddy components, copied models/animations or custom-native gait/XP interception. Unsupported features stay UNKNOWN with a Lua-only alternative, not a substituted bridge.
+- A shared amputation/condition state mirrored between MORTIS and another overhaul. Choose one canonical owner or disable the overlapping feature; neither side silently overwrites the other.
+- Implementing every new injury category before the existing recovery, observation and clinical-authority gates pass.
+
+## Proposed delivery order and proof
+
+Keep the current mandatory roadmap gates. First complete source diagnostic hardening and native report/recovery tests; resolve dedicated Knowledge & Wisdom storage in its owning project. In parallel, a read-only readiness checklist can be specified against explicit presentation metadata. After the human clinical adapter is proven, implement **one wound-care/aftercare provider plus its matching original supply and literature**, then broaden to finite complications and staged invasive work. Prosthetics, circulation, permanent damage and movement remain later capabilities.
+
+For any gameplay slice, document stable identifiers/defaults/bounds and old-save behavior for meaningful server sandbox settings. Use disposable old-save fixtures; test two practitioners, moved/lost equipment, cancel/disconnect/rejoin, exactly-once outcomes and dedicated restart. No field is declared safe from its name alone. Preserve G7 BLOCKED / NOT TESTED and stable G8 BLOCKED until actual evidence exists.
+
+Our installed-source constraints remain [the treatment matrix](VANILLA_TREATMENT_MATRIX.md), [medication matrix](VANILLA_MEDICATION_MATRIX.md), [human capability matrix](BODY_DAMAGE_CAPABILITY_MATRIX.md), [health-panel authority analysis](HEALTH_PANEL_INTEGRATION.md), and build-specific API records. They are existing source evidence, not fresh runtime validation from these references.
+
+## Clean-room and review status
+
+- [x] User-selected references, authors, IDs, exact inspected versions/revisions and licenses/unknowns recorded.
+- [x] Observed source facts separated from author claims, independent design and UNKNOWN native/runtime capabilities.
+- [x] Runtime code, recipes, tuning tables, UI text/translations, assets, animations and third-party documentation imported: **NONE**. External files modified/executed: **NONE**. No author contacted or permission inferred.
+- [x] No GPL component imported. Any future reuse needs exact scope/notices/source obligations review and project-owner authorization; identifying GPL-3.0 here is not approval to merge or redistribute assets. Wound's unknown rights block copying, not independent feature research.
+- [x] Authoring self-check: no foreign implementation bodies or close pseudocode are present in this specification; named foreign interfaces appear solely as compatibility observations.
+- [x] Independent source-review signoff: **PASS for this research-only scope**, reviewed by the Codex merge-coordination task, separate from the research authoring chat. See the integration/review record below. This is not human legal review, imported-component permission or runtime acceptance.
+- [x] Research validation: source metadata/interface fingerprints and narrow path/side/access traces recorded; current source/version/public-file checks recorded with the PR. SP, hosted, dedicated, actual pair compatibility and licensing clearance for imported assets: **NOT TESTED / NOT APPLICABLE (nothing imported)**.
+
+## Original research audit validation record (before integration)
+
+`python scripts/check_versions.py` PASS: 0.11.0 / 12 mirrors and identities. `python scripts/validate_source.py` PASS: unchanged Lua-only 145 authoring files / 19 modules / 29 locales, exact require case, artwork and Workshop drafts. An inline Python check rehashed every recorded installed-Wound snapshot file and confirmed src/scripts/tests/VERSION/SOURCE_INVENTORY have no diff from the baseline. No new gameplay tests were added or runtime tests run for this documentation-only audit; earlier 20-case results remain the separately recorded 0.11.0 evidence.
+
+Before commit, Test-PZRepositoryFreshness.ps1 fetched origin: REVIEW solely for these intentional research docs, HEAD and parent upstream both 2665e74d6f8b829a83beccbd278abad2ff419b43, ahead 0 / behind 0; main ahead 8 / behind 0; no unfinished operations. No stash/reset/pull/merge/rebase. `git diff --cached --check` PASS and `python scripts/check_public_tree.py` PASS (246 indexed files, zero findings). Only the five intended documentation files are staged; private logs, local settings, external source bodies, assets and generated packages remain excluded. CI is not configured or claimed. The independent clean-room reviewer checkbox remains pending; these offline checks do not provide that signoff.
+
+## Independent source review and main integration
+
+The separate merge-coordination task reviewed research head
+`a2f4484d3e4c55c5bf3a7268cb452d1ad6bf999f`, this ledger, the portable evidence
+inventory and all five changed paths. The report contains neutral capability/
+interface observations and independently specified requirements, not external
+implementation bodies, close pseudocode, assets, balance tables or copied UI/
+documentation. Foreign names identify provenance/interfaces only. Existing
+attribution and GPL/unknown-rights limits are retained; nothing is imported and
+this review does not independently adjudicate upstream licenses or asset rights.
+
+Reviewer: Codex merge-coordination task, independent of the research authoring
+chat. Source review PASS for retaining these research notes and proposals. This
+is an engineering review, not legal clearance or approval to implement every
+candidate. Future reuse or implementation remains subject to its own permissions,
+vanilla API, authority, persistence and runtime gates.
+
+The old parent PR was already merged, so this PR is retargeted to main. A normal
+merge brings in main `b2e05c73a40680edac3ed76d7f7ff3416031762b`, preserving both
+the examination report and cold-pack features. Only an appended README section
+conflicted; both sections are retained. Compared with that main, source, scripts,
+tests, VERSION and source inventory are unchanged. New version/source checks and
+the exact public-index review validate the combined documentation tree; original
+20-case results above remain historical, and no new gameplay run is claimed.
+
+No external file is reopened, executed or modified by this independent review.
+No author is contacted. No PZ/server launch, package, deploy or Workshop upload.
+G7 and stable G8 remain BLOCKED; no clinical/runtime or licensing claim is promoted.
