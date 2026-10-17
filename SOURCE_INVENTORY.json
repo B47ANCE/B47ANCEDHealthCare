@@ -1,5 +1,5 @@
 {
-  "project_version": "0.10.0",
+  "project_version": "0.10.1",
   "display_name": "B47ANCE'd Health Care",
   "source_root": "src/B47ANCEDHealthCare",
   "mod_ids": [
@@ -64,7 +64,7 @@
       "pattern": "\\A# Changelog\\n\\n## ([^ ]+) - "
     },
     {
-      "path": "docs/VALIDATION_0_10_0.md",
+      "path": "docs/VALIDATION_0_10_1.md",
       "pattern": "^Current version: ([^ ]+)\\.$"
     },
     {
@@ -84,7 +84,8 @@
   "historical_records": [
     "docs/VALIDATION_0_9_3.md",
     "docs/WORKSHOP_UPLOAD_0_9_3.md",
-    "docs/RELEASE_PROVENANCE_0_9_3.json"
+    "docs/RELEASE_PROVENANCE_0_9_3.json",
+    "docs/VALIDATION_0_10_0.md"
   ],
   "last_distributed_version": "0.9.3"
 }

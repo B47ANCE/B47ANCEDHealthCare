@@ -1,4 +1,4 @@
-# B47ANCE'd Health Care 0.10.0 testing
+# B47ANCE'd Health Care 0.10.1 testing
 
 Automated cases in the suite include `test_severing`, `test_procedure_runtime`,
 `test_sever_transaction`, `test_corpse_recovery`,
@@ -92,3 +92,7 @@ Run python scripts/check_versions.py, python scripts/validate_source.py and pyth
 In disposable SP, confirm the configured recovery/examination seconds are real elapsed durations (including documented vanilla moodle modifiers). Examination must finish locally and publish once; shared recovery must create one authoritative output. Dedicated tests must trace native constructor corpse/item resolution, server getDuration and complete ownership, cancellation/disconnect/rejoin/restart, simultaneous recovery and inventory/anatomy replication. Send a direct old recoverCorpsePart command: it must not mutate anything. Do not use mock test results to mark these live scenarios PASS.
 
 Existing schema-1 saves with absent optional procedure maps initialize only on authoritative writes. Read-only inspection must not add them; corrupt maps must remain intact and reject actions. Repeated reloads and uncertain/executing reservation recovery require disposable native fixtures. The retired ExaminationMaxBodyParts value is ignored without editing existing saves.
+
+## 0.10.1 artwork checks
+
+Run `python scripts/validate_source.py` to verify the artwork inventory hashes, PNG dimensions, source role paths and preview size. For display validation after an explicitly requested package/deploy, check the poster in the Build 42 mod selector and all lettering at normal UI scale. After an explicitly requested publish, check the existing item thumbnail and subscriber download separately. These runtime/distribution checks are NOT TESTED for 0.10.1; no upload is implied by source validation.

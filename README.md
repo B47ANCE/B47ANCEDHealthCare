@@ -6,7 +6,7 @@ providers such as animalWorks to register procedures for any compatible Project
 M.O.R.T.I.S. anatomy.
 
 - Status: foundation development; bounded examination, its player-facing timed health-panel workflow, authoritative severing, and detached-part provenance are implemented, while diagnosis/treatment actions and visuals remain in development.
-- Version: `0.10.0`. See [release work](docs/ROADMAP.md) for the remaining gameplay and safety gates.
+- Version: `0.10.1`. See [release work](docs/ROADMAP.md) for the remaining gameplay and safety gates.
 
 Generic procedure providers can reserve an operation before a timed action,
 lock one or more patient resources, revalidate at completion, cancel safely
@@ -58,7 +58,7 @@ with the Build 42 `thumbnail.png` poster and canonical `icon.png` under `42/`.
 
 ## Identity and migration
 
-- Current version: 0.10.0; root `VERSION` is canonical.
+- Current version: 0.10.1; root `VERSION` is canonical.
 - New Mod ID: `B47ANCEDHealthCare` (replaces `medWorks`). Existing Workshop ID: `3788592396`.
 - Public source: https://github.com/B47ANCE/B47ANCEDHealthCare
 - Required: `ProjectMORTIS` and `B47ANCEDKnowledgeAndWisdom` (the renamed Knowledge & Wisdom dependency).
@@ -66,7 +66,7 @@ with the Build 42 `thumbnail.png` poster and canonical `icon.png` under `42/`.
 - Lua `medWorks/*` imports, `_G.medWorks`, item full types, procedure/knowledge IDs, saved ModData, network channels and SandboxVars keys are preserved. They are compatibility contracts, not the activation ID. No saved-state schema is rewritten.
 - MP testing build - dedicated multiplayer NOT TESTED. G7 BLOCKED / NOT TESTED; stable G8 BLOCKED.
 
-See [migration](docs/IDENTITY_MIGRATION.md), [version policy](docs/VERSION_POLICY.md) and [validation](docs/VALIDATION_0_10_0.md). `Contents/` and older packages are historical; builds use authoritative source into separate staging. Artwork retains the supplied bytes.
+See [migration](docs/IDENTITY_MIGRATION.md), [version policy](docs/VERSION_POLICY.md) and [validation](docs/VALIDATION_0_10_1.md). `Contents/` and older packages are historical; builds use authoritative source into separate staging. The original supplied artwork is retained byte-for-byte under `artwork/`; thumbnail and poster exports are 512x512 PNGs.
 
 ## Offline checks
 
@@ -76,4 +76,8 @@ The 0.9.3 Workshop MP test update was confirmed by SteamCMD and Steam restarted 
 
 ## 0.10.0 roadmap slice
 
-The audit and first implementation slice are in [AUDIT_0_10_0.md](docs/AUDIT_0_10_0.md). Source now uses native server recovery timing, client-only observation completion, correct seconds conversion and stronger procedure identity/resource/replay binding. Recovery diagnostics no longer initialize or repair save data. The obsolete ExaminationMaxBodyParts setting is ignored; the existing 32/64 internal/provider limits remain bounded. Native constructor/clock/replication tests are still required before clinical expansion or release claims. Current source is 0.10.0; the retained 0.9.3 Workshop package and distribution evidence remain historical. No 0.10.0 build/upload was performed.
+The audit and first implementation slice are in [AUDIT_0_10_0.md](docs/AUDIT_0_10_0.md). Source now uses native server recovery timing, client-only observation completion, correct seconds conversion and stronger procedure identity/resource/replay binding. Recovery diagnostics no longer initialize or repair save data. The obsolete ExaminationMaxBodyParts setting is ignored; the existing 32/64 internal/provider limits remain bounded. Native constructor/clock/replication tests are still required before clinical expansion or release claims. Current source is 0.10.1; the retained 0.9.3 Workshop package and distribution evidence remain historical. No 0.10.0 build/upload was performed.
+
+## 0.10.1 artwork
+
+The user-supplied medical-bag artwork is used for `preview.png`, the source-root `thumbnail.png` and the Build 42 poster. The original 1254x1254 PNG is retained outside runtime content; export settings, hashes and previous artwork provenance are in [artwork/ARTWORK.json](artwork/ARTWORK.json). The small icon is preserved. Future explicit Workshop preparation uses the verified staged preview. No package or upload was made; Workshop still distributes 0.9.3. In-game poster display remains NOT TESTED.

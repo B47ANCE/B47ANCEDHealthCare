@@ -1,12 +1,12 @@
 # B47ANCE'd Health Care Master Roadmap
 
-Canonical version: 0.10.0.
+Canonical version: 0.10.1.
 
 ## First slice completed in source
 
 - 0.9.3 foundation remains: procedure registry, reservations/locks/quarantine, MORTIS clothing/provenance/sever transactions, medical knowledge/semantic XP, bounded examinations, optional Spectrum sunburn integration and diagnostics.
 - 0.10.0: native server recovery timing replaces the unchecked custom commit path; client-only examination finishes locally; sandbox seconds convert to native action units. Procedure/operation/patient/resource identities are rechecked, lock arrays detached, validation reentry blocked and diagnostic reads made non-mutating. Malformed saved maps are preserved/rejected. Internal traversal limits are no longer sandbox gameplay options.
-- 18/18 offline Lua 5.1 tests PASS. Native/SP/hosted/dedicated NOT TESTED. Findings and evidence: AUDIT_0_10_0.md and VALIDATION_0_10_0.md.
+- 0.10.0 evidence: 18/18 offline Lua 5.1 tests PASS. Native/SP/hosted/dedicated NOT TESTED. Findings and evidence: AUDIT_0_10_0.md and VALIDATION_0_10_0.md.
 
 ## Ordered work and acceptance gates
 
@@ -25,3 +25,5 @@ Canonical version: 0.10.0.
 Bound presentation-provider values/diagnostic traversal, complete report/diagnostic localization and escaping, validate finite examination duration inputs, and define safe long-lived procedure-ledger retention without deleting replay protection. These are open findings, not completed features. Save corruption/reconnect/restart cases need native fixtures as well as host tests.
 
 G7 dedicated multiplayer BLOCKED / NOT TESTED. Stable G8 BLOCKED. No 0.10.0 package, deploy, Workshop update, game/server launch or Steam restart was requested or performed. The retained 0.9.3 artifacts remain historical and unchanged.
+
+0.10.1 adds the supplied Health Care thumbnail/poster and package-bound preview selection only. See VALIDATION_0_10_1.md. Gameplay roadmap priorities and runtime gates are unchanged. No 0.10.1 package/deploy/upload.
