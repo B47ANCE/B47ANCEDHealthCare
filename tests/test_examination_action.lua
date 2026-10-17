@@ -13,6 +13,10 @@ local character={isDead=function()return dead end,getX=function()return 0 end,ge
 local patient={isDead=function()return false end,getX=function()return x end,getY=function()return y end,getVehicle=function()return nil end,getOnlineID=function()return 7 end}
 SandboxVars={medWorks={ExaminationSeconds=1}}
 local action=Action:new(character,patient);assert(action.maxTime==250 and action:isValid());assert(action:finishObservation()and examined==2);assert(not action:finishObservation()and examined==2)
+for _,invalid in ipairs({0/0,math.huge,-math.huge,"not a duration"})do
+    SandboxVars.medWorks.ExaminationSeconds=invalid
+    assert(Action:new(character,patient).maxTime==1500,"invalid duration must use the 30-second default")
+end
 assert(lastContext.remoteObservation==false and lastContext.bodyDamageSnapshot==nil)
 x=3;assert(not Action:new(character,patient):isValid());x=0;local moved=Action:new(character,patient);x=1;assert(not moved:isValid());x=0;dead=true;assert(not Action:new(character,patient):isValid());dead=false
 isClient=function()return true end;local snapshot={};patient.isLocalPlayer=function()return false end;patient.getBodyDamageRemote=function()return snapshot end

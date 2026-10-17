@@ -1,18 +1,8 @@
-[b]Version 0.10.1[/b]
+[b]Version 0.11.0[/b]
 
 MP testing build - dedicated multiplayer NOT TESTED
 
-[h2]Changes since the 0.9.3 Workshop build[/h2]
-[list]
-[*]Add the supplied Health Care medical-bag thumbnail and Build 42 poster.
-[*]Use native server-timed corpse recovery and reject the legacy direct completion command.
-[*]Finish read-only examinations locally and convert configured seconds to native action units.
-[*]Revalidate procedure, patient, replay ID and resource locks; block validation reentry.
-[*]Keep recovery inspection read-only and preserve/reject malformed saved maps.
-[*]Keep technical examination traversal limits internal; existing gameplay sandbox controls remain.
-[/list]
+[h2]Source development draft[/h2]
+Add View last examination to the health panel for completed, cached observations. Show a localized, scrolling historical report for the exact local examiner/patient. Bound malformed provider output, markup, count/text traversal and cache expiry; keep close/focus behavior local without changing game speed. Preserve gameplay/save/API identities and existing sandbox controls.
 
-[b]Testing and known limitations[/b]
-18/18 Lua 5.1 offline regressions PASS, plus source, artwork, version and package checks. Native/SP/hosted/dedicated NOT TESTED; G7 and stable G8 BLOCKED. Recovery timing, native argument reconstruction, inventory/anatomy replication, join/rejoin and persistence require in-game testing. Clinical treatment expansion and visible corpse limb removal remain unfinished. Dependent mods such as Nightfall still need their separate Mod ID update.
-
-Mod ID: B47ANCEDHealthCare. Existing Workshop ID: 3788592396. Keep dependency and client/server versions matched. This upload does not deploy or restart any server.
+Native UI/SP/hosted/dedicated NOT TESTED. Current Knowledge & Wisdom 0.16.0 blocks multiplayer storage; G7 and stable G8 remain BLOCKED. No 0.11.0 package, deploy or upload. Workshop ID: 3788592396.

@@ -1,0 +1,110 @@
+{
+  "steam_build": "25485521",
+  "game_version": "UNKNOWN",
+  "runtime_status": "NOT_TESTED",
+  "records": [
+    {
+      "api_library": "Project Zomboid vanilla Lua/exposed engine APIs",
+      "game_version": "UNKNOWN",
+      "steam_build": "25485521",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "verified_on": "2026-10-16",
+      "signature_scope": "observed_vanilla_definition",
+      "receiver_type": "ISModalRichText",
+      "symbol": "ISModalRichText:destroy",
+      "signature": "ISModalRichText:destroy()",
+      "mutation": "Local UI, joypad focus and game speed side effects in vanilla. No medical state writes.",
+      "returns": "No explicit return; closes/removes UI according to destroyOnClick.",
+      "notes": "Verified against current installed Steam build; full engine version UNKNOWN. Source evidence only. Native layout, actual controller focus and split-screen behavior NOT TESTED.",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "path": "media/lua/client/ISUI/ISModalRichText.lua",
+          "sha256": "ef25cda5a02a298019f8b0a13ed13c0d989e13b4e5c12469a441da0e88c80e4c",
+          "lines": [
+            70,
+            85
+          ],
+          "statement": "Vanilla close alters paused-message visibility and sets speed controls to 1; Health Care provides its own local close to avoid those side effects."
+        }
+      ]
+    },
+    {
+      "api_library": "Project Zomboid vanilla Lua/exposed engine APIs",
+      "game_version": "UNKNOWN",
+      "steam_build": "25485521",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "verified_on": "2026-10-16",
+      "signature_scope": "observed_vanilla_definition",
+      "receiver_type": "ISModalRichText",
+      "symbol": "ISModalRichText:update",
+      "signature": "ISModalRichText:update()",
+      "mutation": "Local modal geometry/scrolling only.",
+      "returns": "No explicit return.",
+      "notes": "Verified against current installed Steam build; full engine version UNKNOWN. Source evidence only. Native layout, actual controller focus and split-screen behavior NOT TESTED.",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "path": "media/lua/client/ISUI/ISModalRichText.lua",
+          "sha256": "ef25cda5a02a298019f8b0a13ed13c0d989e13b4e5c12469a441da0e88c80e4c",
+          "lines": [
+            128,
+            152
+          ],
+          "statement": "Vanilla auto-height clamps to the full screen rather than the selected local-player viewport. Health Care uses independent instance layout with scroll height."
+        }
+      ]
+    },
+    {
+      "api_library": "Project Zomboid vanilla Lua/exposed engine APIs",
+      "game_version": "UNKNOWN",
+      "steam_build": "25485521",
+      "side": "client",
+      "status": "VERIFIED",
+      "runtime_status": "NOT_TESTED",
+      "verified_on": "2026-10-16",
+      "signature_scope": "observed_vanilla_definition",
+      "receiver_type": "global Lua",
+      "symbol": "getJoypadFocus",
+      "signature": "getJoypadFocus(playerID)",
+      "mutation": "Getter is read-only; corresponding setter changes local controller focus.",
+      "returns": "Current per-player focus or nil.",
+      "notes": "Verified against current installed Steam build; full engine version UNKNOWN. Source evidence only. Native layout, actual controller focus and split-screen behavior NOT TESTED.",
+      "evidence": [
+        {
+          "kind": "vanilla_lua",
+          "path": "media/lua/client/ISUI/Gamepad/JoyPadSetup.lua",
+          "sha256": "1e34303e5328b791daf0cd3b1f3ab84b85bbe7636e3ddb980baa4a1fecc7407e",
+          "lines": [
+            541,
+            548
+          ],
+          "statement": "Observed per-player focus getter and setJoypadFocus(playerID, control) definition; used to restore focus only while this report owns it."
+        }
+      ]
+    }
+  ],
+  "dependency_evidence": [
+    {
+      "repository": "B47ANCEDKnowledgeAndWisdom",
+      "version": "0.16.0",
+      "head": "6ba66c0d8f246d438f2e2f3c974fee9f77fdb426",
+      "dirty": false,
+      "observed_file": "src/B47ANCEDKnowledgeAndWisdom/42/media/lua/shared/B47ANCEDKnowledgeAndWisdom/AuthorityGuard.lua",
+      "sha256": "716cf083b16eaf5c556cea823c880cfbe59e41c34bc9379e96b55834e78caafa"
+    },
+    {
+      "repository": "B47ANCEDSPXTRM",
+      "version": "0.30.0",
+      "head": "ed04f31316f2bcdbe115aec6c1ba2a3511b903f8",
+      "dirty": false,
+      "observed_file": "src/B47ANCEDSPXTRM/42/media/lua/shared/lightWorks/lightWorks_Sunburn.lua",
+      "sha256": "390be6cbc833546727e71fb1c6badddb7ceb2bcab83df04b2f9d4d4a09648c60"
+    }
+  ],
+  "dependency_limit": "Knowledge & Wisdom 0.16.0 AuthorityGuard rejects server read/write with MULTIPLAYER_STORAGE_UNAVAILABLE. Health Care does not bypass it. Offline literature fixture is explicitly SP. SPXTRM retains lightWorks Lua namespace under its renamed source root."
+}

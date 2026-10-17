@@ -1,6 +1,6 @@
 # B47ANCE'd Health Care Master Roadmap
 
-Canonical version: 0.10.1.
+Canonical version: 0.11.0.
 
 ## First slice completed in source
 
@@ -13,7 +13,7 @@ Canonical version: 0.10.1.
 | Priority | Slice | Required evidence / exit condition |
 |---|---|---|
 | 1 | Native recovery path | Disposable SP and dedicated tests of corpse/item constructor resolution, actual seconds, cancellation, clothing/tool movement, two practitioners, exactly one output, save/reload, join/rejoin and restart. Verify subscribed versions and native inventory/anatomy replication. No fabricated runtime PASS. |
-| 2 | Examination usability/accuracy | Verify local perform timing/UI, subscribed remote snapshots, object recreation, stale/cleared snapshots and split-screen isolation. Complete localization/defensive formatting; define privacy/consent requirements before invasive care. |
+| 2 | Examination usability/accuracy — report UI implemented in 0.11.0 source | Verify local perform timing/UI, subscribed remote snapshots, object recreation, stale/cleared snapshots and split-screen isolation. Report UI/localization/defensive formatting are implemented; verify their native display. define privacy/consent requirements before invasive care. |
 | 3 | Shared clinical adapters | Prove native human canonical BodyPart mutation/sync, actor/patient/region identity, exact nested tool/consumable ownership and server consent. Reuse vanilla treatments, never duplicate bandaging. Record one approved procedure and its sandbox/knowledge policies before implementation. |
 | 4 | First treatment extension + matching literature | One vanilla-compatible procedure provider with meaningful server settings, item consumption/rollback/uncertain-state behavior, semantic XP without duplicate vanilla XP and disposable save migration tests. Requires slice 3's authority proof. |
 | 5 | Pain/anesthesia/recovery | Provider-specific consequences only after installed getter/setter, stacking, native serialization and sync contracts are verified. No hidden/global health simulation. |
@@ -22,8 +22,10 @@ Canonical version: 0.10.1.
 
 ## Cross-cutting open audit work
 
-Bound presentation-provider values/diagnostic traversal, complete report/diagnostic localization and escaping, validate finite examination duration inputs, and define safe long-lived procedure-ledger retention without deleting replay protection. These are open findings, not completed features. Save corruption/reconnect/restart cases need native fixtures as well as host tests.
+0.11.0 completes bounded examination report formatting/localization/escaping, finite examination durations, and bounded clock-safe observation caching. Procedure diagnostic traversal/localization and long-lived procedure-ledger retention remain open; never delete replay protection merely to bound storage. Save corruption/reconnect/restart cases need native fixtures as well as host tests.
 
 G7 dedicated multiplayer BLOCKED / NOT TESTED. Stable G8 BLOCKED. No 0.10.0 package, deploy, Workshop update, game/server launch or Steam restart was requested or performed. The retained 0.9.3 artifacts remain historical and unchanged.
 
 0.10.1 adds the supplied Health Care thumbnail/poster and package-bound preview selection only. See VALIDATION_0_10_1.md. Gameplay roadmap priorities and runtime gates are unchanged. The subsequent explicit publish request produced a verified 0.10.1 Workshop MP test upload; see WORKSHOP_UPLOAD_0_10_1.md. No local deploy or server change.
+
+0.11.0 source: View last examination, observer-scoped historical report, viewport-bound scrolling, safe close/focus restoration, 52 UI keys and English fallbacks, malformed-provider/markup/count/UTF-8 limits and clock-safe cache expiry. See EXAMINATION_REPORTS.md and VALIDATION_0_11_0.md. Dedicated recovery remains blocked both by missing native evidence and the current Knowledge & Wisdom 0.16.0 MULTIPLAYER_STORAGE_UNAVAILABLE guard. No 0.11.0 package/deploy/upload. The next implementation slice is diagnostic presentation hardening; native recovery/snapshot/clinical authority gates remain mandatory.

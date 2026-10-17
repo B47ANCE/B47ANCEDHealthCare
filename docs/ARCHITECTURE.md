@@ -128,8 +128,7 @@ dedicated behavior remains an explicit live validation gate.
 Only `MWExaminationAction:finishObservation`, called from local `perform`, publishes a UI-consumable examination. The
 session-local cache is keyed by exact examiner and patient objects, retains at
 most 16 observations per examiner, expires entries after five real-time minutes,
-removes object/function/non-finite facts, and returns a detached copy. Remote
-consent and `BodyDamageRemote` validation still occur before publication.
+removes object/function/non-finite facts, and returns a detached copy. Remote identity and `BodyDamageRemote` availability checks occur before publication; they are not an invasive-care consent or snapshot-freshness guarantee.
 
 ## Current action and reservation boundary (0.10.0)
 
@@ -140,3 +139,7 @@ Client-only MWExaminationAction deliberately has no complete method: it finishes
 Procedure completion checks its persisted procedure/operation/lock identities, recomputes provider resources, verifies lock ownership and rejects conflicting replay IDs. Tokens return detached lock arrays; completion snapshots token fields. A synchronous guard rejects completion/cancellation/recovery reentry during validation. Provider execution receives a shallow context copy with both IDs normalized to the reservation; nonidentity annotations are copied back, while caller identity fields remain unchanged. Execution failures retain uncertain locks. Lock-key callback reentry cannot overwrite a reservation.
 
 Schema remains 1. Read-only recovery inspection creates no ModData or optional maps. Authoritative mutation initializes absent legacy maps, but non-table maps and malformed reservations are preserved and rejected. In-memory validation guards are not saved; persisted executing/uncertain states remain blocked for explicit authoritative recovery after restart. No automatic save rewrite, retry or rollback guarantee is added.
+
+## Local report viewing (0.11.0)
+
+ExaminationViewer reads only CompletedExaminations for an exact examiner/patient and validates getSpecificPlayer(playerNum) at menu construction/click and while open. No server command or medical mutation. Report sections/parts/diagnostics/counts/text are capped and markup is rendered as plain text. Cached strings and copy traversals are bounded; invalid clocks or rollback discard observations. Data stays in session memory, not ModData. The modal has its own viewport layout and close method because vanilla modal auto-height uses the full screen and vanilla destroy changes game speed. Existing panels show historical text until closed, without live patient access. Details: EXAMINATION_REPORTS.md.
