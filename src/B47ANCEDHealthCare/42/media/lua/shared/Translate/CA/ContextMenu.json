@@ -12,5 +12,6 @@
   "ContextMenu_medWorks_RegionRightLeg": "Right leg",
   "ContextMenu_medWorks_RegionLeftFoot": "Left foot",
   "ContextMenu_medWorks_RegionRightFoot": "Right foot",
+  "ContextMenu_medWorks_ViewExamination": "View last examination",
   "ContextMenu_medWorks_CoolSunburn": "Use cold pack for sunburn"
 }

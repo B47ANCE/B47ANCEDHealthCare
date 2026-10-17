@@ -2,6 +2,7 @@ require "XpSystem/ISUI/ISHealthPanel"
 require "TimedActions/ISTimedActionQueue"
 local Action=require "medWorks/ExaminationAction"
 local DiagnosticsViewer=require "medWorks/ProcedureDiagnosticViewer"
+local ExaminationViewer=require "medWorks/ExaminationViewer"
 local original=ISHealthPanel.doBodyPartContextMenu
 if not ISHealthPanel.medWorksExaminationWrapped then
     ISHealthPanel.medWorksExaminationWrapped=true
@@ -15,6 +16,7 @@ if not ISHealthPanel.medWorksExaminationWrapped then
             local label=type(getText)=="function"and getText("ContextMenu_medWorks_PerformExamination")or"Perform examination"
             context:addOption(label,examiner,function(character,target)local ok=pcall(function()ISTimedActionQueue.add(Action:new(character,target))end);if not ok and print then print("[medWorks] Examination action unavailable")end end,patient)
         end
+        ExaminationViewer.addHealthPanelOption(context,playerNum,examiner,patient)
         DiagnosticsViewer.addHealthPanelOption(context,playerNum,examiner,patient)
         context:setVisible(true)
     end

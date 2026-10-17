@@ -1,16 +1,10 @@
 [b]Version 0.11.0[/b]
-MP testing build - dedicated multiplayer NOT TESTED
-Existing item 3788592396. Added optional Spectrum cold-pack self-care with server-owned native timing, supply consumption and recovery inspection. No upload performed.
-
-[b]Version 0.10.0[/b]
 
 MP testing build - dedicated multiplayer NOT TESTED
 
-[h2]Source development draft[/h2]
-• Use native server-timed corpse recovery; reject the legacy direct commit command.
-• Complete client-only read-only examinations locally and convert configured seconds into native action units.
-• Bind procedure completion to its reserved procedure, patient, replay ID and resource locks; block validation reentry.
-• Keep diagnostic inspection read-only; preserve and reject malformed persisted maps.
-• Keep examination traversal ceilings internal instead of exposing technical safety settings.
-
-18 Lua 5.1 offline regressions PASS; native/SP/hosted/dedicated NOT TESTED. G7 and stable G8 BLOCKED. No 0.10.0 package, deployment or Workshop upload was requested. Workshop ID: 3788592396.
+Added localized historical examination reports with bounded provider formatting,
+cache expiry and viewport/focus handling. Added optional SPXTRM cold-pack self-care
+with native server timing, consumed supplies, sandbox controls and receipt-based
+uncertain-outcome recovery. Knowledge & Wisdom's MP storage guard remains.
+Existing item 3788592396. No 0.11.0 upload performed; prior 0.10.1 distribution
+records remain historical. Stable G8 remains blocked pending dedicated G7.

@@ -1,4 +1,9 @@
 package.loaded["medWorks/TestHarness"]=nil
+-- This fixture reloads a module inside one host VM, not a real game runtime.
+-- Keep its temporary identity allocations alive: GC address reuse can otherwise
+-- make tostring({}) repeat and invalidate the simulated different-runtime step.
+-- Native persistence/restart acceptance remains a separate runtime gate.
+collectgarbage("stop")
 local reportLines={}
 getFileWriter=function(name,create,append)
     assert(name=="B47ANCED Health Care Test Results.txt" and create==true and append==false)
@@ -44,3 +49,4 @@ local joined=table.concat(reportLines,"\n")
 assert(joined:find("Mod ID: B47ANCEDHealthCare",1,true))
 assert(joined:find("Dependencies enabled for this stage: B47ANCEDKnowledgeAndWisdom, ProjectMORTIS",1,true))
 print("medWorks in-game test harness/result-export checks passed")
+collectgarbage("restart")

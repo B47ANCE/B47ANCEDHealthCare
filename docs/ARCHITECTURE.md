@@ -128,8 +128,7 @@ dedicated behavior remains an explicit live validation gate.
 Only `MWExaminationAction:finishObservation`, called from local `perform`, publishes a UI-consumable examination. The
 session-local cache is keyed by exact examiner and patient objects, retains at
 most 16 observations per examiner, expires entries after five real-time minutes,
-removes object/function/non-finite facts, and returns a detached copy. Remote
-consent and `BodyDamageRemote` validation still occur before publication.
+removes object/function/non-finite facts, and returns a detached copy. Remote identity and `BodyDamageRemote` availability checks occur before publication; they are not an invasive-care consent or snapshot-freshness guarantee.
 
 ## Current action and reservation boundary (0.10.0)
 
@@ -144,3 +143,7 @@ Schema remains 1. Read-only recovery inspection creates no ModData or optional m
 ## Optional Spectrum self-care (0.11.0)
 
 With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-click a vanilla cold pack in your main inventory while you have documented sunburn. The native timed self-care action consumes the pack and reduces canonical Spectrum dose. It is self-only and server validated; no other-player treatment or free client RPC. Sandbox controls enablement, duration and reduction. Uncertain item/dose outcomes remain locked for inspection; see [current care validation](VALIDATION_0_11_0.md)  Native SP/dedicated NOT TESTED; no package, deployment or upload.
+
+## Local report viewing (0.11.0)
+
+ExaminationViewer reads only CompletedExaminations for an exact examiner/patient and validates getSpecificPlayer(playerNum) at menu construction/click and while open. No server command or medical mutation. Report sections/parts/diagnostics/counts/text are capped and markup is rendered as plain text. Cached strings and copy traversals are bounded; invalid clocks or rollback discard observations. Data stays in session memory, not ModData. The modal has its own viewport layout and close method because vanilla modal auto-height uses the full screen and vanilla destroy changes game speed. Existing panels show historical text until closed, without live patient access. Details: EXAMINATION_REPORTS.md.

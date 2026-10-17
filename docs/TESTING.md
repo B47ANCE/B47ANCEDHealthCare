@@ -96,3 +96,15 @@ Existing schema-1 saves with absent optional procedure maps initialize only on a
 ## Optional Spectrum self-care (0.11.0)
 
 With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-click a vanilla cold pack in your main inventory while you have documented sunburn. The native timed self-care action consumes the pack and reduces canonical Spectrum dose. It is self-only and server validated; no other-player treatment or free client RPC. Sandbox controls enablement, duration and reduction. Uncertain item/dose outcomes remain locked for inspection; see [current care validation](VALIDATION_0_11_0.md)  Native SP/dedicated NOT TESTED; no package, deployment or upload.
+
+## 0.10.1 artwork checks
+
+Run `python scripts/validate_source.py` to verify the artwork inventory hashes, PNG dimensions, source role paths and preview size. For display validation after an explicitly requested package/deploy, check the poster in the Build 42 mod selector and all lettering at normal UI scale. After an explicitly requested publish, check the existing item thumbnail and subscriber download separately. These runtime/distribution checks are NOT TESTED for 0.10.1; no upload is implied by source validation.
+
+## 0.11.0 detailed examination viewer
+
+Offline: run scripts/check_versions.py, scripts/validate_source.py and scripts/run_host_tests.py. New report/viewer regressions and extended cache/action fixtures exercise malformed values, localization/fallback, inert markup, UTF-8/byte bounds, counts/clock/duration edge cases, observer scoping, callback expiry, viewport changes, local-player replacement and close/focus behavior. UI methods are stubbed; 20 PASS does not establish native layout or controller behavior.
+
+After a separately requested development build/deploy, use a disposable SP save: confirm View last examination is absent before completion/cancellation; complete an examination, reopen the same patient's health-panel context menu and view the report. Check age/read-only labels, health/part labels, bleeding/local wound infection and no treatment. Test scrolling/OK, keyboard and controller focus restoration, other dialogs, normal/large fonts and UI scales, viewport changes, split-screen users, replacing one report without closing another, and that closing does not alter game speed. Reopening after five minutes must fail; an already-open report remains explicitly historical. Disconnect/recreate patient/local examiner objects; verify no cross-object/cache leak.
+
+Dedicated knowledge/recovery progression with current Knowledge & Wisdom 0.16.0 is BLOCKED by its explicit unavailable-storage guard. Do not bypass it to perform a test or infer MP PASS. Native recovery/snapshot/consent tests remain outstanding after that dependency is resolved. 0.11.0 is source-only; Workshop still distributes 0.10.1.
