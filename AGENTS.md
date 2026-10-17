@@ -12,4 +12,4 @@ Project: B47ANCE'd Health Care. Canonical version: root VERSION. Mod ID: B47ANCE
 
 Run scripts/check_versions.py, scripts/validate_source.py and scripts/run_host_tests.py. Audit the exact staged index with scripts/check_public_tree.py before every public push. No stable tag or stable G8 without dedicated G7. Publication only updates the existing item and requires all applicable offline checks; preserve historical packages.
 
-Current optional self-care source/validation: docs/VALIDATION_0_11_0.md. Preserve native server timing, exact consumed Coldpack, canonical Spectrum receipts and uncertain-outcome locks. Source root remains unchanged; the artwork checkout is outside this worktree and must stay untouched.
+Current source/validation (including preserved optional self-care): docs/VALIDATION_0_12_0.md. Preserve native server timing, exact consumed Coldpack, canonical Spectrum receipts and uncertain-outcome locks. Source root remains unchanged; the artwork checkout is outside this worktree and must stay untouched.

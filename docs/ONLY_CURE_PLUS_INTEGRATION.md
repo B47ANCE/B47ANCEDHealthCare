@@ -1,5 +1,7 @@
 # Only Cure+ dependency integration plan
 
+Current source follow-up: 0.12.0 implements the [narrow capability/local self-observation slice](ONLY_CURE_PLUS_OBSERVATION.md). No required dependency or gameplay integration is enabled. The planning baseline, historical validation and unresolved broader integration gates below are preserved; their original not-implemented statements describe that earlier baseline.
+
 Original planning decision: 2026-10-16. Historical planning baseline: 0.11.0, commit
 `b2e05c73a40680edac3ed76d7f7ff3416031762b`.
 

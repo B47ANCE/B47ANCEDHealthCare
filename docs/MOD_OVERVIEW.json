@@ -2,9 +2,9 @@
   "schema": 1,
   "id": "health",
   "name": "Health Care",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "reviewed": true,
-  "source_digest": "cc1df258833a5334e111045493ab8886ccf47c46e5c5557473ed2fd487442a28",
+  "source_digest": "d76b6e2862cb5d01002b52a658bf1350f52831060f67e6cd912e8644332d10d0",
   "features": [
     {
       "status": "Source",
@@ -23,19 +23,20 @@
       "text": "Optional Spectrum cold-pack self-care uses native server timed actions, consumed supplies and canonical Spectrum receipts."
     },
     {
-      "status": "Planned",
-      "text": "Independent Only Cure+ dependency integration: capability/readiness audit, then bounded self-observation and original report presentation."
+      "status": "Source",
+      "text": "Optional independent Only Cure+ 3.2.0 capability detection and bounded local self-observation in historical examination reports; no foreign state writes."
     },
     {
       "status": "Blocked",
       "text": "Only Cure+ clinical/prosthetic mutation and remote observations require authority, privacy and anatomy-ownership contracts."
     }
   ],
-  "limits": "Source review only. No Only Cure+ adapter ships. Combined-mod SP/hosted/dedicated NOT TESTED; G7 and stable G8 BLOCKED. Knowledge & Wisdom 0.16.0 dedicated storage remains unavailable. Last distributed Health Care version is 0.10.1.",
+  "limits": "Development source 0.12.0. Only Cure+ native SP/split-screen/hosted/dedicated coexistence NOT TESTED; no remote or treatment bridge. G7 and stable G8 BLOCKED. Knowledge & Wisdom 0.16.0 dedicated storage unavailable. Last distributed Health Care version is 0.10.1.",
   "evidence": [
     "README.md",
     "docs/ARCHITECTURE.md",
-    "docs/VALIDATION_0_11_0.md",
+    "docs/VALIDATION_0_12_0.md",
+    "docs/ONLY_CURE_PLUS_OBSERVATION.md",
     "docs/ONLY_CURE_PLUS_AUDIT_2026_10_17.md"
   ],
   "relations": [

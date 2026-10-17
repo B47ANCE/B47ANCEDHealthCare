@@ -1,5 +1,7 @@
 # B47ANCE'd Health Care Architecture
 
+0.12.0 adds a [client-only Only Cure+ observation adapter](ONLY_CURE_PLUS_OBSERVATION.md). It owns no clinical or anatomical state: local self-identity and exact version/readiness are required, and only detached structural observations reach the examination cache. It sends no commands and is absent from the server load graph. Upstream and MORTIS ownership are unchanged; these facts cannot authorize treatment or synchronize topology.
+
 Project M.O.R.T.I.S. owns anatomy. medWorks owns generic medical procedure
 execution. Procedure providers own their content and domain-specific outcomes.
 

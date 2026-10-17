@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.12.0 - 2026-10-17
+
+MINOR: add independent, optional Only Cure+ 3.2.0 capability detection and local self-observation through the existing examination/report workflow. Reject remote/server/unsupported/unready/malformed contexts; export bounded detached structural observations, never mobility or clinical state. Add localized report fields and focused offline regressions. No upstream initialization, ModData writes, commands, topology changes, progression or materials. Preserve dependency/activation/save identities. Native SP/hosted/dedicated NOT TESTED; G7/stable G8 BLOCKED. Source-only iteration, no package/deploy/upload.
+
 ## 0.11.0 - 2026-10-16
 
 Documentation-only audit follow-up (2026-10-17): replace Only Cure+ absorption with original-mod dependency support. Audit the installed/source 3.2.0 interfaces, readiness defaults, mobility side effects, shared hooks, medical relay authority and independent MORTIS state. Record a conditional observation-first contract and blocked treatment paths, fingerprints and a source-bound feature overview. Runtime, dependencies, license, schema and canonical version remain unchanged; combined-mod SP/dedicated compatibility and independent review are pending.

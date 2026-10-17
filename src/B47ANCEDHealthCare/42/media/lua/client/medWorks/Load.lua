@@ -1,6 +1,7 @@
 require "medWorks/init"
 require "medWorks/Knowledge"
 require "medWorks/Examination"
+require "medWorks/OnlyCureObservation"
 require "medWorks/ExaminationReport"
 require "medWorks/CompletedExaminations"
 require "medWorks/ExaminationAction"
