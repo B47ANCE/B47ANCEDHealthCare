@@ -1,12 +1,8 @@
-[b]Version 0.10.0[/b]
+[b]Version 0.11.0[/b]
 
 MP testing build - dedicated multiplayer NOT TESTED
 
 [h2]Source development draft[/h2]
-• Use native server-timed corpse recovery; reject the legacy direct commit command.
-• Complete client-only read-only examinations locally and convert configured seconds into native action units.
-• Bind procedure completion to its reserved procedure, patient, replay ID and resource locks; block validation reentry.
-• Keep diagnostic inspection read-only; preserve and reject malformed persisted maps.
-• Keep examination traversal ceilings internal instead of exposing technical safety settings.
+Add View last examination to the health panel for completed, cached observations. Show a localized, scrolling historical report for the exact local examiner/patient. Bound malformed provider output, markup, count/text traversal and cache expiry; keep close/focus behavior local without changing game speed. Preserve gameplay/save/API identities and existing sandbox controls.
 
-18 Lua 5.1 offline regressions PASS; native/SP/hosted/dedicated NOT TESTED. G7 and stable G8 BLOCKED. No 0.10.0 package, deployment or Workshop upload was requested. Workshop ID: 3788592396.
+Native UI/SP/hosted/dedicated NOT TESTED. Current Knowledge & Wisdom 0.16.0 blocks multiplayer storage; G7 and stable G8 remain BLOCKED. No 0.11.0 package, deploy or upload. Workshop ID: 3788592396.

@@ -1,5 +1,6 @@
 """Offline identity, syntax, localization, Lua-only and case validation."""
 import json
+import hashlib
 from pathlib import Path
 import re
 import struct
@@ -50,6 +51,18 @@ def main():
         image = source / "42" / info[role]
         data = image.read_bytes()
         assert data[:8] == b"\x89PNG\r\n\x1a\n" and all(struct.unpack(">II", data[16:24]))
+    artwork = json.loads((ROOT / "artwork/ARTWORK.json").read_text(encoding="utf-8"))
+    assert {entry["path"] for entry in artwork["outputs"]} == {
+        "preview.png", f"{inventory['source_root']}/thumbnail.png",
+        f"{inventory['source_root']}/42/{info['poster']}",
+    }, "Artwork roles differ from authoritative metadata"
+    for entry in [artwork["original"], *artwork["outputs"], artwork["preserved_icon"]]:
+        data = (ROOT / entry["path"]).read_bytes()
+        assert hashlib.sha256(data).hexdigest() == entry["sha256"], f"Artwork hash: {entry['path']}"
+        assert len(data) == entry["bytes"] and data[:8] == b"\x89PNG\r\n\x1a\n"
+        assert list(struct.unpack(">II", data[16:24])) == entry["dimensions"]
+    assert len({entry["sha256"] for entry in artwork["outputs"]}) == 1
+    assert all(entry["dimensions"] == [512, 512] and entry["bytes"] < 1_000_000 for entry in artwork["outputs"])
     for name in ("WORKSHOP_DESCRIPTION.txt", "WORKSHOP_CHANGE_NOTE.txt", "workshop.txt"):
         text = (ROOT / name).read_text(encoding="utf-8-sig")
         assert "\\n" not in text and "MP testing build - dedicated multiplayer NOT TESTED" in text
