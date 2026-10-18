@@ -1,4 +1,4 @@
-# B47ANCE'd Health Care 0.11.0 testing
+# B47ANCE'd Health Care 0.12.1 testing
 
 Automated cases in the suite include `test_severing`, `test_procedure_runtime`,
 `test_sever_transaction`, `test_corpse_recovery`,
@@ -95,7 +95,7 @@ Existing schema-1 saves with absent optional procedure maps initialize only on a
 
 ## Optional Spectrum self-care (0.11.0)
 
-With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-click a vanilla cold pack in your main inventory while you have documented sunburn. The native timed self-care action consumes the pack and reduces canonical Spectrum dose. It is self-only and server validated; no other-player treatment or free client RPC. Sandbox controls enablement, duration and reduction. Uncertain item/dose outcomes remain locked for inspection; see [current care validation](VALIDATION_0_11_0.md)  Native SP/dedicated NOT TESTED; no package, deployment or upload.
+With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-click a vanilla cold pack in your main inventory while you have documented sunburn. The native timed self-care action consumes the pack and reduces canonical Spectrum dose. It is self-only and server validated; no other-player treatment or free client RPC. Sandbox controls enablement, duration and reduction. Uncertain item/dose outcomes remain locked for inspection; see [current care validation](VALIDATION_0_12_0.md)  Native SP/dedicated NOT TESTED; no package, deployment or upload.
 
 ## 0.10.1 artwork checks
 
@@ -107,4 +107,10 @@ Offline: run scripts/check_versions.py, scripts/validate_source.py and scripts/r
 
 After a separately requested development build/deploy, use a disposable SP save: confirm View last examination is absent before completion/cancellation; complete an examination, reopen the same patient's health-panel context menu and view the report. Check age/read-only labels, health/part labels, bleeding/local wound infection and no treatment. Test scrolling/OK, keyboard and controller focus restoration, other dialogs, normal/large fonts and UI scales, viewport changes, split-screen users, replacing one report without closing another, and that closing does not alter game speed. Reopening after five minutes must fail; an already-open report remains explicitly historical. Disconnect/recreate patient/local examiner objects; verify no cross-object/cache leak.
 
-Dedicated knowledge/recovery progression with current Knowledge & Wisdom 0.16.0 is BLOCKED by its explicit unavailable-storage guard. Do not bypass it to perform a test or infer MP PASS. Native recovery/snapshot/consent tests remain outstanding after that dependency is resolved. 0.11.0 is source-only; Workshop still distributes 0.10.1.
+Dedicated knowledge/recovery progression with current Knowledge & Wisdom 0.16.0 is BLOCKED by its explicit unavailable-storage guard. Do not bypass it to perform a test or infer MP PASS. Native recovery/snapshot/consent tests remain outstanding after that dependency is resolved. Current 0.12.1 is the authorized MP test iteration; Workshop still distributes 0.10.1.
+
+## Only Cure+ local self-observation (0.12.0)
+
+After an explicitly authorized test deployment, enable the original Only Cure+ 3.2.0 alongside Health Care and its dependencies on a disposable save. Complete Perform examination on yourself, then open View last examination. Check all twelve structural labels, each supported loss level, prosthetic support, unavailable data and healthy native BodyParts that coexist with upstream limb loss. Confirm the adapter issues no treatment, material consumption, knowledge/XP grant, command or foreign save write. Track the original mod's general-action wear/bleeding hooks separately: the existing native base completion still invokes those owner rules, after the observation is captured. Reopening must retain the historical facts without querying upstream.
+
+Test absent/unsupported/conflicting/unready/malformed dependency states, both local player slots, examiner/patient object replacement, remote-patient exclusion, cache expiry and both health-panel wrapping orders. Verify native action duration/cancel/completion and original wear/bleeding hooks; offline mocks do not prove those native effects. On dedicated, verify the client-only adapter is not loaded server-side and that local reports never authorize treatment. Existing G7/stable G8 and Knowledge & Wisdom storage gates remain blocked. No game/server launch, deploy or publish is authorized by this document. See ONLY_CURE_PLUS_OBSERVATION.md and VALIDATION_0_12_0.md under docs/.

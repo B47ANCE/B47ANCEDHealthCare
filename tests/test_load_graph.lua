@@ -1,5 +1,5 @@
 local clientModules={
-    "medWorks/init","medWorks/Knowledge","medWorks/Examination",
+    "medWorks/init","medWorks/Knowledge","medWorks/Examination","medWorks/OnlyCureObservation",
     "medWorks/ExaminationReport","medWorks/ExaminationAction","medWorks/ExaminationViewer","medWorks/ExaminationMenu",
     "medWorks/ProcedureDiagnostics","medWorks/ProcedureDiagnosticViewer",
     "medWorks/SunburnTreatment","medWorks/SunburnCareMenu","medWorks/CorpseRecoveryClient","medWorks/CorpseMenu",

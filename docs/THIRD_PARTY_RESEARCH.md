@@ -1,5 +1,7 @@
 # External medical-mod research ledger
 
+Implementation follow-up: 0.12.0 adds independently authored [Only Cure+ local self-observation](ONLY_CURE_PLUS_OBSERVATION.md) against the narrow audited 3.2.0 interface. No foreign source/assets or clinical logic is imported, and no original files are modified. The existing source audit remains historical evidence; new implementation review and native compatibility are pending.
+
 Current follow-up: the [2026-10-17 Only Cure+ dependency/coexistence audit](ONLY_CURE_PLUS_AUDIT_2026_10_17.md) supersedes absorption proposals and records the now-installed 3.2.0 snapshot. The [integration plan](ONLY_CURE_PLUS_INTEGRATION.md) retains the original mod as an external dependency. The historical audit and review below retain their exact scope; their signoff does not approve the new audit or an unimplemented adapter.
 
 Audit date: 2026-10-16 (America/Phoenix). Health Care baseline: **0.11.0**, commit `2665e74d6f8b829a83beccbd278abad2ff419b43`.

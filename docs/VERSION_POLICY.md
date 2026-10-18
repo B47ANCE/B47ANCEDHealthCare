@@ -6,9 +6,9 @@ Current mirrors are enumerated exactly in `SOURCE_INVENTORY.json`. Run `python s
 
 Gameplay remains Lua-only, server authoritative, and server sandbox controlled. G7 dedicated multiplayer NOT TESTED / BLOCKED; stable G8 BLOCKED. `--release` must fail until those gates have real evidence. An authorized labelled Workshop MP test upload is distribution evidence only. No stable tag.
 
-Current development version: 0.11.0. Public repository B47ANCE/B47ANCEDHealthCare. Source/package/activation ID B47ANCEDHealthCare. For the historical 0.9.3 rename, the user explicitly authorized the pre-1.0 PATCH number despite the public activation-ID break. It must not be represented as automatic save/dependency compatibility. Existing Workshop ID 3788592396 is unchanged. The medWorks API/item/network/sandbox/ModData keys remain documented compatibility contracts.
+Current development version: 0.12.1. Public repository B47ANCE/B47ANCEDHealthCare. Source/package/activation ID B47ANCEDHealthCare. For the historical 0.9.3 rename, the user explicitly authorized the pre-1.0 PATCH number despite the public activation-ID break. It must not be represented as automatic save/dependency compatibility. Existing Workshop ID 3788592396 is unchanged. The medWorks API/item/network/sandbox/ModData keys remain documented compatibility contracts.
 
-The named current validation record is docs/VALIDATION_0_11_0.md. docs/history/pre-health-care-0.9.2 contains immutable pre-rename evidence. Contents is historical, never an input to current packaging. dist is generated and untracked; the previous package is retained. Packaging creates separate versioned staging, a ZIP, integrity verification and a Git-bound release manifest.
+The named current validation record is docs/VALIDATION_0_12_1.md. docs/history/pre-health-care-0.9.2 contains immutable pre-rename evidence. Contents is historical, never an input to current packaging. dist is generated and untracked; the previous package is retained. Packaging creates separate versioned staging, a ZIP, integrity verification and a Git-bound release manifest.
 
 ## 0.10.0 development iteration
 
@@ -21,3 +21,11 @@ PATCH: user-supplied thumbnail/poster assets and verified-preview descriptor pre
 ## 0.11.0 examination report iteration
 
 MINOR: new local report-viewing workflow and defensive presentation/cache contracts. Public API/item/network/sandbox/save identities remain medWorks; the cache remains session-local and its sanitization is stricter. No persistent migration. Earlier 0.10.1 validation/upload/provenance and package are historical, immutable evidence. Current package/manifest are null for 0.11.0, while last_distributed_version remains 0.10.1. G7 and stable G8 remain blocked.
+
+## 0.12.0 Only Cure+ self-observation iteration
+
+MINOR: additive optional client capability and local structural-observation/report contracts. No persistent migration, required dependency, item/activation identity or gameplay-authority change. The narrow supported external interface is Only Cure+ 3.2.0; it is version-specific, not a future compatibility promise. Preserve VALIDATION_0_11_0.md and pinned source audit evidence as historical records. Current package/manifest remain null and last_distributed_version remains 0.10.1. No package/deploy/publish is requested. G7 and stable G8 remain blocked.
+
+## 0.12.1 icon and authorized test publication
+
+PATCH: approved transparent icon export and metadata/provenance only; runtime gameplay is unchanged from 0.12.0. Preserve VALIDATION_0_12_0.md and earlier distribution/artwork evidence as historical records. The user explicitly authorized merging open PRs and publishing after checks on 2026-10-18. This authorizes the existing-item labelled Workshop MP test upload; dedicated G7 and stable G8 remain blocked. No stable tag or local deployment. Prior thumbnail/poster/preview bytes are protected.

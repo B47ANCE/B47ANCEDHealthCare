@@ -1,6 +1,6 @@
 # B47ANCE'd Health Care
 
-Only Cure+ integration is planned as independently authored support for the separately installed original. The [dependency/coexistence audit](docs/ONLY_CURE_PLUS_AUDIT_2026_10_17.md) identifies readiness, state-ownership, timed-action and server-authority blockers; no adapter or dependency change ships yet. See the [integration plan](docs/ONLY_CURE_PLUS_INTEGRATION.md).
+Only Cure+ 3.2.0 now has optional, independently authored local self-observation support in development source. Complete **Perform examination** on yourself, then open **View last examination** to see reported limb loss and prosthetic support, or an explicit unavailable state. The original stays separately installed; no new required dependency. See the [adapter contract](docs/ONLY_CURE_PLUS_OBSERVATION.md) and [source audit](docs/ONLY_CURE_PLUS_AUDIT_2026_10_17.md). Remote observations and treatment integration remain unsupported; native coexistence is NOT TESTED.
 
 B47ANCE'd Health Care (formerly medWorks) is the planned species-agnostic medical-procedure framework for the
 Works ecosystem. It will ship human-focused medical content while allowing
@@ -8,7 +8,7 @@ providers such as animalWorks to register procedures for any compatible Project
 M.O.R.T.I.S. anatomy.
 
 - Status: foundation development; bounded examination, its player-facing timed health-panel workflow, authoritative severing, and detached-part provenance are implemented, while diagnosis/treatment actions and visuals remain in development.
-- Version: `0.11.0`. See [release work](docs/ROADMAP.md) for the remaining gameplay and safety gates.
+- Version: `0.12.1`. See [release work](docs/ROADMAP.md) for the remaining gameplay and safety gates.
 
 Generic procedure providers can reserve an operation before a timed action,
 lock one or more patient resources, revalidate at completion, cancel safely
@@ -60,7 +60,7 @@ with the Build 42 `thumbnail.png` poster and canonical `icon.png` under `42/`.
 
 ## Identity and migration
 
-- Current version: 0.11.0; root `VERSION` is canonical.
+- Current version: 0.12.1; root `VERSION` is canonical.
 - New Mod ID: `B47ANCEDHealthCare` (replaces `medWorks`). Existing Workshop ID: `3788592396`.
 - Public source: https://github.com/B47ANCE/B47ANCEDHealthCare
 - Required: `ProjectMORTIS` and `B47ANCEDKnowledgeAndWisdom` (the renamed Knowledge & Wisdom dependency).
@@ -68,7 +68,7 @@ with the Build 42 `thumbnail.png` poster and canonical `icon.png` under `42/`.
 - Lua `medWorks/*` imports, `_G.medWorks`, item full types, procedure/knowledge IDs, saved ModData, network channels and SandboxVars keys are preserved. They are compatibility contracts, not the activation ID. No saved-state schema is rewritten.
 - MP testing build - dedicated multiplayer NOT TESTED. G7 BLOCKED / NOT TESTED; stable G8 BLOCKED.
 
-See [migration](docs/IDENTITY_MIGRATION.md), [version policy](docs/VERSION_POLICY.md) and [validation](docs/VALIDATION_0_11_0.md). `Contents/` and older packages are historical; builds use authoritative source into separate staging. The original supplied artwork is retained byte-for-byte under `artwork/`; thumbnail and poster exports are 512x512 PNGs.
+See [migration](docs/IDENTITY_MIGRATION.md), [version policy](docs/VERSION_POLICY.md) and [validation](docs/VALIDATION_0_12_1.md). `Contents/` and older packages are historical; builds use authoritative source into separate staging. The original supplied artwork is retained byte-for-byte under `artwork/`; thumbnail and poster exports are 512x512 PNGs.
 
 ## Offline checks
 
@@ -78,7 +78,7 @@ The 0.9.3 Workshop MP test update was confirmed by SteamCMD and Steam restarted 
 
 ## 0.10.0 roadmap slice
 
-The audit and first implementation slice are in [AUDIT_0_10_0.md](docs/AUDIT_0_10_0.md). Source now uses native server recovery timing, client-only observation completion, correct seconds conversion and stronger procedure identity/resource/replay binding. Recovery diagnostics no longer initialize or repair save data. The obsolete ExaminationMaxBodyParts setting is ignored; the existing 32/64 internal/provider limits remain bounded. Native constructor/clock/replication tests are still required before clinical expansion or release claims. Current source is 0.11.0; the retained 0.9.3 Workshop package and distribution evidence remain historical. No 0.10.0 build/upload was performed.
+The audit and first implementation slice are in [AUDIT_0_10_0.md](docs/AUDIT_0_10_0.md). Source now uses native server recovery timing, client-only observation completion, correct seconds conversion and stronger procedure identity/resource/replay binding. Recovery diagnostics no longer initialize or repair save data. The obsolete ExaminationMaxBodyParts setting is ignored; the existing 32/64 internal/provider limits remain bounded. Native constructor/clock/replication tests are still required before clinical expansion or release claims. Current source is 0.12.1; the retained 0.9.3 Workshop package and distribution evidence remain historical. No 0.10.0 build/upload was performed.
 
 ## 0.10.1 artwork
 
@@ -98,4 +98,10 @@ With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-clic
 
 ## Medical-reference audit
 
-The user-selected [The Only Cure+ and Wound Expansion audit](docs/THIRD_PARTY_RESEARCH.md) ranks independent Health Care candidates and records licensing, Lua-only, ownership and compatibility limits. Best near-term proposal: a read-only procedure-readiness checklist; clinical additions remain behind existing authority/dependency/runtime gates. This is research, with no foreign code/assets imported or new runtime feature. Canonical source remains 0.11.0; Workshop remains 0.10.1.
+The user-selected [The Only Cure+ and Wound Expansion audit](docs/THIRD_PARTY_RESEARCH.md) ranks independent Health Care candidates and records licensing, Lua-only, ownership and compatibility limits. Best near-term proposal: a read-only procedure-readiness checklist; clinical additions remain behind existing authority/dependency/runtime gates. This is research, with no foreign code/assets imported or new runtime feature. Canonical source is now 0.12.1; Workshop remains 0.10.1.
+
+## Mod icon (0.12.1)
+
+The approved medical-bag cutout is exported to the existing 32x32 transparent mod-icon slot. The thumbnail, poster and Workshop preview remain byte-for-byte unchanged. Original icon artwork, prompt and previous icon are retained under artwork/. This PATCH includes the prior independently authored local Only Cure+ observation source; native coexistence remains NOT TESTED. The explicit publication request is for a labelled Workshop MP test build, not stable G8 approval. Source checks require Pillow and the host suite requires lupa.lua51.
+
+For the requested thumbnail-preserving publication, `python scripts/prepare_workshop.py --preserve-existing-preview` omits previewfile from the upload descriptor while validating the unchanged packaged preview.

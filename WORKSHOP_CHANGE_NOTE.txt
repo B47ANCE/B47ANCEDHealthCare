@@ -1,10 +1,9 @@
-[b]Version 0.11.0[/b]
+[b]Version 0.12.1[/b]
 
 MP testing build - dedicated multiplayer NOT TESTED
 
-Added localized historical examination reports with bounded provider formatting,
-cache expiry and viewport/focus handling. Added optional SPXTRM cold-pack self-care
-with native server timing, consumed supplies, sandbox controls and receipt-based
-uncertain-outcome recovery. Knowledge & Wisdom's MP storage guard remains.
-Existing item 3788592396. No 0.11.0 upload performed; prior 0.10.1 distribution
-records remain historical. Stable G8 remains blocked pending dedicated G7.
+Updated the mod icon to the approved transparent medical-bag cutout; thumbnail, poster and Workshop preview are unchanged.
+
+Includes changes since 0.10.1: localized historical examination reports; optional Spectrum cold-pack self-care with consumed supplies and authoritative receipts; independent Only Cure+ 3.2.0 capability detection and local self-observation. The original stays separately installed, and no upstream code or assets are bundled.
+
+Only Cure+ remote examination and treatment integration are unsupported. Original general-action wear/bleeding hooks remain in effect. Native SP/hosted/dedicated coexistence is NOT TESTED. Knowledge & Wisdom's dedicated-storage guard still blocks knowledge-dependent MP recovery. G7 and stable G8 remain BLOCKED. Existing Workshop item 3788592396.

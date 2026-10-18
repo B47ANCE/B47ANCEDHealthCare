@@ -4,6 +4,7 @@ import hashlib
 from pathlib import Path
 import re
 import struct
+from PIL import Image
 from lupa.lua51 import LuaRuntime
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -56,13 +57,18 @@ def main():
         "preview.png", f"{inventory['source_root']}/thumbnail.png",
         f"{inventory['source_root']}/42/{info['poster']}",
     }, "Artwork roles differ from authoritative metadata"
-    for entry in [artwork["original"], *artwork["outputs"], artwork["preserved_icon"]]:
+    for entry in [artwork["original"], *artwork["outputs"], artwork["icon"], artwork["icon_original"], artwork["previous_icon"]]:
         data = (ROOT / entry["path"]).read_bytes()
         assert hashlib.sha256(data).hexdigest() == entry["sha256"], f"Artwork hash: {entry['path']}"
         assert len(data) == entry["bytes"] and data[:8] == b"\x89PNG\r\n\x1a\n"
         assert list(struct.unpack(">II", data[16:24])) == entry["dimensions"]
     assert len({entry["sha256"] for entry in artwork["outputs"]}) == 1
     assert all(entry["dimensions"] == [512, 512] and entry["bytes"] < 1_000_000 for entry in artwork["outputs"])
+    assert artwork["icon"]["path"] == f"{inventory['source_root']}/42/{info['icon']}"
+    with Image.open(ROOT / artwork["icon"]["path"]) as icon:
+        assert icon.mode == "RGBA" and icon.size == (32, 32), "Mod icon must preserve the established 32x32 alpha slot"
+        assert icon.getchannel("A").getextrema() == (0, 255), "Mod icon needs actual transparent and opaque pixels"
+        assert all(icon.getpixel(point)[3] == 0 for point in ((0, 0), (31, 0), (0, 31), (31, 31))), "Icon corners must be transparent"
     for name in ("WORKSHOP_DESCRIPTION.txt", "WORKSHOP_CHANGE_NOTE.txt", "workshop.txt"):
         text = (ROOT / name).read_text(encoding="utf-8-sig")
         assert "\\n" not in text and "MP testing build - dedicated multiplayer NOT TESTED" in text
