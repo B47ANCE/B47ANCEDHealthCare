@@ -1,7 +1,7 @@
 local Mortis=require "Mortis/init"
 
 local medWorks=rawget(_G,"medWorks") or {}
-medWorks.VERSION="0.12.0"
+medWorks.VERSION="0.12.1"
 medWorks.Procedures=medWorks.Procedures or {}
 
 local PART_TYPES={

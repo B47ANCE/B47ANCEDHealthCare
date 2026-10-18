@@ -2,9 +2,9 @@
   "schema": 1,
   "id": "health",
   "name": "Health Care",
-  "version": "0.12.0",
+  "version": "0.12.1",
   "reviewed": true,
-  "source_digest": "d76b6e2862cb5d01002b52a658bf1350f52831060f67e6cd912e8644332d10d0",
+  "source_digest": "752ed0208a3aa0000e4e7899693e3d57deac0bb3082ef0135aea59ded9de0119",
   "features": [
     {
       "status": "Source",
@@ -31,13 +31,14 @@
       "text": "Only Cure+ clinical/prosthetic mutation and remote observations require authority, privacy and anatomy-ownership contracts."
     }
   ],
-  "limits": "Development source 0.12.0. Only Cure+ native SP/split-screen/hosted/dedicated coexistence NOT TESTED; no remote or treatment bridge. G7 and stable G8 BLOCKED. Knowledge & Wisdom 0.16.0 dedicated storage unavailable. Last distributed Health Care version is 0.10.1.",
+  "limits": "Development source 0.12.1. Only Cure+ native SP/split-screen/hosted/dedicated coexistence NOT TESTED; no remote or treatment bridge. G7 and stable G8 BLOCKED. Knowledge & Wisdom 0.16.0 dedicated storage unavailable. Last distributed Health Care version is 0.10.1.",
   "evidence": [
     "README.md",
     "docs/ARCHITECTURE.md",
-    "docs/VALIDATION_0_12_0.md",
+    "docs/VALIDATION_0_12_1.md",
     "docs/ONLY_CURE_PLUS_OBSERVATION.md",
-    "docs/ONLY_CURE_PLUS_AUDIT_2026_10_17.md"
+    "docs/ONLY_CURE_PLUS_AUDIT_2026_10_17.md",
+    "artwork/ARTWORK.json"
   ],
   "relations": [
     {

@@ -1,5 +1,5 @@
 {
-  "project_version": "0.12.0",
+  "project_version": "0.12.1",
   "display_name": "B47ANCE'd Health Care",
   "source_root": "src/B47ANCEDHealthCare",
   "mod_ids": [
@@ -65,7 +65,7 @@
       "pattern": "\\A# Changelog\\n\\n## ([^ ]+) - "
     },
     {
-      "path": "docs/VALIDATION_0_12_0.md",
+      "path": "docs/VALIDATION_0_12_1.md",
       "pattern": "^Current version: ([^ ]+)\\.$"
     },
     {
@@ -92,7 +92,8 @@
     "docs/RELEASE_PROVENANCE_0_10_1.json",
     "docs/history/0.11.0-branches/coldpack-validation.md",
     "docs/history/0.11.0-branches/examination-validation.md",
-    "docs/VALIDATION_0_11_0.md"
+    "docs/VALIDATION_0_11_0.md",
+    "docs/VALIDATION_0_12_0.md"
   ],
   "last_distributed_version": "0.10.1"
 }

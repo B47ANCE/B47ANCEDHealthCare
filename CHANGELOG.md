@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.12.1 - 2026-10-18
+
+PATCH: use the approved transparent medical-bag artwork as the 32x32 mod icon. Preserve the thumbnail, poster, Workshop preview and prior artwork byte-for-byte. Merge the reviewed audit/local Only Cure+ observation source for an explicitly authorized labelled Workshop MP test upload after checks. No gameplay or save-schema change from 0.12.0. Native coexistence and dedicated behavior remain NOT TESTED; G7/stable G8 BLOCKED.
+
 ## 0.12.0 - 2026-10-17
 
 MINOR: add independent, optional Only Cure+ 3.2.0 capability detection and local self-observation through the existing examination/report workflow. Reject remote/server/unsupported/unready/malformed contexts; export bounded detached structural observations, never mobility or clinical state. Add localized report fields and focused offline regressions. No upstream initialization, ModData writes, commands, topology changes, progression or materials. Preserve dependency/activation/save identities. Native SP/hosted/dedicated NOT TESTED; G7/stable G8 BLOCKED. Source-only iteration, no package/deploy/upload.
