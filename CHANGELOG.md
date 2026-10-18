@@ -2,6 +2,8 @@
 
 ## 0.12.1 - 2026-10-18
 
+Pre-upload packaging repair: accept Windows CRLF as well as LF metadata, while rejecting duplicate fields and mismatched Mod ID/version/dependencies. Pure metadata regression tests added; no gameplay changes.
+
 PATCH: use the approved transparent medical-bag artwork as the 32x32 mod icon. Preserve the thumbnail, poster, Workshop preview and prior artwork byte-for-byte. Merge the reviewed audit/local Only Cure+ observation source for an explicitly authorized labelled Workshop MP test upload after checks. No gameplay or save-schema change from 0.12.0. Native coexistence and dedicated behavior remain NOT TESTED; G7/stable G8 BLOCKED.
 
 ## 0.12.0 - 2026-10-17

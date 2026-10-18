@@ -18,6 +18,15 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
+def validate_mod_metadata(data, version):
+    # Git checkouts may use LF or CRLF; validate fields, not newline substrings.
+    pairs = [line.split("=", 1) for line in data.decode("utf-8-sig").splitlines() if "=" in line]
+    metadata = dict(pairs)
+    assert len(metadata) == len(pairs), "Duplicate mod metadata field"
+    assert metadata.get("id") == MOD and metadata.get("modversion") == version, "Mod identity/version differs"
+    assert metadata.get("require") == "ProjectMORTIS,B47ANCEDKnowledgeAndWisdom", "Required Mod IDs differ"
+
+
 def inputs():
     inventory = json.loads((ROOT / "SOURCE_INVENTORY.json").read_text())
     version = (ROOT / "VERSION").read_text().strip()
@@ -38,9 +47,7 @@ def inputs():
     for name in ("preview.png", "workshop.txt"):
         expected[name] = (ROOT / name).read_bytes()
     assert len(expected) == len({name.casefold() for name in expected})
-    info = expected[f"Contents/mods/{MOD}/42/mod.info"].decode("utf-8-sig")
-    assert f"id={MOD}\n" in info and f"modversion={version}\n" in info
-    assert "require=ProjectMORTIS,B47ANCEDKnowledgeAndWisdom" in info
+    validate_mod_metadata(expected[f"Contents/mods/{MOD}/42/mod.info"], version)
     descriptor = expected["workshop.txt"].decode("utf-8-sig")
     assert "visibility=public" in descriptor and "MP testing build - dedicated multiplayer NOT TESTED" in descriptor
     return version, expected

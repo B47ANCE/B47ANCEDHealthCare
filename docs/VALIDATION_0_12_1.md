@@ -31,3 +31,5 @@ it does not clear G7 or stable G8. Steam restart needs a new specific confirmati
 after verified upload success. Publication never implies local/server deployment.
 
 Publication will use `python scripts/prepare_workshop.py --preserve-existing-preview`: the descriptor omits previewfile as well as visibility/tags, preserving the live Workshop thumbnail even if its server-side copy differs from local authoring assets. The staged preview remains hash-checked. Final package/VDF evidence is recorded with the upload result.
+
+The first real build correctly stopped before artifact creation/upload because the legacy builder tested metadata using LF-only byte substrings after a Windows checkout. This pre-upload tooling repair validates parsed UTF-8/BOM-aware splitlines, rejects duplicate fields and retains exact identity/version/dependency checks. `python -m unittest discover -s tests -p test_package_metadata.py` covers LF/CRLF, optional final newline/BOM, duplicate and mismatched fields. Actual source input enumeration is rerun before packaging; no unsafe bypass or package relabelling is used. This remains the unuploaded 0.12.1 candidate.
