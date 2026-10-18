@@ -105,3 +105,5 @@ The user-selected [The Only Cure+ and Wound Expansion audit](docs/THIRD_PARTY_RE
 The approved medical-bag cutout is exported to the existing 32x32 transparent mod-icon slot. The thumbnail, poster and Workshop preview remain byte-for-byte unchanged. Original icon artwork, prompt and previous icon are retained under artwork/. This PATCH includes the prior independently authored local Only Cure+ observation source; native coexistence remains NOT TESTED. The explicit publication request is for a labelled Workshop MP test build, not stable G8 approval. Source checks require Pillow and the host suite requires lupa.lua51.
 
 For the requested thumbnail-preserving publication, `python scripts/prepare_workshop.py --preserve-existing-preview` omits previewfile from the upload descriptor while validating the unchanged packaged preview.
+
+Package metadata regression: `python -m unittest discover -s tests -p test_package_metadata.py` checks LF/CRLF/BOM input and rejects duplicate or mismatched identity/version/dependencies. This pre-upload 0.12.1 tooling repair preserves runtime gameplay.
