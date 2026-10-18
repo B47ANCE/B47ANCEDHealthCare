@@ -1,4 +1,6 @@
-# Detailed examination reports — 0.11.0 source
+# Detailed examination reports — current 0.12.0 source
+
+0.12.0 adds an optional [Only Cure+ local self-observation section](ONLY_CURE_PLUS_OBSERVATION.md). It formats twelve validated structural observations or a localized unavailable state, using ten additional UI keys in all 29 English-fallback dictionaries. A report containing this section uses a neutral completion summary; vanilla fields cleared by another mod cannot imply healthy anatomy. The snapshot retains the same cache limits below and rendering performs no upstream queries.
 
 After completing Perform examination, reopen the body-region context menu for the same patient and select View last examination. The option is available only to the same local examiner while their session-local observation remains cached. The callback checks again, so an old menu cannot reopen an expired or different patient's report. No examination is started by viewing.
 

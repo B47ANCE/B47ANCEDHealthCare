@@ -1,5 +1,5 @@
 {
-  "provenance": "User-supplied Health Care artwork, attached 2026-10-16; no generative edits. Original retained byte-for-byte. No third-party license inferred.",
+  "provenance": "User-supplied Health Care thumbnail/poster retained unchanged. Approved icon generated from that image using built-in image_gen with transparent alpha, then explicitly selected by owner on 2026-10-18. No third-party rights inferred.",
   "original": {
     "path": "artwork/health-care-original.png",
     "sha256": "5656c81da79c59efcb72cabaf0a8cb161f8ff07422f366bbeb60e6ae27548643",
@@ -46,16 +46,6 @@
       "bytes": 308715
     }
   ],
-  "preserved_icon": {
-    "path": "src/B47ANCEDHealthCare/42/icon.png",
-    "sha256": "fa3da2fd25be9ab6348b4c576fdbb7219f52e2ede48ad979bd32d1a79d65e0ee",
-    "dimensions": [
-      32,
-      32
-    ],
-    "mode": "RGBA",
-    "bytes": 2658
-  },
   "previous_outputs": {
     "source_commit": "0c7fd8defe24d859db69d585c7a3f0b5f9649c76",
     "paths": [
@@ -64,5 +54,42 @@
       "src/B47ANCEDHealthCare/42/thumbnail.png"
     ],
     "sha256": "ad1ebdc8e6c81309b8b8000e21417d40d85bc500a9d629326d11d8bfa5c128e0"
+  },
+  "previous_icon": {
+    "path": "artwork/health-care-icon-pre-0.12.1.png",
+    "sha256": "fa3da2fd25be9ab6348b4c576fdbb7219f52e2ede48ad979bd32d1a79d65e0ee",
+    "dimensions": [
+      32,
+      32
+    ],
+    "mode": "RGBA",
+    "bytes": 2658,
+    "source_commit": "83a3f9e0876f392a989ffa4ba54fc37fe63576db"
+  },
+  "icon_original": {
+    "path": "artwork/health-care-bag-icon-original.png",
+    "sha256": "b58b89c9fb92c55d6e17d97ee16735e85d646b5ecba5dec2b48c278d1c1639cf",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "bytes": 1556873
+  },
+  "icon": {
+    "path": "src/B47ANCEDHealthCare/42/icon.png",
+    "sha256": "87883d9b5e4ec034a28f949a5e0fd3745c7ebf4235e9dfa474a77099392984af",
+    "dimensions": [
+      32,
+      32
+    ],
+    "mode": "RGBA",
+    "bytes": 2635
+  },
+  "icon_export": {
+    "operation": "Approved alpha artwork exported to existing 32x32 mod-icon slot using Pillow LANCZOS; preserve RGBA. No generative redraw at integration.",
+    "pillow_version": "12.3.0",
+    "prompt": "artwork/health-care-bag-icon.prompt.txt",
+    "method": "built-in image_gen edit (previously approved source); deterministic size export"
   }
 }

@@ -1,0 +1,341 @@
+{
+  "audit_date": "2026-10-17",
+  "timezone": "America/Phoenix",
+  "scope": "Read-only interoperability and dependency audit; no upstream execution/import/modification",
+  "health_care": {
+    "version": "0.11.0",
+    "commit": "c6eae57de7e32ccef862372d1f63e5215783d847",
+    "files": [
+      {
+        "path": "src/B47ANCEDHealthCare/42/mod.info",
+        "sha256": "ba3efc0df2ce7ef062c569b350137aae6df0eefc620130e922e31c5336953dbc"
+      },
+      {
+        "path": "src/B47ANCEDHealthCare/42/media/lua/shared/medWorks/Examination.lua",
+        "sha256": "a122e34d9ae2e7bd3b2f05c953017099f41af4ead2fd0ab96f3986871df3538f"
+      },
+      {
+        "path": "src/B47ANCEDHealthCare/42/media/lua/client/medWorks/ExaminationAction.lua",
+        "sha256": "57e1263f371e6b6614a0ea43884eda005fe1e9c97d923fa4be4766ebf9662c9d"
+      },
+      {
+        "path": "src/B47ANCEDHealthCare/42/media/lua/client/medWorks/ExaminationMenu.lua",
+        "sha256": "67928dbade5acc3e6b50a0dc0b464bf68bb003419ca8e0223c72f40ada5ba896"
+      },
+      {
+        "path": "src/B47ANCEDHealthCare/42/media/lua/shared/medWorks/CorpseRecovery.lua",
+        "sha256": "ab7fdfe9ed324cacede3b92a5bc84a92a76e4c46caf9dfc5d050795fcda5a911"
+      },
+      {
+        "path": "src/B47ANCEDHealthCare/42/media/lua/shared/medWorks/init.lua",
+        "sha256": "4969009b40b9d4380af34827608c08b335fd3a2b03c7db08c49405d8111c3794"
+      },
+      {
+        "path": "src/B47ANCEDHealthCare/42/media/lua/shared/medWorks/RecoverPartAction.lua",
+        "sha256": "4f92d4001f95293e11820d0c99275a4ff1b1b195416b59de18a33236f12dad4a"
+      },
+      {
+        "path": "src/B47ANCEDHealthCare/42/media/lua/shared/medWorks/SunburnCareAction.lua",
+        "sha256": "52bd4816210a7c6fdaca7ac34ecbe2ebf466872772d84b2de7496bc4ad6b3422"
+      },
+      {
+        "path": "src/B47ANCEDHealthCare/42/media/lua/shared/medWorks/ExaminationReport.lua",
+        "sha256": "2b56da6aa5c98ed8b0a3c4c978083934b3f1beae9f671f90cb588bb139ae8a9b"
+      }
+    ]
+  },
+  "only_cure": {
+    "workshop_id": "3818733381",
+    "mod_id": "TheOnlyCurePlus",
+    "author": "NEXCONKER",
+    "license": "GPL-3.0",
+    "installed_version": "3.2.0",
+    "repository": "https://github.com/Nexconker/TheOnlyCurePlus",
+    "public_commit": "9e08c4b54df008595418f36aa0c648d197290518",
+    "public_version": "3.2.0",
+    "public_head_rechecked": true,
+    "installed_inventory": {
+      "files": 903,
+      "tree_sha256": "e78e57c46b650dfd6fc0dc241810dfbc1c366a313e87c4f07768e7eef2c16315",
+      "tree_hash_format": "SHA256 of sorted relative POSIX path + NUL + file SHA256 + LF",
+      "custom_native_paths": [],
+      "require_key_collisions": [
+        [
+          "42/media/lua/server/TOC/Events.lua",
+          "42/media/lua/shared/TOC/Events.lua"
+        ]
+      ],
+      "lua_files_in_realm_directories": 65,
+      "all_lua_files": 66,
+      "require_key_collisions_note": "Cross-realm TOC/Events shared/server duplicate is an existing upstream resolver ambiguity, not a filename-case collision. Which module require selects is a runtime gate."
+    },
+    "public_inventory": {
+      "files": 903,
+      "tree_sha256": "e78e57c46b650dfd6fc0dc241810dfbc1c366a313e87c4f07768e7eef2c16315"
+    },
+    "delta": {
+      "changed_files": 0,
+      "installed_only_files": 0,
+      "public_only_files": 0,
+      "changed_lua": [],
+      "changed_audit_paths": []
+    },
+    "files": [
+      {
+        "path": "42/mod.info",
+        "sha256": "79fffb572faf858f2e0eac1edf098bee643d16ec711940d33e468f4b1713451f",
+        "matches_public": true,
+        "public_sha256": "79fffb572faf858f2e0eac1edf098bee643d16ec711940d33e468f4b1713451f"
+      },
+      {
+        "path": "LICENSE",
+        "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+        "matches_public": true,
+        "public_sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+      },
+      {
+        "path": "42/media/lua/client/TOC/API.lua",
+        "sha256": "2202febbe2226b3809457e5bccad1890e3c4c1d407d2401588eb063d2cf4dc98",
+        "lines": [
+          [
+            14,
+            18
+          ],
+          [
+            53,
+            65
+          ]
+        ],
+        "matches_public": true,
+        "public_sha256": "2202febbe2226b3809457e5bccad1890e3c4c1d407d2401588eb063d2cf4dc98"
+      },
+      {
+        "path": "42/media/lua/client/TOC/Plus/LegMobility.lua",
+        "sha256": "bc4f86c1680ff36e73655cc4054f95ad28972814d8867d70ea9a4f55c0bb1e15",
+        "lines": [
+          [
+            69,
+            95
+          ]
+        ],
+        "matches_public": true,
+        "public_sha256": "bc4f86c1680ff36e73655cc4054f95ad28972814d8867d70ea9a4f55c0bb1e15"
+      },
+      {
+        "path": "42/media/lua/shared/TOC/Controllers/DataController.lua",
+        "sha256": "617ca621a304eb575119c3bb3cbf60ff3737302556d2b8fb1f4d5b7b99e1a193",
+        "lines": [
+          [
+            131,
+            153
+          ],
+          [
+            412,
+            429
+          ]
+        ],
+        "matches_public": true,
+        "public_sha256": "617ca621a304eb575119c3bb3cbf60ff3737302556d2b8fb1f4d5b7b99e1a193"
+      },
+      {
+        "path": "42/media/lua/server/TOC/Controllers/ServerDataController.lua",
+        "sha256": "05057b55b3a1fb595f02c346eecdfef8bc111ef07c25e6aab191f33c70e22aa2",
+        "matches_public": true,
+        "public_sha256": "05057b55b3a1fb595f02c346eecdfef8bc111ef07c25e6aab191f33c70e22aa2"
+      },
+      {
+        "path": "42/media/lua/server/TOC/ServerRelayCommands.lua",
+        "sha256": "6c18bb8944c45f166cd80f3a61fa4e38293993e40d681e65e89123ffa913aa75",
+        "lines": [
+          [
+            50,
+            96
+          ],
+          [
+            111,
+            165
+          ],
+          [
+            211,
+            244
+          ],
+          [
+            340,
+            347
+          ]
+        ],
+        "matches_public": true,
+        "public_sha256": "6c18bb8944c45f166cd80f3a61fa4e38293993e40d681e65e89123ffa913aa75"
+      },
+      {
+        "path": "42/media/lua/server/TOC/Handlers/ServerDataHandler.lua",
+        "sha256": "4cf1c71c72b6eb0642e99349a4fc029b92c4ca403db53c76d3d90f020c4bc75a",
+        "matches_public": true,
+        "public_sha256": "4cf1c71c72b6eb0642e99349a4fc029b92c4ca403db53c76d3d90f020c4bc75a"
+      },
+      {
+        "path": "42/media/lua/client/TOC/Controllers/ClientDataController.lua",
+        "sha256": "d8317d9bd579fb07d248d23c98766da9f944935cbafc973f8204506f2d088d23",
+        "matches_public": true,
+        "public_sha256": "d8317d9bd579fb07d248d23c98766da9f944935cbafc973f8204506f2d088d23"
+      },
+      {
+        "path": "42/media/lua/shared/TOC/Handlers/CachedDataHandler.lua",
+        "sha256": "923f5423261158434dca2a3bdce209ca75ecc91824b9609eb75e6945333a88dd",
+        "matches_public": true,
+        "public_sha256": "923f5423261158434dca2a3bdce209ca75ecc91824b9609eb75e6945333a88dd"
+      },
+      {
+        "path": "42/media/lua/shared/TOC/BaseTimedActionOverride.lua",
+        "sha256": "0a8a1d1c1d9fb01993b67158abeaa3436654860ddb03bc89b7625c65882ff352",
+        "lines": [
+          [
+            8,
+            42
+          ],
+          [
+            66,
+            87
+          ]
+        ],
+        "matches_public": true,
+        "public_sha256": "0a8a1d1c1d9fb01993b67158abeaa3436654860ddb03bc89b7625c65882ff352"
+      },
+      {
+        "path": "42/media/lua/client/TOC/UI/HealthPanel.lua",
+        "sha256": "771fe2afe73a74172c9184c5f81590a2c12182a0cc775a2e45470909a521978d",
+        "lines": [
+          [
+            38,
+            59
+          ],
+          [
+            139,
+            147
+          ]
+        ],
+        "matches_public": true,
+        "public_sha256": "771fe2afe73a74172c9184c5f81590a2c12182a0cc775a2e45470909a521978d"
+      },
+      {
+        "path": "42/media/lua/shared/TOC/Handlers/AmputationHandler.lua",
+        "sha256": "8b7ef69061278ce36aabf0df1e07001afa9a9409318f32b94c007c93a5e4540f",
+        "lines": [
+          [
+            111,
+            124
+          ],
+          [
+            198,
+            260
+          ]
+        ],
+        "matches_public": true,
+        "public_sha256": "8b7ef69061278ce36aabf0df1e07001afa9a9409318f32b94c007c93a5e4540f"
+      },
+      {
+        "path": "42/media/lua/server/TOC/Controllers/ServerDamageSanitizer.lua",
+        "sha256": "7ef77697d0027b23c880997c65fa6245315835b687755c0f39ffa57f0c13a803",
+        "matches_public": true,
+        "public_sha256": "7ef77697d0027b23c880997c65fa6245315835b687755c0f39ffa57f0c13a803"
+      },
+      {
+        "path": "42/media/lua/shared/TOC/Events.lua",
+        "sha256": "01a87dae083f38ccd2737e0f0a061ce426b7ea4665f6cac1d560b3891d3f16eb",
+        "matches_public": true,
+        "public_sha256": "01a87dae083f38ccd2737e0f0a061ce426b7ea4665f6cac1d560b3891d3f16eb"
+      },
+      {
+        "path": "42/media/lua/shared/TOC/StaticData.lua",
+        "sha256": "675a7d5b02fb73217c99e4494dec426072a2bea49dade9f2ea944fa9d4111db5",
+        "matches_public": true,
+        "public_sha256": "675a7d5b02fb73217c99e4494dec426072a2bea49dade9f2ea944fa9d4111db5"
+      },
+      {
+        "path": "42/media/lua/client/TOC/Main.lua",
+        "sha256": "1a65bfa8b22f080c53b074698df4d2d741fdc30d99f53a55a32f9de482da2c26",
+        "matches_public": true,
+        "public_sha256": "1a65bfa8b22f080c53b074698df4d2d741fdc30d99f53a55a32f9de482da2c26"
+      },
+      {
+        "path": "42/media/lua/shared/TOC/CommandsData.lua",
+        "sha256": "ae9d4ec93e2e5664336d7a5e9ce35e49fc8279751802cbb6397e4db1d3426782",
+        "matches_public": true,
+        "public_sha256": "ae9d4ec93e2e5664336d7a5e9ce35e49fc8279751802cbb6397e4db1d3426782"
+      },
+      {
+        "path": "42/media/lua/shared/TOC/BodyLocations.lua",
+        "sha256": "6ecd734cd1e4ce442b3f9f3c75019adf8ca134415db093f453837f522ee313df",
+        "matches_public": true,
+        "public_sha256": "6ecd734cd1e4ce442b3f9f3c75019adf8ca134415db093f453837f522ee313df"
+      },
+      {
+        "path": "42/media/lua/shared/TOC/Handlers/ProsthesisHandler.lua",
+        "sha256": "06d6f5df7a8296bb931ffa06f32950ea67bd77e0865d94d97d8e3bfdfc5a8a69",
+        "matches_public": true,
+        "public_sha256": "06d6f5df7a8296bb931ffa06f32950ea67bd77e0865d94d97d8e3bfdfc5a8a69"
+      },
+      {
+        "path": "42/media/lua/shared/TOC/Plus/SurgeryPlan.lua",
+        "sha256": "d24ca88d84d1589ba13ae5e8e94dcacd02942d6c1da7502d72821f56a43b1bc0",
+        "matches_public": true,
+        "public_sha256": "d24ca88d84d1589ba13ae5e8e94dcacd02942d6c1da7502d72821f56a43b1bc0"
+      },
+      {
+        "path": "42/media/lua/shared/TOC/Plus/PostOp.lua",
+        "sha256": "a62c1f6be6b5a11a5d8759712faf8bb05425ff24961075bf1d41747575e148b1",
+        "matches_public": true,
+        "public_sha256": "a62c1f6be6b5a11a5d8759712faf8bb05425ff24961075bf1d41747575e148b1"
+      }
+    ],
+    "initial_metadata_observation": "3.1.1 at audit start; external Workshop files changed during read-only audit. Final captured metadata and scoped rehash are 3.2.0. Earlier observation is not the final fingerprinted snapshot."
+  },
+  "mortis": {
+    "version": "0.25.0-dev.4",
+    "commit": "f0358fef2ec4519cbfb26bad641699488c7f8ec9",
+    "dirty": false,
+    "files": [
+      {
+        "path": "src/ProjectMORTIS/42/media/lua/shared/Mortis/Runtime/AnatomyRuntime.lua",
+        "sha256": "ff881f60861d309fe2006900adbf7965d625dde003d8ebdf837b6f3bc58a5bcd"
+      },
+      {
+        "path": "src/ProjectMORTIS/42/media/lua/shared/Mortis/Definitions/CoreAnatomy.lua",
+        "sha256": "31410c4990f76ae59d5f74b23be928a5f222999aa5a3cb075196efc7f175e281"
+      },
+      {
+        "path": "src/ProjectMORTIS/42/media/lua/shared/Mortis/Runtime/AnatomyConsequenceRuntime.lua",
+        "sha256": "f1161ae6738d27db16097bd4ce8c70cc6915b04146c71d1e6d562bd467e60473"
+      }
+    ]
+  },
+  "knowledge": {
+    "version": "0.16.0",
+    "commit": "6ba66c0d8f246d438f2e2f3c974fee9f77fdb426",
+    "files": [
+      {
+        "path": "src/B47ANCEDKnowledgeAndWisdom/42/media/lua/shared/B47ANCEDKnowledgeAndWisdom/AuthorityGuard.lua",
+        "sha256": "716cf083b16eaf5c556cea823c880cfbe59e41c34bc9379e96b55834e78caafa"
+      }
+    ]
+  },
+  "game": {
+    "steam_build": "25485521",
+    "exact_engine_patch": "UNKNOWN",
+    "files": [
+      {
+        "path": "media/lua/client/OptionScreens/ModSelector/ModSelectorModel.lua",
+        "sha256": "a42f02da40a1f3be4e221b94ef126d38c92e71119472b097a1fdcfa826c7f67e"
+      },
+      {
+        "path": "media/lua/shared/TimedActions/ISBaseTimedAction.lua",
+        "sha256": "ad72e57f976bd1564d59d08d98d06f8c8d4acea6386aace48e0d99ce9d02a1f0"
+      }
+    ]
+  },
+  "production_imports": [],
+  "asset_imports": [],
+  "external_modifications": [],
+  "runtime": "PZ/SP/hosted/dedicated NOT TESTED",
+  "review": "Independent review of new audit pending; earlier research signoff does not cover this audit"
+}

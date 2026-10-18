@@ -1,4 +1,5 @@
 """Prepare an existing-item VDF from canonical text. Never authenticates/uploads."""
+import argparse
 import json
 import hashlib
 from pathlib import Path
@@ -14,6 +15,9 @@ def quote(value):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--preserve-existing-preview", action="store_true", help="Omit previewfile so Steam retains the existing Workshop thumbnail")
+    options = parser.parse_args()
     subprocess.run([sys.executable, str(ROOT / "scripts/check_versions.py")], check=True)
     subprocess.run([sys.executable, str(ROOT / "scripts/validate_source.py")], check=True)
     subprocess.run([sys.executable, str(ROOT / "scripts/package_project.py"), "--verify"], check=True)
@@ -27,14 +31,16 @@ def main():
     values = {
         "appid": "108600", "publishedfileid": "3788592396",
         "contentfolder": (ROOT / f"dist/workshop-{version}").as_posix(),
-        "previewfile": (ROOT / f"dist/workshop-{version}/preview.png").as_posix(),
         "title": "B47ANCE'd Health Care", "description": description, "changenote": changes,
     }
-    preview = Path(values["previewfile"]).read_bytes()
+    preview_path = ROOT / f"dist/workshop-{version}/preview.png"
+    if not options.preserve_existing_preview:
+        values["previewfile"] = preview_path.as_posix()
+    preview = preview_path.read_bytes()
     assert preview.startswith(b"\x89PNG\r\n\x1a\n") and 0 < len(preview) < 1_000_000, "Preview must be PNG under 1 MB"
     assert hashlib.sha256(preview).hexdigest() == manifest["files"]["preview.png"], "Preview differs from verified package"
-    # The user supplied replacement artwork. Include its verified staged preview;
-    # omit visibility and tags to preserve the existing item's settings.
+    # Preview replacement is explicit; preserve-existing-preview leaves Steam's
+    # current thumbnail untouched. Visibility/tags are always omitted.
     text = '"workshopitem"\n{\n' + "".join(f"    {quote(key)} {quote(value)}\n" for key, value in values.items()) + "}\n"
     tokens = re.findall(r'"(?:\\.|[^"\\])*"', text, re.S)
     decoded = [json.loads(token, strict=False) for token in tokens]
@@ -44,7 +50,8 @@ def main():
         assert target.read_text(encoding="utf-8") == text, "Existing descriptor differs; review explicitly"
     else:
         target.write_text(text, encoding="utf-8", newline="\n")
-    print("PASS: existing item 3788592396 / App 108600; canonical title, description, changes and verified preview; actual paragraph breaks round-trip; visibility/tags omitted")
+    preview_result = "existing Workshop preview preserved (previewfile omitted)" if options.preserve_existing_preview else "verified staged preview included"
+    print(f"PASS: existing item 3788592396 / App 108600; canonical title, description, changes; {preview_result}; actual paragraph breaks round-trip; visibility/tags omitted")
     print("VDF:", target)
 
 

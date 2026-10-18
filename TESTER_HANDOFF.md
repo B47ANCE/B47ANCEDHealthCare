@@ -1,4 +1,4 @@
-# B47ANCE'd Health Care 0.11.0 playtester handoff
+# B47ANCE'd Health Care 0.12.1 playtester handoff
 
 Begin only after the first two dependency-stage reports are reviewed as PASS.
 Enable only B47ANCED Knowledge & Wisdom, Project M.O.R.T.I.S., and B47ANCE'd Health Care (`B47ANCEDHealthCare`) on a disposable
@@ -24,8 +24,14 @@ MP testing build - dedicated multiplayer NOT TESTED. Prior 0.8.2/0.9.2 reports a
 
 ## Optional Spectrum self-care (0.11.0)
 
-With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-click a vanilla cold pack in your main inventory while you have documented sunburn. The native timed self-care action consumes the pack and reduces canonical Spectrum dose. It is self-only and server validated; no other-player treatment or free client RPC. Sandbox controls enablement, duration and reduction. Uncertain item/dose outcomes remain locked for inspection; see [current care validation](docs/VALIDATION_0_11_0.md)  Native SP/dedicated NOT TESTED; no package, deployment or upload.
+With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-click a vanilla cold pack in your main inventory while you have documented sunburn. The native timed self-care action consumes the pack and reduces canonical Spectrum dose. It is self-only and server validated; no other-player treatment or free client RPC. Sandbox controls enablement, duration and reduction. Uncertain item/dose outcomes remain locked for inspection; see [current care validation](docs/VALIDATION_0_12_0.md)  Native SP/dedicated NOT TESTED; no package, deployment or upload.
 
 0.10.1 changes thumbnail/poster artwork and future preview selection only. The subsequent explicit publish request distributed 0.10.1 to existing item 3788592396 for MP testing; see docs/WORKSHOP_UPLOAD_0_10_1.md. No local deployment/server changes. Verify the full Health Care poster and text in the mod selector; this visual check is currently NOT TESTED.
 
 0.11.0 source adds View last examination. Following an explicitly requested test build/deployment, check that the option appears only after a completed observation and only for that local examiner/patient. Open and scroll the historical report; verify font/layout, mouse/keyboard/controller, split-screen window/focus isolation, expiry on reopening and unchanged game speed on close. An open report stays historical after expiry. No 0.11.0 package or deployment exists. Current Knowledge & Wisdom 0.16.0 blocks multiplayer storage; keep dedicated knowledge/recovery tests BLOCKED pending its owning-project fix. See docs/EXAMINATION_REPORTS.md and docs/VALIDATION_0_11_0.md.
+
+## Only Cure+ local self-observation (0.12.0)
+
+After an explicitly authorized test deployment, enable the original Only Cure+ 3.2.0 alongside Health Care and its dependencies on a disposable save. Complete Perform examination on yourself, then open View last examination. Check all twelve structural labels, each supported loss level, prosthetic support, unavailable data and healthy native BodyParts that coexist with upstream limb loss. Confirm the adapter issues no treatment, material consumption, knowledge/XP grant, command or foreign save write. Track the original mod's general-action wear/bleeding hooks separately: the existing native base completion still invokes those owner rules, after the observation is captured. Reopening must retain the historical facts without querying upstream.
+
+Test absent/unsupported/conflicting/unready/malformed dependency states, both local player slots, examiner/patient object replacement, remote-patient exclusion, cache expiry and both health-panel wrapping orders. Verify native action duration/cancel/completion and original wear/bleeding hooks; offline mocks do not prove those native effects. On dedicated, verify the client-only adapter is not loaded server-side and that local reports never authorize treatment. Existing G7/stable G8 and Knowledge & Wisdom storage gates remain blocked. No game/server launch, deploy or publish is authorized by this document. See ONLY_CURE_PLUS_OBSERVATION.md and VALIDATION_0_12_0.md under docs/.

@@ -1,6 +1,10 @@
 # B47ANCE'd Health Care Master Roadmap
 
-Canonical version: 0.11.0.
+Canonical version: 0.12.1.
+
+## Original Only Cure+ dependency track
+
+The owner selected clean-room support for the separately installed original, superseding absorption. The [2026-10-17 dependency/coexistence audit](ONLY_CURE_PLUS_AUDIT_2026_10_17.md) records historical blockers. 0.12.0 implements [version/readiness-gated capability detection, local self-observation and original report presentation](ONLY_CURE_PLUS_OBSERVATION.md), with no new required dependency or shared gameplay state. Native hook coexistence and independent review remain pending. Remote data, treatments, surgery and prosthetic mutations still require authoritative contracts and anatomy-ownership proof. Do not reuse upstream relay commands or mirror cut flags into MORTIS; existing mandatory gates below remain in force.
 
 ## First slice completed in source
 
@@ -28,7 +32,7 @@ G7 dedicated multiplayer BLOCKED / NOT TESTED. Stable G8 BLOCKED. No 0.10.0 pack
 
 ## Optional Spectrum self-care (0.11.0)
 
-With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-click a vanilla cold pack in your main inventory while you have documented sunburn. The native timed self-care action consumes the pack and reduces canonical Spectrum dose. It is self-only and server validated; no other-player treatment or free client RPC. Sandbox controls enablement, duration and reduction. Uncertain item/dose outcomes remain locked for inspection; see [current care validation](VALIDATION_0_11_0.md)  Native SP/dedicated NOT TESTED; no package, deployment or upload.
+With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-click a vanilla cold pack in your main inventory while you have documented sunburn. The native timed self-care action consumes the pack and reduces canonical Spectrum dose. It is self-only and server validated; no other-player treatment or free client RPC. Sandbox controls enablement, duration and reduction. Uncertain item/dose outcomes remain locked for inspection; see [current care validation](VALIDATION_0_12_0.md)  Native SP/dedicated NOT TESTED; no package, deployment or upload.
 
 0.10.1 adds the supplied Health Care thumbnail/poster and package-bound preview selection only. See VALIDATION_0_10_1.md. Gameplay roadmap priorities and runtime gates are unchanged. The subsequent explicit publish request produced a verified 0.10.1 Workshop MP test upload; see WORKSHOP_UPLOAD_0_10_1.md. No local deploy or server change.
 

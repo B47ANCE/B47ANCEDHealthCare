@@ -59,6 +59,43 @@ local function partLine(part)
     if label==""then label=tr("BodyPart","Body part")end
     return label..": "..table.concat(observed,", ")
 end
+local onlyCureStates = {
+    ["not-ready"] = {"OnlyCureNotReady", "Only Cure+ observations unavailable: local data is not ready."},
+    ["unsupported-version"] = {"OnlyCureUnsupported", "Only Cure+ observations unavailable: unsupported version."},
+    ["conflicting-mod"] = {"OnlyCureConflict", "Only Cure+ observations unavailable: conflicting original mod is active."},
+}
+local onlyCureParts = {Hand_L=true, ForeArm_L=true, UpperArm_L=true, Hand_R=true, ForeArm_R=true,
+    UpperArm_R=true, Foot_L=true, LowerLeg_L=true, UpperLeg_L=true, Foot_R=true, LowerLeg_R=true, UpperLeg_R=true}
+local function onlyCureLines(data, add)
+    local status = rawget(data, "status")
+    if status ~= "ready" or rawget(data, "scope") ~= "local-self" or rawget(data, "schemaVersion") ~= 1 then
+        local text = onlyCureStates[status]
+        add(text and tr(text[1], text[2]) or tr("OnlyCureUnavailable", "Only Cure+ observations unavailable; no limb status inferred."))
+        return
+    end
+    local parts, seen = rawget(data, "parts"), {}
+    local valid = type(parts) == "table" and rawget(parts, 13) == nil
+    for index = 1, 12 do
+        local part = valid and rawget(parts, index)
+        local name = type(part) == "table" and rawget(part, "type")
+        local loss = type(part) == "table" and rawget(part, "lossReported")
+        local support = type(part) == "table" and rawget(part, "supportReported")
+        if not onlyCureParts[name] or seen[name] or type(loss) ~= "boolean" or type(support) ~= "boolean"
+            or (not loss and support) then valid = false; break end
+        seen[name] = true
+    end
+    if not valid then add(tr("OnlyCureUnavailable", "Only Cure+ observations unavailable; no limb status inferred.")); return end
+    add(tr("OnlyCureTitle", "Only Cure+ local self-observation"))
+    add(tr("OnlyCureSeparate", "Vanilla health and reported limb loss describe separate systems."))
+    for index = 1, 12 do
+        local part = rawget(parts, index)
+        local name = rawget(part, "type")
+        local state = not rawget(part, "lossReported") and tr("OnlyCureNoLoss", "no loss reported")
+            or rawget(part, "supportReported") and tr("OnlyCureSupportedLoss", "loss and prosthetic support reported")
+            or tr("OnlyCureUnsupportedLoss", "loss reported; no prosthetic support reported")
+        if not add(tr("Part_"..name, bodyNames[name])..": "..state) then break end
+    end
+end
 function Report.format(report)
     if type(report)~="table"then return{tr("Unavailable","Examination unavailable")}end
     local lines={};local truncated=rawget(report,"presentationLimited")==true
@@ -75,6 +112,9 @@ function Report.format(report)
                 if type(data)=="table"then
                     local id=Report.safeText(rawget(section,"providerId")or rawget(section,"owner"))
                     if not add("["..(id~=""and id or tr("Provider","provider")).."]")then break end
+                    if rawget(data,"kind")=="only-cure-self" then
+                        onlyCureLines(data,add)
+                    else
                     local health=rawget(data,"overallHealth")
                     if finite(health)and health>=0 and health<=100 then add(tr("Health","Overall health: %1",string.format("%.1f",health)))end
                     local injured=count(rawget(data,"injuredPartCount"))
@@ -88,6 +128,7 @@ function Report.format(report)
                         if rawget(parts,Report.MAX_PARTS+1)~=nil then truncated=true end
                     end
                     if rawget(data,"truncated")==true then add(tr("PartLimit","Observation limited by the body-part safety ceiling."))end
+                    end
                 end
             end
             if #lines>=Report.MAX_LINES-1 then truncated=true;break end
@@ -118,6 +159,9 @@ function Report.summary(report)
             local section=rawget(sections,index);if section==nil then break end
             local data=type(section)=="table"and rawget(section,"data")or nil
             if type(data)=="table"then
+                if rawget(data,"kind")=="only-cure-self" then
+                    return tr("OnlyCureSummary","Examination complete: review the detailed report for Only Cure+ observations.")
+                end
                 local value=count(rawget(data,"injuredPartCount"))
                 if value then injured=injured+value;known=true end
                 infections=infections+(count(rawget(data,"localWoundInfectionCount"))or 0)
