@@ -1,6 +1,6 @@
 # B47ANCE'd Health Care Master Roadmap
 
-Canonical version: 0.12.0.
+Canonical version: 0.12.1.
 
 ## Original Only Cure+ dependency track
 

@@ -4,7 +4,7 @@ Medical examination, treatment, surgery, trauma procedures, and recovery infrast
 
 B47ANCE'd Health Care owns authoritative medical actions while consuming shared entity and anatomy capabilities where a procedure requires them.
 
-[b]Mod Version: 0.12.0[/b]
+[b]Mod Version: 0.12.1[/b]
 
 [b]Development Status[/b]
 
@@ -52,7 +52,7 @@ Mod ID: B47ANCEDHealthCare
 
 [h2]Compatibility and testing[/h2]
 MP testing build - dedicated multiplayer NOT TESTED
-Requires Project Zomboid Build 42.20.3 or later, ProjectMORTIS and B47ANCEDKnowledgeAndWisdom. Native game/SP/hosted/dedicated validation of 0.12.0 has not been performed. Hosted/dedicated synchronization, native inventories, persistence, consent and corpse provenance remain runtime gates. G7 and stable G8 remain BLOCKED.
+Requires Project Zomboid Build 42.20.3 or later, ProjectMORTIS and B47ANCEDKnowledgeAndWisdom. Native game/SP/hosted/dedicated validation of 0.12.1 has not been performed. Hosted/dedicated synchronization, native inventories, persistence, consent and corpse provenance remain runtime gates. G7 and stable G8 remain BLOCKED.
 
 [h2]Migration from medWorks[/h2]
 Select B47ANCEDHealthCare instead of medWorks in mod lists. Existing Workshop item 3788592396 is retained. Dependent mods, including Nightfall, must update their required Mod ID before using this build. Lua API, item types, saved state and sandbox keys remain medWorks for compatibility. Back up existing saves; validate migration on a disposable copy. Rendered limb removal and a complete clinical treatment loop remain unfinished.
@@ -63,8 +63,8 @@ Server sandbox settings control examination and recovery availability, duration 
 [h2]Source Code and Development[/h2]
 [url=https://github.com/B47ANCE/B47ANCEDHealthCare]GitHub — Source Code & Issues[/url]
 
-[h2]Development status for 0.12.0[/h2]
-Native server recovery timing, local observation completion, corrected seconds conversion, read-only recovery inspection and stronger procedure reservation identity/lock checks are implemented in source. The legacy direct recovery command is disabled. Clinical consequences, body visuals and native/dedicated proof remain pending. Current source is 0.12.0; the last confirmed Workshop distribution is 0.10.1. No 0.12.0 upload has been requested. Dedicated multiplayer remains NOT TESTED; this is not a stable-release claim.
+[h2]Development status for 0.12.1[/h2]
+Native server recovery timing, local observation completion, corrected seconds conversion, read-only recovery inspection and stronger procedure reservation identity/lock checks are implemented in source. The legacy direct recovery command is disabled. Clinical consequences, body visuals and native/dedicated proof remain pending. Current version 0.12.1 is supplied for explicitly authorized Workshop MP testing. Dedicated multiplayer remains NOT TESTED; this is not a stable-release claim.
 
 The 0.10.1 source update adds the user-supplied Health Care thumbnail/poster. In-game artwork display remains NOT TESTED.
 
@@ -75,3 +75,7 @@ View last examination opens a localized, read-only historical report for the exa
 Optional SPXTRM integration: use a main-inventory cold pack for timed sunburn self-care. Requires the compatible Spectrum treatment-receipt API (0.30.0); consumed supplies, server settings and uncertain-outcome inspection apply. Native multiplayer NOT TESTED.
 
 Development source adds optional Only Cure+ 3.2.0 local self-observation. No upstream code/assets bundled; no remote or treatment integration. Native coexistence NOT TESTED.
+
+The mod icon now uses the approved transparent medical-bag cutout. The existing thumbnail, poster and Workshop preview are unchanged.
+
+Optional Only Cure+ support uses the separately installed original by NEXCONKER, based on ZioPao and contributors' The Only Cure. [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3818733381]Support the original Only Cure+ Workshop item[/url]. Health Care bundles no original code or assets; its observation adapter is independently authored.

@@ -1,4 +1,4 @@
-# B47ANCE'd Health Care 0.12.0 playtester handoff
+# B47ANCE'd Health Care 0.12.1 playtester handoff
 
 Begin only after the first two dependency-stage reports are reviewed as PASS.
 Enable only B47ANCED Knowledge & Wisdom, Project M.O.R.T.I.S., and B47ANCE'd Health Care (`B47ANCEDHealthCare`) on a disposable
