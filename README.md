@@ -84,13 +84,13 @@ The audit and first implementation slice are in [AUDIT_0_10_0.md](docs/AUDIT_0_1
 
 The user-supplied medical-bag artwork is used for `preview.png`, the source-root `thumbnail.png` and the Build 42 poster. The original 1254x1254 PNG is retained outside runtime content; export settings, hashes and previous artwork provenance are in [artwork/ARTWORK.json](artwork/ARTWORK.json). The small icon is preserved. Future explicit Workshop preparation uses the verified staged preview. The subsequent explicitly requested 0.10.1 Workshop MP test upload was confirmed by SteamCMD; see [distribution evidence](docs/WORKSHOP_UPLOAD_0_10_1.md). In-game poster display remains NOT TESTED.
 
-Current distribution: 0.10.1 Workshop MP testing build, source commit `042673cb25a7eddf2a1536a871ded89ca562c837`. Package and sanitized provenance are recorded in [WORKSHOP_UPLOAD_0_10_1.md](docs/WORKSHOP_UPLOAD_0_10_1.md). Native SP/dedicated and subscriber download remain NOT TESTED; G7/stable G8 BLOCKED.
+Current distribution: 0.12.1 Workshop MP testing build, source commit `5d3fab7eebb3a290c88957adc94c7d9be7941a7c`. [Verified upload/provenance](docs/WORKSHOP_UPLOAD_0_12_1.md); native/subscriber verification remains NOT TESTED. G7/stable G8 BLOCKED.
 
 ## Detailed examination reports (0.11.0 source)
 
 After completing **Perform examination**, reopen a body-region context menu in the same patient health panel and choose **View last examination**. It appears only while that exact examiner/patient observation is cached (five minutes with a valid clock). The report is a read-only historical snapshot, labelled with its age at opening. It does not update live or perform treatment. It can stay open after cache expiry; reopening rechecks expiry. One scrolling window per local player remains inside that player's viewport and restores controller focus when closed, without changing game speed.
 
-Report labels/findings use translation keys with English fallback in all 29 locale folders; this is not a claim of 29 translated languages. Malformed providers are skipped or shown safely, markup is inert, and text/traversal/count budgets are internal safety limits. Missing/non-finite/backward clocks invalidate reopening; no save data is written. Native layout, gamepad, remote snapshots and dedicated behavior remain untested. See [report design/testing](docs/EXAMINATION_REPORTS.md). The current Knowledge & Wisdom 0.16.0 dependency explicitly blocks multiplayer storage, so knowledge-gated dedicated recovery remains blocked pending work in that owning project. Workshop still distributes 0.10.1; no 0.11.0 package or upload.
+Report labels/findings use translation keys with English fallback in all 29 locale folders; this is not a claim of 29 translated languages. Malformed providers are skipped or shown safely, markup is inert, and text/traversal/count budgets are internal safety limits. Missing/non-finite/backward clocks invalidate reopening; no save data is written. Native layout, gamepad, remote snapshots and dedicated behavior remain untested. See [report design/testing](docs/EXAMINATION_REPORTS.md). The current Knowledge & Wisdom 0.16.0 dependency explicitly blocks multiplayer storage, so knowledge-gated dedicated recovery remains blocked pending work in that owning project. The 0.11.0 iteration was not separately uploaded; see the current 0.12.1 distribution record above.
 
 ## Optional Spectrum self-care (0.11.0)
 
@@ -98,7 +98,7 @@ With SPXTRM 0.30.0 or its compatible treatment-receipt API available, right-clic
 
 ## Medical-reference audit
 
-The user-selected [The Only Cure+ and Wound Expansion audit](docs/THIRD_PARTY_RESEARCH.md) ranks independent Health Care candidates and records licensing, Lua-only, ownership and compatibility limits. Best near-term proposal: a read-only procedure-readiness checklist; clinical additions remain behind existing authority/dependency/runtime gates. This is research, with no foreign code/assets imported or new runtime feature. Canonical source is now 0.12.1; Workshop remains 0.10.1.
+The user-selected [The Only Cure+ and Wound Expansion audit](docs/THIRD_PARTY_RESEARCH.md) ranks independent Health Care candidates and records licensing, Lua-only, ownership and compatibility limits. Best near-term proposal: a read-only procedure-readiness checklist; clinical additions remain behind existing authority/dependency/runtime gates. This is research, with no foreign code/assets imported or new runtime feature. Canonical source and the confirmed Workshop test distribution are 0.12.1.
 
 ## Mod icon (0.12.1)
 
@@ -107,3 +107,5 @@ The approved medical-bag cutout is exported to the existing 32x32 transparent mo
 For the requested thumbnail-preserving publication, `python scripts/prepare_workshop.py --preserve-existing-preview` omits previewfile from the upload descriptor while validating the unchanged packaged preview.
 
 Package metadata regression: `python -m unittest discover -s tests -p test_package_metadata.py` checks LF/CRLF/BOM input and rejects duplicate or mismatched identity/version/dependencies. This pre-upload 0.12.1 tooling repair preserves runtime gameplay.
+
+The explicitly requested 0.12.1 existing-item upload succeeded through SteamCMD after source/package checks and PR merges. The live thumbnail directive was omitted; source thumbnail/poster/preview hashes are unchanged. See [upload evidence](docs/WORKSHOP_UPLOAD_0_12_1.md).

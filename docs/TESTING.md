@@ -107,7 +107,7 @@ Offline: run scripts/check_versions.py, scripts/validate_source.py and scripts/r
 
 After a separately requested development build/deploy, use a disposable SP save: confirm View last examination is absent before completion/cancellation; complete an examination, reopen the same patient's health-panel context menu and view the report. Check age/read-only labels, health/part labels, bleeding/local wound infection and no treatment. Test scrolling/OK, keyboard and controller focus restoration, other dialogs, normal/large fonts and UI scales, viewport changes, split-screen users, replacing one report without closing another, and that closing does not alter game speed. Reopening after five minutes must fail; an already-open report remains explicitly historical. Disconnect/recreate patient/local examiner objects; verify no cross-object/cache leak.
 
-Dedicated knowledge/recovery progression with current Knowledge & Wisdom 0.16.0 is BLOCKED by its explicit unavailable-storage guard. Do not bypass it to perform a test or infer MP PASS. Native recovery/snapshot/consent tests remain outstanding after that dependency is resolved. Current 0.12.1 is the authorized MP test iteration; Workshop still distributes 0.10.1.
+Dedicated knowledge/recovery progression with current Knowledge & Wisdom 0.16.0 is BLOCKED by its explicit unavailable-storage guard. Do not bypass it to perform a test or infer MP PASS. Native recovery/snapshot/consent tests remain outstanding after that dependency is resolved. Current 0.12.1 is the authorized MP test iteration; Workshop now distributes the confirmed 0.12.1 MP test build; subscriber/native behavior is not verified.
 
 ## Only Cure+ local self-observation (0.12.0)
 

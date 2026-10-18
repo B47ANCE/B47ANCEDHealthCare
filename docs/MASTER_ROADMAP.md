@@ -2,6 +2,8 @@
 
 Canonical version: 0.12.1.
 
+Current distribution: confirmed 0.12.1 Workshop MP test upload; see [evidence](WORKSHOP_UPLOAD_0_12_1.md). Runtime G7 and stable G8 remain blocked.
+
 ## Original Only Cure+ dependency track
 
 The owner selected clean-room support for the separately installed original, superseding absorption. The [2026-10-17 dependency/coexistence audit](ONLY_CURE_PLUS_AUDIT_2026_10_17.md) records historical blockers. 0.12.0 implements [version/readiness-gated capability detection, local self-observation and original report presentation](ONLY_CURE_PLUS_OBSERVATION.md), with no new required dependency or shared gameplay state. Native hook coexistence and independent review remain pending. Remote data, treatments, surgery and prosthetic mutations still require authoritative contracts and anatomy-ownership proof. Do not reuse upstream relay commands or mirror cut flags into MORTIS; existing mandatory gates below remain in force.

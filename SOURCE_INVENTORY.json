@@ -80,8 +80,8 @@
     "medWorks network channel",
     "SandboxVars.medWorks"
   ],
-  "current_package": null,
-  "current_manifest": null,
+  "current_package": "dist/B47ANCEDHealthCare-0.12.1-workshop-ready.zip",
+  "current_manifest": "dist/RELEASE_0_12_1.json",
   "historical_records": [
     "docs/VALIDATION_0_9_3.md",
     "docs/WORKSHOP_UPLOAD_0_9_3.md",
@@ -95,5 +95,5 @@
     "docs/VALIDATION_0_11_0.md",
     "docs/VALIDATION_0_12_0.md"
   ],
-  "last_distributed_version": "0.10.1"
+  "last_distributed_version": "0.12.1"
 }
